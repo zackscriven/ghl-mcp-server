@@ -1,0 +1,238 @@
+{
+  "GET /calendars/{calendarId}/free-slots": {
+    "status": "exception",
+    "note": "descriptionNote added: startDate/endDate are epoch-ms numbers, not ISO dates, despite the param name."
+  },
+  "DELETE /calendars/{calendarId}/notifications/{notificationId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/{calendarId}/notifications/{notificationId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/{calendarId}/notifications/{notificationId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/{calendarId}/notifications": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/{calendarId}/notifications": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "DELETE /calendars/{calendarId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/{calendarId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/{calendarId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "DELETE /calendars/appointments/{appointmentId}/notes/{noteId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/appointments/{appointmentId}/notes/{noteId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/appointments/{appointmentId}/notes": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/appointments/{appointmentId}/notes": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/blocked-slots": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "DELETE /calendars/events/{eventId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/events/appointments/{eventId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/events/appointments/{eventId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/events/appointments": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/events/block-slots/{eventId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/events/block-slots": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/events": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/groups/{groupId}/status": {
+    "status": "exception",
+    "note": "descriptionNote added: operationId says disable-group but isActive body field toggles both directions."
+  },
+  "DELETE /calendars/groups/{groupId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/groups/{groupId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/groups/validate-slug": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/groups": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/groups": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "DELETE /calendars/resources/{resourceType}/{id}": {
+    "status": "exception",
+    "note": "versionHeader overridden v3->2021-04-15: v3-tier row was deprecated (Services V1); legacy 2021-04-15 is the current documented version. See overrides notes[]."
+  },
+  "GET /calendars/resources/{resourceType}/{id}": {
+    "status": "exception",
+    "note": "versionHeader overridden v3->2021-04-15: v3-tier row was deprecated (Services V1); legacy 2021-04-15 is the current documented version. See overrides notes[]."
+  },
+  "PUT /calendars/resources/{resourceType}/{id}": {
+    "status": "exception",
+    "note": "versionHeader overridden v3->2021-04-15: v3-tier row was deprecated (Services V1); legacy 2021-04-15 is the current documented version. See overrides notes[]."
+  },
+  "GET /calendars/resources/{resourceType}": {
+    "status": "exception",
+    "note": "versionHeader overridden v3->2021-04-15: v3-tier row was deprecated (Services V1); legacy 2021-04-15 is the current documented version. See overrides notes[]."
+  },
+  "POST /calendars/resources/{resourceType}": {
+    "status": "exception",
+    "note": "versionHeader overridden v3->2021-04-15: v3-tier row was deprecated (Services V1); legacy 2021-04-15 is the current documented version. See overrides notes[]."
+  },
+  "DELETE /calendars/schedules/{id}/associations/{calendarId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/schedules/{id}/associations/{calendarId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "DELETE /calendars/schedules/{id}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/schedules/{id}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/schedules/{id}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/schedules/event-calendar/{calendarId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/schedules/event-calendar/{calendarId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/schedules/event-calendar/{calendarId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/schedules/search": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/schedules": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "DELETE /calendars/services/bookings/{bookingId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/services/bookings/{bookingId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/services/bookings/{bookingId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/services/bookings": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/services/bookings": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "DELETE /calendars/services/catalog/{serviceId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/services/catalog/{serviceId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/services/catalog/{serviceId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/services/catalog": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/services/catalog": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "DELETE /calendars/services/locations/{serviceLocationId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/services/locations/{serviceLocationId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "PUT /calendars/services/locations/{serviceLocationId}": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "GET /calendars/services/locations": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  },
+  "POST /calendars/services/locations": {
+    "status": "ok",
+    "note": "renamed for domain clarity; no schema issues found"
+  }
+}

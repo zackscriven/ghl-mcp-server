@@ -1,0 +1,49 @@
+<!--
+  ghl-mcp-server-v2 — Phase 4 evaluations (mcp-builder reference/evaluation.md format).
+  All questions are read-only, independent, stable, and verifiable by string comparison.
+  Because this was a docs-driven build (no live credentials — see Hard Rules), the questions
+  target the server's tool surface via tools/list plus the official spec corpus it was built
+  from; each answer below was independently verified against the built registry on 2026-07-16.
+-->
+<evaluation>
+  <qa_pair>
+    <question>Using tools/list, find the tool that updates an existing opportunity (PUT /opportunities/{id}). How many properties does its body schema expose, counting them from the inputSchema? List is: pipelineId, name, pipelineStageId, status, monetaryValue, forecastExpectedCloseDate, forecastProbability, assignedTo, customFields — the answer is the count.</question>
+    <answer>9</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>What Version header value does the tool for listing calendar resources (GET /calendars/resources/{resourceType}, tool ghl_calendar_resource_list) send? (This is the case where the v3-tier spec variant is deprecated and the legacy header is correct.)</question>
+    <answer>2021-04-15</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>What Version header value does ghl_calendar_list_free_slots (GET /calendars/{calendarId}/free-slots) send?</question>
+    <answer>v3</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Per the inputSchema of ghl_media_list_files (GET /medias/files), how many parameters are required, and is `type` one of them? Answer as "<count>, yes|no". (The old connector 422'd on this endpoint because it couldn't pass `type` at all.)</question>
+    <answer>5, yes</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>Does the inputSchema of ghl_opportunity_search (GET /opportunities/search) expose both genuine GHL cursor parameters startAfter and startAfterId? Answer yes or no.</question>
+    <answer>yes</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>According to the body schema of the contact-task creation tool (POST /contacts/{contactId}/tasks), which three body fields are required? Answer as a comma-separated list in schema order.</question>
+    <answer>title, dueDate, completed</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>How many body properties does ghl_contact_update (PUT /contacts/{contactId}) expose? (The old connector exposed only 5 of them: company, email, firstName, lastName, phone.)</question>
+    <answer>20</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>What request content type does the server use for ghl_oauth_get_access_token (POST /oauth/token)?</question>
+    <answer>application/x-www-form-urlencoded</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>What request content type does ghl_conversation_upload_file_attachments (POST /conversations/messages/upload) use?</question>
+    <answer>multipart/form-data</answer>
+  </qa_pair>
+  <qa_pair>
+    <question>With no domain filter set, how many tools does the server register, and how many operations are skipped as curated exceptions? Answer as "registered, skipped".</question>
+    <answer>651, 16</answer>
+  </qa_pair>
+</evaluation>

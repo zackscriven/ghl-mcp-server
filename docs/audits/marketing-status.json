@@ -1,0 +1,538 @@
+{
+  "DELETE /emails/builder/{locationId}/{templateId}": {
+    "status": "ok",
+    "note": "Registered as ghl_email_builder_template_delete. Has descriptionNote."
+  },
+  "POST /emails/builder/data": {
+    "status": "ok",
+    "note": "Registered as ghl_email_builder_template_update. Has descriptionNote."
+  },
+  "GET /emails/builder": {
+    "status": "ok",
+    "note": "Registered as ghl_email_builder_template_get. Has descriptionNote."
+  },
+  "POST /emails/builder": {
+    "status": "ok",
+    "note": "Registered as ghl_email_builder_template_create. Has descriptionNote."
+  },
+  "GET /emails/schedule": {
+    "status": "ok",
+    "note": "Registered as ghl_email_legacy_campaign_list. Has descriptionNote."
+  },
+  "GET /social-media-posting/oauth/{locationId}/facebook/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_facebook_page_group."
+  },
+  "POST /social-media-posting/oauth/{locationId}/facebook/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_attach_facebook_page_group."
+  },
+  "GET /social-media-posting/oauth/{locationId}/google/locations/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_google_locations."
+  },
+  "POST /social-media-posting/oauth/{locationId}/google/locations/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_set_google_locations."
+  },
+  "GET /social-media-posting/oauth/{locationId}/instagram/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_instagram_page_group."
+  },
+  "POST /social-media-posting/oauth/{locationId}/instagram/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_attach_instagram_page_group."
+  },
+  "GET /social-media-posting/oauth/{locationId}/linkedin/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_linkedin_page_profile."
+  },
+  "POST /social-media-posting/oauth/{locationId}/linkedin/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_attach_linkedin_page_profile."
+  },
+  "GET /social-media-posting/oauth/{locationId}/tiktok-business/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_tiktok_business_profile."
+  },
+  "GET /social-media-posting/oauth/{locationId}/tiktok/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_tiktok_profile."
+  },
+  "POST /social-media-posting/oauth/{locationId}/tiktok/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_attach_tiktok_profile."
+  },
+  "GET /social-media-posting/oauth/{locationId}/twitter/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_twitter_profile."
+  },
+  "POST /social-media-posting/oauth/{locationId}/twitter/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_attach_twitter_profile."
+  },
+  "GET /social-media-posting/oauth/facebook/start": {
+    "status": "exception",
+    "note": "Skipped: Browser-only OAuth initiation flow (spec: 'Open the API in a window ... User is navigated to Facebook login OAuth screen ... listen on window object for message'). Result is delivered via window.postMessage in a browser context, not a server-to-server HTTP response — not callable from an MCP server. Complete the flow in an actual browser, then use ghl_social_get_facebook_page_group / ghl_social_attach_facebook_page_group with the resulting accountId."
+  },
+  "GET /social-media-posting/oauth/google/start": {
+    "status": "exception",
+    "note": "Skipped: Browser-only OAuth initiation flow, same pattern as the Facebook start endpoint (window.postMessage response, not a normal HTTP response). Not callable server-to-server. Use ghl_social_get_google_locations / ghl_social_set_google_locations after completing the flow in a browser."
+  },
+  "GET /social-media-posting/oauth/instagram/start": {
+    "status": "exception",
+    "note": "Skipped: Browser-only OAuth initiation flow, same pattern as the Facebook start endpoint (window.postMessage response, not a normal HTTP response). Not callable server-to-server. Use ghl_social_get_instagram_page_group / ghl_social_attach_instagram_page_group after completing the flow in a browser."
+  },
+  "GET /social-media-posting/oauth/linkedin/start": {
+    "status": "exception",
+    "note": "Skipped: Browser-only OAuth initiation flow, same pattern as the Facebook start endpoint (window.postMessage response, not a normal HTTP response). Not callable server-to-server. Use ghl_social_get_linkedin_page_profile / ghl_social_attach_linkedin_page_profile after completing the flow in a browser."
+  },
+  "GET /social-media-posting/oauth/tiktok-business/start": {
+    "status": "exception",
+    "note": "Skipped: Browser-only OAuth initiation flow, same pattern as the Facebook start endpoint (window.postMessage response, not a normal HTTP response). Not callable server-to-server. Use ghl_social_get_tiktok_business_profile after completing the flow in a browser."
+  },
+  "GET /social-media-posting/oauth/tiktok/start": {
+    "status": "exception",
+    "note": "Skipped: Browser-only OAuth initiation flow, same pattern as the Facebook start endpoint (window.postMessage response, not a normal HTTP response). Not callable server-to-server. Use ghl_social_get_tiktok_profile / ghl_social_attach_tiktok_profile after completing the flow in a browser."
+  },
+  "GET /social-media-posting/oauth/twitter/start": {
+    "status": "exception",
+    "note": "Skipped: Browser-only OAuth initiation flow AND deprecated per the spec (Twitter/X). Not callable server-to-server (window.postMessage response). No documented replacement named in the spec."
+  },
+  "GET /blogs/authors": {
+    "status": "ok",
+    "note": "Registered as ghl_blog_get_all_authors_by_location."
+  },
+  "GET /blogs/categories": {
+    "status": "ok",
+    "note": "Registered as ghl_blog_get_all_categories_by_location."
+  },
+  "PUT /blogs/posts/{postId}": {
+    "status": "ok",
+    "note": "Registered as ghl_blog_update_post."
+  },
+  "GET /blogs/posts/all": {
+    "status": "ok",
+    "note": "Registered as ghl_blog_post_list. Has descriptionNote."
+  },
+  "GET /blogs/posts/url-slug-exists": {
+    "status": "ok",
+    "note": "Registered as ghl_blog_check_url_slug_exists."
+  },
+  "POST /blogs/posts": {
+    "status": "ok",
+    "note": "Registered as ghl_blog_post_create."
+  },
+  "GET /blogs/site/all": {
+    "status": "ok",
+    "note": "Registered as ghl_blog_site_list."
+  },
+  "DELETE /brand-boards/{locationId}/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_delete."
+  },
+  "GET /brand-boards/{locationId}/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_get_by_id."
+  },
+  "PATCH /brand-boards/{locationId}/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_update."
+  },
+  "GET /brand-boards/{locationId}": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_get_by_location."
+  },
+  "POST /brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}/default": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_set_default_voice."
+  },
+  "DELETE /brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_delete_voice."
+  },
+  "GET /brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_get_voice."
+  },
+  "PATCH /brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_update_voice."
+  },
+  "GET /brand-boards/locations/{locationId}/brand-voices": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_list_voices."
+  },
+  "POST /brand-boards/locations/{locationId}/brand-voices": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_create_voice."
+  },
+  "POST /brand-boards/": {
+    "status": "ok",
+    "note": "Registered as ghl_brand_board_create."
+  },
+  "GET /campaigns/": {
+    "status": "ok",
+    "note": "Registered as ghl_campaign_list."
+  },
+  "POST /courses/courses-exporter/public/import": {
+    "status": "ok",
+    "note": "Registered as ghl_course_import."
+  },
+  "GET /emails/locations/{locationId}/campaigns/bulk-actions/{campaignId}": {
+    "status": "ok",
+    "note": "Registered as ghl_email_get_bulk_action_campaign."
+  },
+  "GET /emails/locations/{locationId}/campaigns/bulk-actions": {
+    "status": "ok",
+    "note": "Registered as ghl_email_list_bulk_action_campaigns."
+  },
+  "POST /emails/locations/{locationId}/campaigns/emails/{campaignId}/schedule": {
+    "status": "ok",
+    "note": "Registered as ghl_email_schedule_campaign."
+  },
+  "DELETE /emails/locations/{locationId}/campaigns/emails/{campaignId}": {
+    "status": "ok",
+    "note": "Registered as ghl_email_delete_campaign."
+  },
+  "GET /emails/locations/{locationId}/campaigns/emails/{campaignId}": {
+    "status": "ok",
+    "note": "Registered as ghl_email_get_campaign."
+  },
+  "PATCH /emails/locations/{locationId}/campaigns/emails/{campaignId}": {
+    "status": "ok",
+    "note": "Registered as ghl_email_update_campaign."
+  },
+  "GET /emails/locations/{locationId}/campaigns/emails": {
+    "status": "ok",
+    "note": "Registered as ghl_email_list_campaigns."
+  },
+  "POST /emails/locations/{locationId}/campaigns/emails": {
+    "status": "ok",
+    "note": "Registered as ghl_email_create_campaign."
+  },
+  "GET /emails/locations/{locationId}/campaigns/stats/{source}/{sourceId}": {
+    "status": "ok",
+    "note": "Registered as ghl_email_get_campaign_stats."
+  },
+  "GET /emails/locations/{locationId}/campaigns/workflows/{campaignId}": {
+    "status": "ok",
+    "note": "Registered as ghl_email_get_workflow_campaign."
+  },
+  "GET /emails/locations/{locationId}/campaigns/workflows": {
+    "status": "ok",
+    "note": "Registered as ghl_email_list_workflow_campaigns."
+  },
+  "DELETE /emails/locations/{locationId}/templates/{templateId}": {
+    "status": "ok",
+    "note": "Registered as ghl_email_template_delete."
+  },
+  "GET /emails/locations/{locationId}/templates/{templateId}": {
+    "status": "ok",
+    "note": "Registered as ghl_email_template_get."
+  },
+  "PATCH /emails/locations/{locationId}/templates/{templateId}": {
+    "status": "ok",
+    "note": "Registered as ghl_email_template_update."
+  },
+  "POST /emails/locations/{locationId}/templates/folders": {
+    "status": "ok",
+    "note": "Registered as ghl_email_template_folder_create."
+  },
+  "POST /emails/locations/{locationId}/templates/import": {
+    "status": "ok",
+    "note": "Registered as ghl_email_template_import."
+  },
+  "GET /emails/locations/{locationId}/templates": {
+    "status": "ok",
+    "note": "Registered as ghl_email_template_list."
+  },
+  "POST /emails/locations/{locationId}/templates": {
+    "status": "ok",
+    "note": "Registered as ghl_email_template_create."
+  },
+  "GET /forms/": {
+    "status": "ok",
+    "note": "Registered as ghl_form_list."
+  },
+  "GET /forms/submissions": {
+    "status": "ok",
+    "note": "Registered as ghl_form_get_submissions."
+  },
+  "POST /forms/upload-custom-files": {
+    "status": "ok",
+    "note": "Registered as ghl_form_upload_custom_files. Has descriptionNote."
+  },
+  "GET /funnels/funnel/list": {
+    "status": "ok",
+    "note": "Registered as ghl_funnel_list."
+  },
+  "DELETE /funnels/lookup/redirect/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_funnel_delete_redirect_by_id."
+  },
+  "PATCH /funnels/lookup/redirect/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_funnel_update_redirect_by_id."
+  },
+  "GET /funnels/lookup/redirect/list": {
+    "status": "ok",
+    "note": "Registered as ghl_funnel_fetch_redirects_list."
+  },
+  "POST /funnels/lookup/redirect": {
+    "status": "ok",
+    "note": "Registered as ghl_funnel_create_redirect."
+  },
+  "GET /funnels/page/count": {
+    "status": "ok",
+    "note": "Registered as ghl_funnel_get_pages_count_by_id."
+  },
+  "GET /funnels/page": {
+    "status": "ok",
+    "note": "Registered as ghl_funnel_get_pages_by_id."
+  },
+  "DELETE /links/{linkId}": {
+    "status": "ok",
+    "note": "Registered as ghl_link_delete."
+  },
+  "PUT /links/{linkId}": {
+    "status": "ok",
+    "note": "Registered as ghl_link_update."
+  },
+  "GET /links/": {
+    "status": "ok",
+    "note": "Registered as ghl_link_list."
+  },
+  "GET /links/id/{linkId}": {
+    "status": "ok",
+    "note": "Registered as ghl_link_get_by_id."
+  },
+  "POST /links/": {
+    "status": "ok",
+    "note": "Registered as ghl_link_create."
+  },
+  "GET /links/search": {
+    "status": "ok",
+    "note": "Registered as ghl_link_search_trigger."
+  },
+  "DELETE /medias/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_media_delete_file."
+  },
+  "POST /medias/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_media_update_file."
+  },
+  "PUT /medias/delete-files": {
+    "status": "ok",
+    "note": "Registered as ghl_media_bulk_delete_files."
+  },
+  "GET /medias/files": {
+    "status": "ok",
+    "note": "Registered as ghl_media_list_files. Has descriptionNote."
+  },
+  "POST /medias/folder": {
+    "status": "ok",
+    "note": "Registered as ghl_media_create_folder."
+  },
+  "PUT /medias/update-files": {
+    "status": "ok",
+    "note": "Registered as ghl_media_bulk_update_files."
+  },
+  "POST /medias/upload-file": {
+    "status": "ok",
+    "note": "Registered as ghl_media_upload_file. Has descriptionNote."
+  },
+  "DELETE /social-media-posting/{locationId}/accounts/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_delete_account."
+  },
+  "GET /social-media-posting/{locationId}/accounts": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_account."
+  },
+  "GET /social-media-posting/{locationId}/categories/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_category_get."
+  },
+  "GET /social-media-posting/{locationId}/categories": {
+    "status": "ok",
+    "note": "Registered as ghl_social_category_list."
+  },
+  "DELETE /social-media-posting/{locationId}/csv/{csvId}/post/{postId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_delete_csv_post."
+  },
+  "DELETE /social-media-posting/{locationId}/csv/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_delete_csv."
+  },
+  "GET /social-media-posting/{locationId}/csv/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_csv_post."
+  },
+  "PATCH /social-media-posting/{locationId}/csv/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_csv_finalize. Has descriptionNote."
+  },
+  "GET /social-media-posting/{locationId}/csv": {
+    "status": "ok",
+    "note": "Registered as ghl_social_csv_list. Has descriptionNote."
+  },
+  "POST /social-media-posting/{locationId}/csv": {
+    "status": "ok",
+    "note": "Registered as ghl_social_csv_upload. Has descriptionNote."
+  },
+  "DELETE /social-media-posting/{locationId}/posts/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_delete_post."
+  },
+  "GET /social-media-posting/{locationId}/posts/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_post."
+  },
+  "PUT /social-media-posting/{locationId}/posts/{id}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_edit_post."
+  },
+  "POST /social-media-posting/{locationId}/posts/bulk-delete": {
+    "status": "ok",
+    "note": "Registered as ghl_social_bulk_delete_planner_posts."
+  },
+  "POST /social-media-posting/{locationId}/posts/list": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_posts."
+  },
+  "POST /social-media-posting/{locationId}/posts": {
+    "status": "ok",
+    "note": "Registered as ghl_social_post_create. Has descriptionNote."
+  },
+  "POST /social-media-posting/{locationId}/set-accounts": {
+    "status": "ok",
+    "note": "Registered as ghl_social_set_accounts."
+  },
+  "POST /social-media-posting/{locationId}/tags/details": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_tags_by_ids."
+  },
+  "GET /social-media-posting/{locationId}/tags": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_tags_location_id."
+  },
+  "DELETE /social-media-posting/category/queues/{postId}/active-post": {
+    "status": "ok",
+    "note": "Registered as ghl_social_delete_current_active_post_and_schedule_next."
+  },
+  "POST /social-media-posting/category/queues/{queueId}/create/item": {
+    "status": "ok",
+    "note": "Registered as ghl_social_create_queue_item."
+  },
+  "POST /social-media-posting/category/queues/{queueId}/edit/calendar": {
+    "status": "ok",
+    "note": "Registered as ghl_social_fetch_edit_session_calendar."
+  },
+  "POST /social-media-posting/category/queues/{queueId}/edit/discard": {
+    "status": "ok",
+    "note": "Registered as ghl_social_discard_edit_session."
+  },
+  "POST /social-media-posting/category/queues/{queueId}/edit/save": {
+    "status": "ok",
+    "note": "Registered as ghl_social_save_edit_session."
+  },
+  "POST /social-media-posting/category/queues/{queueId}/edit/start": {
+    "status": "ok",
+    "note": "Registered as ghl_social_start_edit_session."
+  },
+  "POST /social-media-posting/category/queues/{queueId}/items/{itemId}/clone": {
+    "status": "ok",
+    "note": "Registered as ghl_social_clone_queue_item."
+  },
+  "PUT /social-media-posting/category/queues/{queueId}/items/{itemId}/reset": {
+    "status": "ok",
+    "note": "Registered as ghl_social_reset_queue_item."
+  },
+  "DELETE /social-media-posting/category/queues/{queueId}/items/{itemId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_delete_queue_item."
+  },
+  "PUT /social-media-posting/category/queues/{queueId}/items/{itemId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_update_queue_item."
+  },
+  "POST /social-media-posting/category/queues/{queueId}/items": {
+    "status": "ok",
+    "note": "Registered as ghl_social_fetch_queue_items."
+  },
+  "POST /social-media-posting/category/queues/{queueId}/slots": {
+    "status": "ok",
+    "note": "Registered as ghl_social_fetch_slots."
+  },
+  "GET /social-media-posting/category/queues/{queueId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_fetch_queue_by_id."
+  },
+  "PUT /social-media-posting/category/queues/{queueId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_update_queue."
+  },
+  "GET /social-media-posting/category/queues/available-categories": {
+    "status": "ok",
+    "note": "Registered as ghl_social_fetch_available_categories."
+  },
+  "POST /social-media-posting/category/queues/list/calendar": {
+    "status": "ok",
+    "note": "Registered as ghl_social_fetch_calendar_list."
+  },
+  "POST /social-media-posting/category/queues/list": {
+    "status": "ok",
+    "note": "Registered as ghl_social_fetch_queues."
+  },
+  "POST /social-media-posting/category/queues": {
+    "status": "ok",
+    "note": "Registered as ghl_social_create_queue."
+  },
+  "DELETE /social-media-posting/comments/{platform}/{id}/like": {
+    "status": "ok",
+    "note": "Registered as ghl_social_delete_like."
+  },
+  "POST /social-media-posting/comments/{platform}/{id}/like": {
+    "status": "ok",
+    "note": "Registered as ghl_social_create_like."
+  },
+  "POST /social-media-posting/comments/{platform}/list": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_comment_list."
+  },
+  "POST /social-media-posting/comments/{platform}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_create_comment."
+  },
+  "GET /social-media-posting/oauth/{locationId}/{platform}/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_oauth_accounts."
+  },
+  "POST /social-media-posting/oauth/{locationId}/{platform}/accounts/{accountId}": {
+    "status": "ok",
+    "note": "Registered as ghl_social_attach_oauth_accounts."
+  },
+  "GET /social-media-posting/oauth/{platform}/start": {
+    "status": "exception",
+    "note": "Skipped: v3 generic browser-only OAuth initiation flow ('Start OAuth Flow (Step 1 of 3)' — spec explicitly says 'Open this API in a browser window (not via cURL)'; result delivered via window.postMessage). Not callable server-to-server. After completing the flow in a browser, use GET /social-media-posting/{locationId}/{platform}/accounts/{accountId} (ghl_social_get_oauth_accounts) with the resulting accountId, per the spec's own documented 3-step flow."
+  },
+  "POST /social-media-posting/statistics": {
+    "status": "ok",
+    "note": "Registered as ghl_social_get_statistics."
+  },
+  "GET /surveys/": {
+    "status": "ok",
+    "note": "Registered as ghl_survey_list."
+  },
+  "GET /surveys/submissions": {
+    "status": "ok",
+    "note": "Registered as ghl_survey_get_submissions."
+  },
+  "GET /workflows/": {
+    "status": "ok",
+    "note": "Registered as ghl_workflow_list."
+  }
+}

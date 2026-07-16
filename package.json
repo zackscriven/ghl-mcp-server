@@ -1,0 +1,23 @@
+{
+  "name": "ghl-mcp-server",
+  "version": "2.0.0",
+  "description": "Comprehensive GoHighLevel MCP server — full public API surface (667 operations), spec-driven, multi-tenant, per-operation Version headers, dry-run safety gate.",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "ghl-mcp-server": "build/index.js" },
+  "scripts": {
+    "extract": "node scripts/extract-operations.mjs",
+    "build": "tsc && node -e \"require('fs').cpSync('src/generated','build/generated',{recursive:true})\"",
+    "start": "node build/index.js",
+    "inspect": "npx @modelcontextprotocol/inspector node build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+
+# Environment / secrets
+.env
+.env.*
+*.env
+
+# macOS
+.DS_Store
+._*
+
+# Internal ops notes (not for public repo)
+MIGRATION.md
+
+# Audit-agent scratch leftovers
+docs/audits/.scratch_delete_me.cjs
+docs/audits/_tmp_names.txt
+*.log

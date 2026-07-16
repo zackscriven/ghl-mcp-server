@@ -1,0 +1,374 @@
+{
+  "GET /oauth/installedLocations": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "POST /oauth/locationToken": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. contentType override: application/x-www-form-urlencoded (spec-only content type; registry auto-select already correct, override added explicitly per brief)."
+  },
+  "GET /users/": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions. Deprecated; superseded by GET /users/search (v3)."
+  },
+  "DELETE /businesses/{businessId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /businesses/{businessId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "PUT /businesses/{businessId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /businesses/": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "POST /businesses/": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /companies/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "DELETE /custom-menus/{customMenuId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /custom-menus/{customMenuId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "PUT /custom-menus/{customMenuId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /custom-menus/": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Renamed ghl_custom_menu_get -> ghl_custom_menu_list (list op, avoid confusion with singular get-by-id)."
+  },
+  "POST /custom-menus/": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /locations/{locationId}/conversationChannels/{type}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "DELETE /locations/{locationId}/customFields/{id}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /locations/{locationId}/customFields/{id}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "PUT /locations/{locationId}/customFields/{id}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "POST /locations/{locationId}/customFields/upload": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions. contentType override: multipart/form-data (file upload; spec has no application/json alternative; registry auto-select already correct, override added explicitly per brief)."
+  },
+  "GET /locations/{locationId}/customFields": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "POST /locations/{locationId}/customFields": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "DELETE /locations/{locationId}/customValues/{id}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /locations/{locationId}/customValues/{id}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "PUT /locations/{locationId}/customValues/{id}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /locations/{locationId}/customValues": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "POST /locations/{locationId}/customValues": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /locations/{locationId}/permissions": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "PUT /locations/{locationId}/permissions": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "DELETE /locations/{locationId}/recurring-tasks/{id}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /locations/{locationId}/recurring-tasks/{id}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "PUT /locations/{locationId}/recurring-tasks/{id}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "POST /locations/{locationId}/recurring-tasks": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "DELETE /locations/{locationId}/tags/{tagId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /locations/{locationId}/tags/{tagId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "PUT /locations/{locationId}/tags/{tagId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /locations/{locationId}/tags": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "POST /locations/{locationId}/tags": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "POST /locations/{locationId}/tasks/search": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "DELETE /locations/{locationId}/templates/{id}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /locations/{locationId}/templates": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /locations/{locationId}/timezones": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "DELETE /locations/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /locations/{locationId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "PUT /locations/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Renamed ghl_location_put -> ghl_location_update (clearer verb)."
+  },
+  "POST /locations/": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Name reaffirmed explicitly: ghl_location_create (matches already-correct derived name)."
+  },
+  "GET /locations/search": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "DELETE /marketplace/app/{appId}/installations": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /marketplace/app/{appId}/installations": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /marketplace/app/{appId}/rebilling-config/location/{locationId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions. Renamed ghl_marketplace_get_rebilling_config_for_app -> ghl_marketplace_get_rebilling_config (shorter, still unique/unambiguous within prefix)."
+  },
+  "DELETE /marketplace/billing/charges/{chargeId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions. Spec declares no Version header parameter at all for this op (unusual vs. rest of domain, verified genuine — not an extraction bug); operations.json correctly carries versionHeader empty string."
+  },
+  "GET /marketplace/billing/charges/{chargeId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions. Spec declares no Version header parameter at all for this op (unusual vs. rest of domain, verified genuine — not an extraction bug); operations.json correctly carries versionHeader empty string."
+  },
+  "GET /marketplace/billing/charges/has-funds": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions. Spec declares no Version header parameter at all for this op (unusual vs. rest of domain, verified genuine — not an extraction bug); operations.json correctly carries versionHeader empty string."
+  },
+  "GET /marketplace/billing/charges": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions. Spec declares no Version header parameter at all for this op (unusual vs. rest of domain, verified genuine — not an extraction bug); operations.json correctly carries versionHeader empty string."
+  },
+  "POST /marketplace/billing/charges": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions. Spec declares no Version header parameter at all for this op (unusual vs. rest of domain, verified genuine — not an extraction bug); operations.json correctly carries versionHeader empty string."
+  },
+  "POST /marketplace/external-auth/migration": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "GET /oauth/installed-locations": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Renamed ghl_oauth_get_installed_location_get2 -> ghl_oauth_get_installed_locations (dedupe suffix removed, still unique)."
+  },
+  "POST /oauth/location-token": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. contentType override: application/x-www-form-urlencoded (spec-only content type; registry auto-select already correct, override added explicitly per brief). Renamed ghl_oauth_get_location_access_token_post2 -> ghl_oauth_exchange_location_token (clearer, dedupe suffix removed)."
+  },
+  "POST /oauth/token": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions. contentType override: pinned to application/x-www-form-urlencoded; spec also documents application/json for the identical GetAccessTokenBodyDto schema (registry default would have silently picked application/json) — noted both are valid. Name reaffirmed explicitly: ghl_oauth_get_access_token (matches already-correct derived name)."
+  },
+  "GET /saas-api/public-api/agency-plans/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by GET /saas/agency-plans/{companyId}."
+  },
+  "POST /saas-api/public-api/bulk-disable-saas/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by POST /saas/bulk-disable-saas/{companyId}."
+  },
+  "POST /saas-api/public-api/bulk-enable-saas/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by POST /saas/bulk-enable-saas/{companyId}."
+  },
+  "POST /saas-api/public-api/companies/{companyId}/locations/{locationId}/wallet-balance/complimentary-credits": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /saas-api/public-api/companies/{companyId}/locations/{locationId}/wallet-balance": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "POST /saas-api/public-api/enable-saas/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by POST /saas/enable-saas/{locationId}."
+  },
+  "GET /saas-api/public-api/get-saas-subscription/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by GET /saas/get-saas-subscription/{locationId}."
+  },
+  "GET /saas-api/public-api/locations": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by GET /saas/locations. Renamed ghl_saas_locations_deprecated -> ghl_saas_get_locations_by_stripe_id_deprecated (clarifies lookup key)."
+  },
+  "POST /saas-api/public-api/pause/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by POST /saas/pause/{locationId}."
+  },
+  "GET /saas-api/public-api/saas-locations/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by GET /saas/saas-locations/{companyId}."
+  },
+  "GET /saas-api/public-api/saas-plan/{planId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by GET /saas/saas-plan/{planId}."
+  },
+  "POST /saas-api/public-api/update-rebilling/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by POST /saas/update-rebilling/{companyId}."
+  },
+  "PUT /saas-api/public-api/update-saas-subscription/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Deprecated; superseded by PUT /saas/update-saas-subscription/{locationId}. Renamed from misleading generated name. Renamed ghl_saas_generate_payment_link_deprecated -> ghl_saas_update_saas_subscription_deprecated (original generated name was WRONG - op updates a subscription, does not generate a payment link; corrected to match spec summary)."
+  },
+  "GET /saas/agency-plans/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "POST /saas/allow-attach-rebilling/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "POST /saas/bulk-disable-saas/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "POST /saas/bulk-enable-saas/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "POST /saas/enable-saas/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /saas/get-saas-subscription/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /saas/locations": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Renamed ghl_saas_locations -> ghl_saas_get_locations_by_stripe_id (clarifies lookup key)."
+  },
+  "POST /saas/pause/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /saas/saas-locations/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /saas/saas-plan/{planId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "POST /saas/update-rebilling/{companyId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "PUT /saas/update-saas-subscription/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Renamed ghl_saas_generate_payment_link -> ghl_saas_update_saas_subscription (original generated name was WRONG - op updates a subscription, does not generate a payment link; corrected to match spec summary)."
+  },
+  "GET /snapshots/": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Renamed ghl_snapshot_get_custom -> ghl_snapshot_list (clearer; original name was a leftover from ambiguous summary text)."
+  },
+  "POST /snapshots/share/link": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /snapshots/snapshot-status/{snapshotId}/location/{locationId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /snapshots/snapshot-status/{snapshotId}": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name. Renamed ghl_snapshot_get_push -> ghl_snapshot_get_pushes_between_dates (disambiguates from the /location/{locationId} sibling, matches required from/to query params)."
+  },
+  "DELETE /users/{userId}": {
+    "status": "exception",
+    "note": "SPEC BUG: operation-level parameters omits the userId path parameter (only the GET sibling declares it) in both users.json and v3/users-v3.json, despite sharing the same {userId} path template. registry.ts builds the tool schema strictly from op.parameters with additionalProperties:false and no path-template fallback, so the generated tool has no field for userId and will always fail at request time with a missing-path-parameter error. Not fixable via OperationOverride (no path-param injection mechanism exists in the override API). Left REGISTERED (not skipped) per brief guidance; needs a registry.ts fix (infer required path params from the URL template when the spec under-declares them). See src/overrides/platform.ts notes."
+  },
+  "GET /users/{userId}": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "PUT /users/{userId}": {
+    "status": "exception",
+    "note": "SPEC BUG: operation-level parameters omits the userId path parameter (only the GET sibling declares it) in both users.json and v3/users-v3.json, despite sharing the same {userId} path template. registry.ts builds the tool schema strictly from op.parameters with additionalProperties:false and no path-template fallback, so the generated tool has no field for userId and will always fail at request time with a missing-path-parameter error. Not fixable via OperationOverride (no path-param injection mechanism exists in the override API). Left REGISTERED (not skipped) per brief guidance; needs a registry.ts fix (infer required path params from the URL template when the spec under-declares them). See src/overrides/platform.ts notes."
+  },
+  "POST /users/": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  },
+  "POST /users/search/filter-by-email": {
+    "status": "ok",
+    "note": "Requires an AGENCY-LEVEL (Company) token per spec security (Agency-Access / Agency-Access-Only) — descriptionNote added. Verified version header, body/params completeness, and name."
+  },
+  "GET /users/search": {
+    "status": "ok",
+    "note": "Verified: version header, body completeness, params, and name all correct per spec; no exceptions."
+  }
+}

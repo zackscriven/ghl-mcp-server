@@ -1,0 +1,14 @@
+{
+  "GET /opportunities/lost-reason": { "status": "ok", "note": "All 6 query params (name, deleted, query, skip, limit, getCount) plus required locationId extracted correctly. Version v3 correct. No overrides needed." },
+  "GET /opportunities/pipelines": { "status": "ok", "note": "Required locationId extracted correctly. Version v3 correct. Renamed ghl_opportunity_get_pipelines -> ghl_pipeline_list per brief's own naming example." },
+  "GET /opportunities/{id}": { "status": "ok", "note": "Required path param id extracted correctly. Version v3 correct." },
+  "DELETE /opportunities/{id}": { "status": "ok", "note": "Required path param id extracted correctly. Version v3 correct." },
+  "PUT /opportunities/{id}": { "status": "ok", "note": "REGRESSION CHECK CONFIRMED FIXED: body exposes all 9 UpdateOpportunityDtoV3 properties (pipelineId, name, pipelineStageId, status, monetaryValue, forecastExpectedCloseDate, forecastProbability, assignedTo, customFields) that the old connector silently dropped. Version v3 correct." },
+  "PUT /opportunities/{id}/status": { "status": "ok", "note": "Body (status, lostReasonId) and path id extracted correctly. Version v3 correct." },
+  "POST /opportunities/{id}/followers": { "status": "ok", "note": "Body (followers array) and path id extracted correctly. Version v3 correct." },
+  "DELETE /opportunities/{id}/followers": { "status": "ok", "note": "Both the isRemoveAllFollowers query param AND the FollowersDTO JSON body (unusual for DELETE but spec-documented) extracted correctly, plus path id. Version v3 correct." },
+  "POST /opportunities/": { "status": "ok", "note": "Body (pipelineId, locationId, name, pipelineStageId, status, contactId, monetaryValue, forecastExpectedCloseDate, forecastProbability, assignedTo, customFields) fully extracted. Version v3 correct." },
+  "GET /opportunities/search": { "status": "ok", "note": "REGRESSION CHECK CONFIRMED FIXED: all 19 filter/pagination query params extracted (q, status, campaignId, id, order, endDate, startAfter, startAfterId, date, country, page, limit, getTasks, getNotes, getCalendarEvents, locationId, pipelineId, pipelineStageId, contactId, assignedTo) — old connector could only ever reach page 1 of 100. Pagination mechanism documented in overrides descriptionNote and audit report. Version v3 correct." },
+  "POST /opportunities/search": { "status": "ok", "note": "Advanced-filter body (locationId, query, limit, page, searchAfter, additionalDetails) fully extracted. Version v3 correct. Renamed ghl_opportunity_search_opportunities_advanced -> ghl_opportunity_search_advanced (removed redundant stutter)." },
+  "POST /opportunities/upsert": { "status": "ok", "note": "Body (id, pipelineId, locationId, followers, isRemoveAllFollowers, followersActionType, name, status, pipelineStageId, monetaryValue, forecastExpectedCloseDate, forecastProbability, assignedTo, lostReasonId) fully extracted. Version v3 correct." }
+}

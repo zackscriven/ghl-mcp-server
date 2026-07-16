@@ -1,0 +1,242 @@
+{
+  "DELETE /contacts/{contactId}/campaigns/removeAll": {
+    "status": "ok",
+    "note": "renamed ghl_contact_remove_from_all_campaigns_legacy"
+  },
+  "GET /contacts/": {
+    "status": "ok",
+    "note": "renamed ghl_contact_list; descriptionNote added (deprecated, points to search)"
+  },
+  "DELETE /associations/{associationId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /associations/{associationId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "PUT /associations/{associationId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /associations/": {
+    "status": "ok",
+    "note": "renamed ghl_association_list"
+  },
+  "GET /associations/key/{key_name}": {
+    "status": "ok",
+    "note": "renamed ghl_association_get_by_key_name"
+  },
+  "GET /associations/objectKey/{objectKey}": {
+    "status": "ok",
+    "note": "renamed ghl_association_get_by_object_key"
+  },
+  "POST /associations/": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /associations/relations/{recordId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "DELETE /associations/relations/{relationId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /associations/relations": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /contacts/{contactId}/appointments": {
+    "status": "ok",
+    "note": "renamed ghl_contact_get_appointments"
+  },
+  "DELETE /contacts/{contactId}/campaigns/{campaignId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /contacts/{contactId}/campaigns/{campaignId}": {
+    "status": "ok",
+    "note": "descriptionNote only, no changes needed"
+  },
+  "DELETE /contacts/{contactId}/campaigns/remove-all": {
+    "status": "ok",
+    "note": "renamed ghl_contact_remove_from_all_campaigns (fixes _delete2 collision artifact)"
+  },
+  "DELETE /contacts/{contactId}/followers": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /contacts/{contactId}/followers": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "DELETE /contacts/{contactId}/notes/{id}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /contacts/{contactId}/notes/{id}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "PUT /contacts/{contactId}/notes/{id}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /contacts/{contactId}/notes": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /contacts/{contactId}/notes": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "DELETE /contacts/{contactId}/tags": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /contacts/{contactId}/tags": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "PUT /contacts/{contactId}/tasks/{taskId}/completed": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "DELETE /contacts/{contactId}/tasks/{taskId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /contacts/{contactId}/tasks/{taskId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "PUT /contacts/{contactId}/tasks/{taskId}": {
+    "status": "ok",
+    "note": "REGRESSION-VERIFIED: assignedTo present"
+  },
+  "GET /contacts/{contactId}/tasks": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /contacts/{contactId}/tasks": {
+    "status": "ok",
+    "note": "REGRESSION-VERIFIED: assignedTo present; documents required title/dueDate/completed causing old 422s"
+  },
+  "DELETE /contacts/{contactId}/workflow/{workflowId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /contacts/{contactId}/workflow/{workflowId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "DELETE /contacts/{contactId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /contacts/{contactId}": {
+    "status": "ok",
+    "note": "renamed ghl_contact_get_by_id (fixes _get2 collision artifact)"
+  },
+  "PUT /contacts/{contactId}": {
+    "status": "ok",
+    "note": "REGRESSION-VERIFIED: all required fields present (assignedTo, customFields, tags, dnd*, address*, dateOfBirth, source, website, timezone, country)"
+  },
+  "POST /contacts/bulk/business": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /contacts/bulk/tags/update/{type}": {
+    "status": "ok",
+    "note": "renamed ghl_contact_bulk_update_tags (was wrongly named ghl_contact_create_association)"
+  },
+  "GET /contacts/business/{businessId}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /contacts/": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /contacts/search/duplicate": {
+    "status": "ok",
+    "note": "descriptionNote: at least one of number/email required (business logic, spec does not mark)"
+  },
+  "POST /contacts/search": {
+    "status": "ok",
+    "note": "SPEC GAP: SearchBodyV2DTO empty in official OpenAPI; descriptionNote added, verified not extraction loss"
+  },
+  "POST /contacts/upsert": {
+    "status": "ok",
+    "note": "descriptionNote only, verified complete"
+  },
+  "DELETE /custom-fields/{id}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /custom-fields/{id}": {
+    "status": "ok",
+    "note": "descriptionNote: also returns folders"
+  },
+  "PUT /custom-fields/{id}": {
+    "status": "ok",
+    "note": "descriptionNote: locationId+showInForms required on every update (spec-verified)"
+  },
+  "DELETE /custom-fields/folder/{id}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "PUT /custom-fields/folder/{id}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /custom-fields/folder": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /custom-fields/object-key/{objectKey}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "POST /custom-fields/": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /objects/{key}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "PUT /objects/{key}": {
+    "status": "ok",
+    "note": "renamed ghl_object_update_schema"
+  },
+  "DELETE /objects/{schemaKey}/records/{id}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "GET /objects/{schemaKey}/records/{id}": {
+    "status": "ok",
+    "note": "verified: version header, params, body schema, pagination, name all correct — no override needed"
+  },
+  "PUT /objects/{schemaKey}/records/{id}": {
+    "status": "ok",
+    "note": "SPEC GAP: UpdateCustomObjectRecordDto empty in official OpenAPI; descriptionNote added"
+  },
+  "POST /objects/{schemaKey}/records/search": {
+    "status": "ok",
+    "note": "descriptionNote only, verified complete (locationId/page/pageLimit/query/searchAfter all required)"
+  },
+  "POST /objects/{schemaKey}/records": {
+    "status": "ok",
+    "note": "SPEC GAP: CreateCustomObjectRecordDto empty in official OpenAPI; descriptionNote added"
+  },
+  "GET /objects/": {
+    "status": "ok",
+    "note": "renamed ghl_object_list (fixes ambiguity vs get_schema_by_key)"
+  },
+  "POST /objects/": {
+    "status": "ok",
+    "note": "renamed ghl_object_create_custom_object"
+  }
+}

@@ -1,0 +1,418 @@
+{
+  "PUT /ad-publishing/facebook/ads-v2": {
+    "status": "exception",
+    "note": "skip: v3 twin registered under ad-publishing (PUT /ad-publishing/facebook/ads, fb-upsert-ad)"
+  },
+  "POST /ad-publishing/facebook/adsets/{adsetId}/duplicate": {
+    "status": "exception",
+    "note": "skip: v3 twin registered under ad-publishing (POST /ad-publishing/facebook/adsets/{adSetId}/duplicate, fb-duplicate-adset)"
+  },
+  "POST /ad-publishing/facebook/adsets/{adsetId}/pause": {
+    "status": "exception",
+    "note": "skip: v3 twin registered under ad-publishing (POST /ad-publishing/facebook/adsets/{adSetId}/pause, fb-pause-adset)"
+  },
+  "POST /ad-publishing/facebook/adsets/{adsetId}/resume": {
+    "status": "exception",
+    "note": "skip: v3 twin registered under ad-publishing (POST /ad-publishing/facebook/adsets/{adSetId}/resume, fb-resume-adset)"
+  },
+  "DELETE /ad-publishing/facebook/adsets/{adsetId}": {
+    "status": "exception",
+    "note": "skip: v3 twin registered under ad-publishing (DELETE /ad-publishing/facebook/adsets/{adSetId}, fb-delete-adset)"
+  },
+  "DELETE /ad-publishing/facebook/ad-accounts/{adAccountId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_account_delete"
+  },
+  "GET /ad-publishing/facebook/ad-accounts/{adAccountId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_account_get"
+  },
+  "GET /ad-publishing/facebook/ad-accounts": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_account_list"
+  },
+  "POST /ad-publishing/facebook/ads/{adId}/duplicate": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_ad_duplicate"
+  },
+  "POST /ad-publishing/facebook/ads/{adId}/pause": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_ad_pause"
+  },
+  "POST /ad-publishing/facebook/ads/{adId}/resume": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_ad_resume"
+  },
+  "DELETE /ad-publishing/facebook/ads/{adId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_ad_delete"
+  },
+  "POST /ad-publishing/facebook/adsets/{adSetId}/duplicate": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_adset_duplicate"
+  },
+  "POST /ad-publishing/facebook/adsets/{adSetId}/pause": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_adset_pause"
+  },
+  "POST /ad-publishing/facebook/adsets/{adSetId}/resume": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_adset_resume"
+  },
+  "DELETE /ad-publishing/facebook/adsets/{adSetId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_adset_delete"
+  },
+  "PUT /ad-publishing/facebook/adsets": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_adset_upsert"
+  },
+  "PUT /ad-publishing/facebook/ads": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_ad_upsert"
+  },
+  "GET /ad-publishing/facebook/campaign/{campaignId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_campaign_get"
+  },
+  "POST /ad-publishing/facebook/campaigns/{campaignId}/duplicate": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_campaign_duplicate"
+  },
+  "POST /ad-publishing/facebook/campaigns/{campaignId}/pause": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_campaign_pause"
+  },
+  "GET /ad-publishing/facebook/campaigns/{campaignId}/publishing-progress": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_campaign_publishing_progress_get"
+  },
+  "POST /ad-publishing/facebook/campaigns/{campaignId}/publish": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_campaign_publish"
+  },
+  "POST /ad-publishing/facebook/campaigns/{campaignId}/resume": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_campaign_resume"
+  },
+  "DELETE /ad-publishing/facebook/campaigns/{campaignId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_campaign_delete"
+  },
+  "PUT /ad-publishing/facebook/campaigns": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_campaign_upsert"
+  },
+  "GET /ad-publishing/facebook/conversation-forms": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_conversation_form_list"
+  },
+  "POST /ad-publishing/facebook/conversation-forms": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_conversation_form_create"
+  },
+  "PUT /ad-publishing/facebook/custom-audience/{audienceId}/member/batch": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_audience_member_batch_update"
+  },
+  "DELETE /ad-publishing/facebook/custom-audience/{audienceId}/member": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_audience_member_remove"
+  },
+  "PUT /ad-publishing/facebook/custom-audience/{audienceId}/member": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_audience_member_add"
+  },
+  "DELETE /ad-publishing/facebook/custom-audience/{audienceId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_audience_delete"
+  },
+  "GET /ad-publishing/facebook/custom-audience/{audienceId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_audience_get"
+  },
+  "PUT /ad-publishing/facebook/custom-audience/{audienceId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_audience_update"
+  },
+  "GET /ad-publishing/facebook/custom-audience": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_audience_list"
+  },
+  "GET /ad-publishing/facebook/entity": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_entity_get"
+  },
+  "DELETE /ad-publishing/facebook/integration": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_integration_delete"
+  },
+  "GET /ad-publishing/facebook/integration": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_integration_get"
+  },
+  "POST /ad-publishing/facebook/integration": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_integration_create"
+  },
+  "GET /ad-publishing/facebook/lead-form/{leadFormId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_lead_form_get"
+  },
+  "GET /ad-publishing/facebook/me": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_current_user_get"
+  },
+  "GET /ad-publishing/facebook/page/{pageId}/forms": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_page_lead_form_list"
+  },
+  "POST /ad-publishing/facebook/page/{pageId}/forms": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_page_lead_form_create"
+  },
+  "GET /ad-publishing/facebook/page/{pageId}/instagram": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_page_instagram_account_list"
+  },
+  "PUT /ad-publishing/facebook/page/default": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_page_set_default"
+  },
+  "DELETE /ad-publishing/facebook/page": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_page_delete"
+  },
+  "GET /ad-publishing/facebook/pages": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_page_list"
+  },
+  "GET /ad-publishing/facebook/pixels": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_pixel_list"
+  },
+  "PUT /ad-publishing/facebook/pixels": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_pixel_upsert"
+  },
+  "GET /ad-publishing/facebook/reporting/campaign/{campaignId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_campaign_reporting_get"
+  },
+  "GET /ad-publishing/facebook/reporting/list": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_reporting_list"
+  },
+  "GET /ad-publishing/facebook/reporting": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_fb_reporting_get"
+  },
+  "GET /ad-publishing/facebook/targeting/search": {
+    "status": "ok",
+    "note": "renamed ghl_ad_fb_targeting_search (unchanged); note: spec leaves locationId non-required unlike sibling ops, left as spec-documented"
+  },
+  "DELETE /ad-publishing/google/ad-accounts/{adAccountId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_account_delete"
+  },
+  "GET /ad-publishing/google/ad-accounts/{adAccountId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_account_get"
+  },
+  "GET /ad-publishing/google/ad-accounts": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_account_list"
+  },
+  "POST /ad-publishing/google/ads/{adId}/publish": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_campaign_publish"
+  },
+  "GET /ad-publishing/google/ads/{adId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_campaign_get"
+  },
+  "PUT /ad-publishing/google/ads": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_campaign_upsert"
+  },
+  "GET /ad-publishing/google/assets": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_asset_list"
+  },
+  "POST /ad-publishing/google/assets": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_asset_upsert"
+  },
+  "GET /ad-publishing/google/audiences/{audienceId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_audience_get"
+  },
+  "GET /ad-publishing/google/audiences": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_audience_list"
+  },
+  "PUT /ad-publishing/google/audiences": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_audience_upsert"
+  },
+  "GET /ad-publishing/google/conversion-goals": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_conversion_goal_list"
+  },
+  "DELETE /ad-publishing/google/conversions/{conversionId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_conversion_delete"
+  },
+  "GET /ad-publishing/google/conversions/{conversionId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_conversion_get"
+  },
+  "GET /ad-publishing/google/conversions": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_conversion_list"
+  },
+  "PUT /ad-publishing/google/conversions": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_conversion_upsert"
+  },
+  "GET /ad-publishing/google/entity": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_entity_get"
+  },
+  "GET /ad-publishing/google/integration": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_integration_get"
+  },
+  "POST /ad-publishing/google/integration": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_integration_create"
+  },
+  "POST /ad-publishing/google/keyword-ideas": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_keyword_ideas_get"
+  },
+  "GET /ad-publishing/google/me": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_current_user_get"
+  },
+  "GET /ad-publishing/google/reporting/campaign/{campaignId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_campaign_reporting_get"
+  },
+  "GET /ad-publishing/google/reporting/list": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_reporting_list"
+  },
+  "GET /ad-publishing/google/reporting": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_reporting_get"
+  },
+  "DELETE /ad-publishing/google/segments/{segmentId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_segment_delete"
+  },
+  "GET /ad-publishing/google/segments/{segmentId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_segment_get"
+  },
+  "POST /ad-publishing/google/segments/offline-user-list-job": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_segment_offline_job_create"
+  },
+  "GET /ad-publishing/google/segments": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_segment_list"
+  },
+  "PUT /ad-publishing/google/segments": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_segment_upsert"
+  },
+  "GET /ad-publishing/google/target-interests": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_target_interest_list"
+  },
+  "GET /ad-publishing/google/targeting/search": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_google_targeting_search"
+  },
+  "POST /ad-publishing/linkedin/{accountId}/form": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_lead_form_create"
+  },
+  "GET /ad-publishing/linkedin/{accountId}/forms": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_lead_form_list"
+  },
+  "PATCH /ad-publishing/linkedin/{adId}/status": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_ad_status_update"
+  },
+  "DELETE /ad-publishing/linkedin/ad-account": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_account_delete"
+  },
+  "GET /ad-publishing/linkedin/ad-account": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_account_get"
+  },
+  "GET /ad-publishing/linkedin/ad-accounts": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_account_list"
+  },
+  "POST /ad-publishing/linkedin/ads/{adId}/publish": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_campaign_group_publish"
+  },
+  "GET /ad-publishing/linkedin/ads/{adId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_campaign_group_get"
+  },
+  "PUT /ad-publishing/linkedin/ads": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_campaign_group_upsert"
+  },
+  "GET /ad-publishing/linkedin/integration": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_integration_get"
+  },
+  "POST /ad-publishing/linkedin/integration": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_integration_create"
+  },
+  "GET /ad-publishing/linkedin/me": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_current_user_get"
+  },
+  "GET /ad-publishing/linkedin/reporting/campaign-group/{campaignGroupId}": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_campaign_group_reporting_get"
+  },
+  "GET /ad-publishing/linkedin/reporting/list": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_reporting_list"
+  },
+  "GET /ad-publishing/linkedin/reporting": {
+    "status": "ok",
+    "note": "renamed to ghl_ad_li_reporting_get"
+  },
+  "GET /ad-publishing/linkedin/targeting/search": {
+    "status": "ok",
+    "note": "renamed ghl_ad_li_targeting_search (unchanged); note: spec documents both 'query' and 'q' optional query params, extraction faithful, left as-is"
+  },
+  "GET /affiliate-manager/{locationId}/affiliates/{affiliateId}": {
+    "status": "ok",
+    "note": "generated name already clean, no override applied"
+  },
+  "GET /affiliate-manager/{locationId}/affiliates": {
+    "status": "ok",
+    "note": "generated name already clean, no override applied"
+  },
+  "GET /affiliate-manager/{locationId}/commissions": {
+    "status": "ok",
+    "note": "renamed to ghl_affiliate_commission_list"
+  },
+  "GET /affiliate-manager/{locationId}/payouts": {
+    "status": "ok",
+    "note": "renamed to ghl_affiliate_payout_list"
+  }
+}

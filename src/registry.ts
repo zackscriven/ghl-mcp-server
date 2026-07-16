@@ -1,0 +1,195 @@
+/**
+ * Builds the MCP tool registry from src/generated/operations.json + the
+ * per-domain curated overrides. Request schemas are carried verbatim from the
+ * OpenAPI specs (full field sets — nothing hand-transcribed, nothing dropped).
+ *
+ * Input schema shape per tool:
+ *   - path/query/header params → top-level properties (spec names preserved)
+ *   - request body → a top-level `body` property carrying the spec's schema verbatim
+ */
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import type { Operation, OperationsFile, OperationOverride, SpecParameter } from "./types.js";
+import { assignNames, specBase } from "./naming.js";
+import { allOverrides } from "./overrides/index.js";
+
+export interface RegisteredTool {
+  name: string;
+  op: Operation;
+  override: OperationOverride | undefined;
+  description: string;
+  inputSchema: Record<string, unknown>;
+  annotations: {
+    title: string;
+    readOnlyHint: boolean;
+    destructiveHint: boolean;
+    idempotentHint: boolean;
+    openWorldHint: boolean;
+  };
+  versionHeader: string;
+  contentType: string;
+  paramIndex: { path: string[]; query: string[]; header: string[] };
+}
+
+export interface Registry {
+  tools: RegisteredTool[];
+  byName: Map<string, RegisteredTool>;
+  skipped: Array<{ key: string; name: string; reason: string }>;
+}
+
+function loadOperations(): OperationsFile {
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const p = path.join(here, "generated", "operations.json");
+  return JSON.parse(fs.readFileSync(p, "utf8")) as OperationsFile;
+}
+
+const PAGINATION_PARAMS = new Set([
+  "limit", "offset", "page", "skip", "startAfter", "startAfterId", "cursor", "nextPageUrl", "lastMessageId", "lastDocumentId",
+  "pageLength", "pageSize", "lastKnowledgeBaseId", "lastFaqId",
+]);
+
+function paramSchema(p: SpecParameter): Record<string, unknown> {
+  const s = { ...(p.schema ?? { type: "string" }) } as Record<string, unknown>;
+  if (p.description && !s.description) s.description = p.description;
+  return s;
+}
+
+function buildInputSchema(op: Operation, ov: OperationOverride | undefined, contentType: string) {
+  const properties: Record<string, unknown> = {};
+  const required: string[] = [];
+  const idx = { path: [] as string[], query: [] as string[], header: [] as string[] };
+
+  const params = [...op.parameters];
+  for (const extra of ov?.extraQueryParams ?? []) {
+    params.push({ name: extra.name, in: "query", schema: extra.schema, description: extra.description });
+  }
+  // Some official specs omit a path parameter declaration even though the URL
+  // template requires it (confirmed: GET /conversations/messages/{id},
+  // PUT/DELETE /users/{userId}). Infer missing path params from the template
+  // so those tools are actually callable.
+  const declaredPath = new Set(params.filter((p) => p?.in === "path").map((p) => p.name));
+  for (const m of op.path.matchAll(/\{([^}]+)\}/g)) {
+    if (!declaredPath.has(m[1])) {
+      params.push({
+        name: m[1],
+        in: "path",
+        required: true,
+        schema: { type: "string" },
+        description: "Path parameter (inferred from the URL template; the official spec omits its declaration).",
+      });
+    }
+  }
+
+  const seen = new Set<string>();
+  for (const p of params) {
+    if (!p?.name || seen.has(p.name)) continue;
+    seen.add(p.name);
+    properties[p.name] = paramSchema(p);
+    if (p.in === "path") idx.path.push(p.name);
+    else if (p.in === "header") idx.header.push(p.name);
+    else idx.query.push(p.name);
+    if (p.in === "path" || p.required || ov?.forceRequired?.includes(p.name)) required.push(p.name);
+  }
+
+  const bodySchema = op.requestBody?.content?.[contentType]?.schema
+    ?? op.requestBody?.content?.["application/json"]?.schema;
+  if (op.requestBody && bodySchema && Object.keys(bodySchema).length > 0) {
+    properties["body"] = {
+      description: op.requestBody.description ?? "Request body (schema carried verbatim from the official OpenAPI spec).",
+      ...bodySchema,
+    };
+    if (op.requestBody.required) required.push("body");
+  } else if (op.requestBody) {
+    // Spec declares a body but gives an empty/absent schema (e.g. some
+    // multipart upload endpoints) — expose a permissive object rather than
+    // silently omitting the body entirely.
+    properties["body"] = {
+      type: "object",
+      description:
+        (op.requestBody.description ?? "Request body.") +
+        " The official spec provides no field-level schema for this body; pass fields as documented. " +
+        (contentType.startsWith("multipart/")
+          ? "For multipart uploads, file values may be given as { filePath, filename?, mimeType? } objects."
+          : ""),
+      additionalProperties: true,
+    };
+    if (op.requestBody.required) required.push("body");
+  }
+
+  return {
+    schema: {
+      type: "object",
+      properties,
+      ...(required.length ? { required: [...new Set(required)] } : {}),
+      additionalProperties: false,
+    },
+    idx,
+  };
+}
+
+function buildDescription(op: Operation, ov: OperationOverride | undefined): string {
+  const parts: string[] = [];
+  if (ov?.descriptionNote) parts.push(ov.descriptionNote);
+  if (op.deprecated) parts.push("[DEPRECATED per official docs — prefer the documented replacement if one exists.]");
+  parts.push(op.summary || op.operationId || `${op.method} ${op.path}`);
+  const desc = op.description?.trim();
+  if (desc && desc !== op.summary) parts.push(desc.slice(0, 600));
+  parts.push(`Endpoint: ${op.method} ${op.path} (Version header: ${op.versionHeader || "none"}; source: ${op.specFile})`);
+  if (op.scopes.length) parts.push(`OAuth scopes: ${op.scopes.join(", ")}`);
+  const pag = op.parameters.filter((p) => p.in === "query" && PAGINATION_PARAMS.has(p.name)).map((p) => p.name);
+  if (pag.length) parts.push(`Pagination params: ${pag.join(", ")} — pass them to page through full result sets.`);
+  return parts.join("\n");
+}
+
+export function buildRegistry(enabledDomains: string[] | null): Registry {
+  const opsFile = loadOperations();
+  const overrideMap = new Map<string, OperationOverride>();
+  for (const dom of allOverrides) {
+    for (const [key, ov] of Object.entries(dom.overrides)) overrideMap.set(key, ov);
+  }
+
+  let ops = opsFile.operations;
+  if (enabledDomains) {
+    ops = ops.filter((op) => enabledDomains.includes(specBase(op.specFile).toLowerCase()));
+  }
+
+  const names = assignNames(ops, (op) => overrideMap.get(op.method + " " + op.path)?.name);
+  const tools: RegisteredTool[] = [];
+  const skipped: Registry["skipped"] = [];
+
+  for (const op of ops) {
+    const key = op.method + " " + op.path;
+    const ov = overrideMap.get(key);
+    const name = names.get(op)!;
+    if (ov?.skip) {
+      skipped.push({ key, name, reason: ov.skip.reason });
+      continue;
+    }
+    const contentType = ov?.contentType
+      ?? (op.requestBody?.content && !op.requestBody.content["application/json"]
+        ? Object.keys(op.requestBody.content)[0] ?? "application/json"
+        : "application/json");
+    const { schema, idx } = buildInputSchema(op, ov, contentType);
+    const isRead = op.method === "GET";
+    tools.push({
+      name,
+      op,
+      override: ov,
+      description: buildDescription(op, ov),
+      inputSchema: schema,
+      annotations: {
+        title: op.summary || name,
+        readOnlyHint: isRead,
+        destructiveHint: op.method === "DELETE",
+        idempotentHint: isRead || op.method === "PUT" || op.method === "DELETE",
+        openWorldHint: true,
+      },
+      versionHeader: ov?.versionHeader ?? op.versionHeader,
+      contentType,
+      paramIndex: idx,
+    });
+  }
+
+  return { tools, byName: new Map(tools.map((t) => [t.name, t])), skipped };
+}

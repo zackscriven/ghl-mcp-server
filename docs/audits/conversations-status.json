@@ -1,0 +1,366 @@
+{
+  "PUT /conversations/preferences/custom-subtypes/{id}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversations/preferences/custom-subtypes": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_conversation_list_custom_subtypes."
+  },
+  "POST /conversations/preferences/custom-subtypes": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversations/preferences/unsubscriptions/status": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /conversations/preferences/unsubscriptions/user-change": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /agent-studio/agent/{agentId}/execute": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "DELETE /agent-studio/agent/{agentId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /agent-studio/agent/{agentId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PATCH /agent-studio/agent/{agentId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /agent-studio/agent/versions/{versionId}/publish": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PATCH /agent-studio/agent/versions/{versionId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /agent-studio/agent": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_agent_studio_list. descriptionNote added."
+  },
+  "POST /agent-studio/agent": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /agent-studio/public-api/agents/{agentId}/execute": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_agent_studio_execute_deprecated. descriptionNote added."
+  },
+  "GET /agent-studio/public-api/agents/{agentId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_agent_studio_get_by_id_deprecated. descriptionNote added."
+  },
+  "GET /agent-studio/public-api/agents": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_agent_studio_list_deprecated. descriptionNote added."
+  },
+  "DELETE /chat-widget/{locationId}/{id}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /chat-widget/clone": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /chat-widget/data/{locationId}/{id}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PATCH /chat-widget/data/{locationId}/{id}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PUT /chat-widget/data/{locationId}/{id}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /chat-widget/list": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /chat-widget/": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /chat-widget/public/config/{id}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_chat_widget_get_public_config. descriptionNote added."
+  },
+  "DELETE /conversation-ai/agents/{agentId}/actions/{actionId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversation-ai/agents/{agentId}/actions/{actionId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PUT /conversation-ai/agents/{agentId}/actions/{actionId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversation-ai/agents/{agentId}/actions/list": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /conversation-ai/agents/{agentId}/actions": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PATCH /conversation-ai/agents/{agentId}/followup-settings": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "DELETE /conversation-ai/agents/{agentId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversation-ai/agents/{agentId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PUT /conversation-ai/agents/{agentId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversation-ai/agents/search": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /conversation-ai/agents": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversation-ai/generations": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_conversation_ai_get_generation."
+  },
+  "GET /conversations/{conversationId}/messages": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "DELETE /conversations/{conversationId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversations/{conversationId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PUT /conversations/{conversationId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversations/locations/{locationId}/messages/{messageId}/transcription/download": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. descriptionNote added."
+  },
+  "GET /conversations/locations/{locationId}/messages/{messageId}/transcription": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversations/messages/{id}": {
+    "status": "exception",
+    "note": "Spec extraction gap: the official spec's `parameters` array for this operation is missing the `id` path parameter (path template is /conversations/messages/{id} but zero params are declared). The generated tool has no way to accept `id`, so every call fails at request time with 'Missing required path parameter(s): id'. Not fixable via the override API (no path-param-injection mechanism exists). Needs a registry.ts fix or an upstream spec correction before re-enabling."
+  },
+  "PUT /conversations/messages/{messageId}/attachments": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. descriptionNote added."
+  },
+  "GET /conversations/messages/{messageId}/locations/{locationId}/recording": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. descriptionNote added."
+  },
+  "DELETE /conversations/messages/{messageId}/schedule": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PUT /conversations/messages/{messageId}/status": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "DELETE /conversations/messages/email/{emailMessageId}/schedule": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PUT /conversations/messages/email/{id}/status": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversations/messages/email/{id}": {
+    "status": "exception",
+    "note": "Same spec extraction gap as GET /conversations/messages/{id}: `parameters` is empty despite the path requiring {id}. Tool cannot be called successfully as generated. Needs a registry.ts fix or an upstream spec correction before re-enabling."
+  },
+  "GET /conversations/messages/export": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /conversations/messages/inbound": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_conversation_add_inbound_message."
+  },
+  "POST /conversations/messages/outbound": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_conversation_add_outbound_message."
+  },
+  "POST /conversations/messages/review-reply": {
+    "status": "exception",
+    "note": "Spec description states verbatim: 'This endpoint is internal-only and is not supported for OAuth or public API integrations. It will be removed from the public OpenAPI specification in a future release.' Unusable by an API-key/OAuth-authenticated MCP server; no alternative public endpoint is documented for Google-review replies."
+  },
+  "POST /conversations/messages/upload/complete": {
+    "status": "exception",
+    "note": "Spec description states verbatim: 'This endpoint is internal-only and is not supported for OAuth or public API integrations. It will be removed from the public OpenAPI specification in a future release.' Unusable by an API-key/OAuth-authenticated MCP server. Functional replacement for file uploads: POST /conversations/messages/upload (ghl_conversation_upload_file_attachments), which is not deprecated."
+  },
+  "POST /conversations/messages/upload/initiate": {
+    "status": "exception",
+    "note": "Same internal-only/no-OAuth-support disclaimer as POST /conversations/messages/upload/complete (part of the same 2-step GCS signed-URL flow). Unusable by an API-key/OAuth-authenticated MCP server. Functional replacement: POST /conversations/messages/upload (ghl_conversation_upload_file_attachments)."
+  },
+  "POST /conversations/messages/upload": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. descriptionNote added. contentType=multipart/form-data."
+  },
+  "POST /conversations/messages": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_conversation_send_message. descriptionNote added."
+  },
+  "POST /conversations/": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /conversations/providers/live-chat/typing": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /conversations/search": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /email/verify": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_email_verify."
+  },
+  "PUT /knowledge-bases/{id}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "DELETE /knowledge-bases/{knowledgeBaseId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /knowledge-bases/{knowledgeBaseId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /knowledge-bases/crawler/status": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_kb_crawler_status."
+  },
+  "POST /knowledge-bases/crawler/train": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_kb_crawler_train."
+  },
+  "DELETE /knowledge-bases/crawler": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_kb_crawler_delete_urls."
+  },
+  "GET /knowledge-bases/crawler": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_kb_crawler_list_urls."
+  },
+  "POST /knowledge-bases/crawler": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_kb_crawler_discover."
+  },
+  "DELETE /knowledge-bases/faqs/{id}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_kb_faq_delete."
+  },
+  "PUT /knowledge-bases/faqs/{id}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_kb_faq_update."
+  },
+  "GET /knowledge-bases/faqs": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_kb_faq_list."
+  },
+  "POST /knowledge-bases/faqs": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_kb_faq_create."
+  },
+  "GET /knowledge-bases/": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_kb_list. descriptionNote added."
+  },
+  "POST /knowledge-bases/": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /phone-system/number-pools": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_phone_list_number_pools. descriptionNote added."
+  },
+  "GET /phone-system/numbers/location/{locationId}/available": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_phone_list_available_numbers. descriptionNote added."
+  },
+  "POST /phone-system/numbers/location/{locationId}/purchase": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_phone_purchase_number."
+  },
+  "GET /phone-system/numbers/location/{locationId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_phone_list_active_numbers."
+  },
+  "DELETE /voice-ai/actions/{actionId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /voice-ai/actions/{actionId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PUT /voice-ai/actions/{actionId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "POST /voice-ai/actions": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "DELETE /voice-ai/agents/{agentId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /voice-ai/agents/{agentId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "PATCH /voice-ai/agents/{agentId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /voice-ai/agents": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable. Renamed to ghl_voice_ai_list_agents."
+  },
+  "POST /voice-ai/agents": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /voice-ai/dashboard/call-logs/{callId}": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  },
+  "GET /voice-ai/dashboard/call-logs": {
+    "status": "ok",
+    "note": "verified: body/params complete, version header correct, pagination present where applicable."
+  }
+}

@@ -1,0 +1,458 @@
+{
+  "GET /invoices/": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_invoice_list) already clear. No override needed."
+  },
+  "POST /invoices/": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_invoice_create) already clear. No override needed."
+  },
+  "DELETE /invoices/{invoiceId}": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_invoice_delete) already clear. No override needed."
+  },
+  "GET /invoices/{invoiceId}": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_invoice_get) already clear. No override needed."
+  },
+  "PUT /invoices/{invoiceId}": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_invoice_update) already clear. No override needed."
+  },
+  "PATCH /invoices/{invoiceId}/late-fees-configuration": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_invoice_update_late_fees_configuration) already clear. No override needed."
+  },
+  "POST /invoices/{invoiceId}/record-payment": {
+    "status": "ok",
+    "note": "Renamed to ghl_invoice_record_payment. Records a manual/offline payment against an invoice (e.g. cash, check). Does not process a live charge."
+  },
+  "POST /invoices/{invoiceId}/send": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_invoice_send) already clear. No override needed."
+  },
+  "POST /invoices/{invoiceId}/void": {
+    "status": "ok",
+    "note": "Renamed to ghl_invoice_void. Irreversible: marks the invoice as void. A voided invoice cannot be paid or reactivated afterward."
+  },
+  "POST /invoices/estimate": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_create_new_estimate -> ghl_estimate_create (sub-resource prefix convention / clarity)."
+  },
+  "DELETE /invoices/estimate/{estimateId}": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_delete_estimate -> ghl_estimate_delete (sub-resource prefix convention / clarity)."
+  },
+  "PUT /invoices/estimate/{estimateId}": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_update_estimate -> ghl_estimate_update (sub-resource prefix convention / clarity)."
+  },
+  "POST /invoices/estimate/{estimateId}/invoice": {
+    "status": "ok",
+    "note": "Renamed to ghl_estimate_convert_to_invoice. Creates a new invoice from an accepted/existing estimate."
+  },
+  "POST /invoices/estimate/{estimateId}/send": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_send_estimate -> ghl_estimate_send (sub-resource prefix convention / clarity)."
+  },
+  "GET /invoices/estimate/list": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_list_estimates -> ghl_estimate_list (sub-resource prefix convention / clarity)."
+  },
+  "GET /invoices/estimate/number/generate": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_generate_estimate_number -> ghl_estimate_generate_number (sub-resource prefix convention / clarity)."
+  },
+  "PATCH /invoices/estimate/stats/last-visited-at": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_update_estimate_last_visited_at -> ghl_estimate_update_last_visited_at (sub-resource prefix convention / clarity)."
+  },
+  "GET /invoices/estimate/template": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_list_estimate_templates -> ghl_estimate_template_list (sub-resource prefix convention / clarity)."
+  },
+  "POST /invoices/estimate/template": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_create_estimate_template -> ghl_estimate_template_create (sub-resource prefix convention / clarity)."
+  },
+  "DELETE /invoices/estimate/template/{templateId}": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_delete_estimate_template -> ghl_estimate_template_delete (sub-resource prefix convention / clarity)."
+  },
+  "PUT /invoices/estimate/template/{templateId}": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_update_estimate_template -> ghl_estimate_template_update (sub-resource prefix convention / clarity)."
+  },
+  "GET /invoices/estimate/template/preview": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_preview_estimate_template -> ghl_estimate_template_preview (sub-resource prefix convention / clarity)."
+  },
+  "GET /invoices/generate-invoice-number": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_generate_number -> ghl_invoice_generate_number (sub-resource prefix convention / clarity)."
+  },
+  "GET /invoices/schedule": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_list_schedules -> ghl_invoice_schedule_list (sub-resource prefix convention / clarity)."
+  },
+  "POST /invoices/schedule": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_create_schedule -> ghl_invoice_schedule_create (sub-resource prefix convention / clarity)."
+  },
+  "DELETE /invoices/schedule/{scheduleId}": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_delete_schedule -> ghl_invoice_schedule_delete (sub-resource prefix convention / clarity)."
+  },
+  "GET /invoices/schedule/{scheduleId}": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_get_schedule -> ghl_invoice_schedule_get (sub-resource prefix convention / clarity)."
+  },
+  "PUT /invoices/schedule/{scheduleId}": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_update_schedule -> ghl_invoice_schedule_update (sub-resource prefix convention / clarity)."
+  },
+  "POST /invoices/schedule/{scheduleId}/auto-payment": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_auto_payment_schedule -> ghl_invoice_schedule_set_auto_payment (sub-resource prefix convention / clarity)."
+  },
+  "POST /invoices/schedule/{scheduleId}/cancel": {
+    "status": "ok",
+    "note": "Renamed to ghl_invoice_schedule_cancel. Stops all remaining not-yet-sent occurrences of this recurring/scheduled invoice. Already-sent invoices are unaffected."
+  },
+  "POST /invoices/schedule/{scheduleId}/schedule": {
+    "status": "ok",
+    "note": "Renamed to ghl_invoice_schedule_activate. Activates (starts sending) a previously created but not-yet-scheduled recurring invoice."
+  },
+  "POST /invoices/schedule/{scheduleId}/updateAndSchedule": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_update_and_schedule_schedule -> ghl_invoice_schedule_update_and_activate (sub-resource prefix convention / clarity)."
+  },
+  "GET /invoices/settings": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_get_settings -> ghl_invoice_get_settings (sub-resource prefix convention / clarity)."
+  },
+  "PATCH /invoices/stats/last-visited-at": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_invoice_update_last_visited_at) already clear. No override needed."
+  },
+  "GET /invoices/template": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_list_templates -> ghl_invoice_template_list (sub-resource prefix convention / clarity)."
+  },
+  "POST /invoices/template": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_create_template -> ghl_invoice_template_create (sub-resource prefix convention / clarity)."
+  },
+  "DELETE /invoices/template/{templateId}": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_delete_template -> ghl_invoice_template_delete (sub-resource prefix convention / clarity)."
+  },
+  "GET /invoices/template/{templateId}": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_get_template -> ghl_invoice_template_get (sub-resource prefix convention / clarity)."
+  },
+  "PUT /invoices/template/{templateId}": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_update_template -> ghl_invoice_template_update (sub-resource prefix convention / clarity)."
+  },
+  "PATCH /invoices/template/{templateId}/late-fees-configuration": {
+    "status": "ok",
+    "note": "Renamed ghl_invoice_update_template_late_fees_configuration -> ghl_invoice_template_update_late_fees_configuration (sub-resource prefix convention / clarity)."
+  },
+  "PATCH /invoices/template/{templateId}/payment-methods-configuration": {
+    "status": "ok",
+    "note": "Renamed to ghl_invoice_template_update_payment_methods_configuration. Updates which payment methods are enabled on invoices created from this template."
+  },
+  "POST /invoices/text2pay": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_invoice_text2pay) already clear. No override needed."
+  },
+  "DELETE /payments/coupon": {
+    "status": "ok",
+    "note": "Renamed to ghl_payment_coupon_delete. Permanently deletes the coupon. Any checkout links relying on its code will stop applying the discount."
+  },
+  "GET /payments/coupon": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_get_coupon -> ghl_payment_coupon_get (sub-resource prefix convention / clarity)."
+  },
+  "POST /payments/coupon": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_create_coupon -> ghl_payment_coupon_create (sub-resource prefix convention / clarity)."
+  },
+  "PUT /payments/coupon": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_update_coupon -> ghl_payment_coupon_update (sub-resource prefix convention / clarity)."
+  },
+  "GET /payments/coupon/list": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_list_coupons -> ghl_payment_coupon_list (sub-resource prefix convention / clarity)."
+  },
+  "PUT /payments/custom-provider/capabilities": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_custom_provider_marketplace_app_update_capabilities -> ghl_payment_custom_provider_update_capabilities (sub-resource prefix convention / clarity)."
+  },
+  "GET /payments/custom-provider/connect": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_fetch_config -> ghl_payment_custom_provider_get_config (sub-resource prefix convention / clarity)."
+  },
+  "POST /payments/custom-provider/connect": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_create_config -> ghl_payment_custom_provider_create_config (sub-resource prefix convention / clarity)."
+  },
+  "POST /payments/custom-provider/disconnect": {
+    "status": "ok",
+    "note": "Renamed to ghl_payment_custom_provider_disconnect_config. Disconnects the custom payment provider's live/test config. This can interrupt live payment collection at this location until reconnected."
+  },
+  "DELETE /payments/custom-provider/provider": {
+    "status": "ok",
+    "note": "Renamed to ghl_payment_custom_provider_delete. Permanently removes the custom payment provider integration itself (not just its config). Any in-flight or future payment flows depending on it will fail."
+  },
+  "POST /payments/custom-provider/provider": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_create_integration -> ghl_payment_custom_provider_create (sub-resource prefix convention / clarity)."
+  },
+  "GET /payments/integrations/provider/whitelabel": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_list_integration_providers -> ghl_payment_integration_provider_list (sub-resource prefix convention / clarity)."
+  },
+  "POST /payments/integrations/provider/whitelabel": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_create_integration_provider -> ghl_payment_integration_provider_create (sub-resource prefix convention / clarity)."
+  },
+  "GET /payments/orders": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_list_orders -> ghl_payment_order_list (sub-resource prefix convention / clarity)."
+  },
+  "GET /payments/orders/{orderId}": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_get_order_by_id -> ghl_payment_order_get (sub-resource prefix convention / clarity)."
+  },
+  "GET /payments/orders/{orderId}/fulfillments": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_list_order_fulfillment -> ghl_payment_order_list_fulfillments (sub-resource prefix convention / clarity)."
+  },
+  "POST /payments/orders/{orderId}/fulfillments": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_create_order_fulfillment -> ghl_payment_order_create_fulfillment (sub-resource prefix convention / clarity)."
+  },
+  "GET /payments/orders/{orderId}/notes": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_list_order_notes -> ghl_payment_order_list_notes (sub-resource prefix convention / clarity)."
+  },
+  "POST /payments/orders/{orderId}/record-payment": {
+    "status": "ok",
+    "note": "Renamed to ghl_payment_order_record_payment. Records a manual/offline payment against an order. Does not process a live charge."
+  },
+  "GET /payments/subscriptions": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_list_subscriptions -> ghl_payment_subscription_list (sub-resource prefix convention / clarity)."
+  },
+  "GET /payments/subscriptions/{subscriptionId}": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_get_subscription_by_id -> ghl_payment_subscription_get (sub-resource prefix convention / clarity)."
+  },
+  "GET /payments/transactions": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_list_transactions -> ghl_payment_transaction_list (sub-resource prefix convention / clarity)."
+  },
+  "GET /payments/transactions/{transactionId}": {
+    "status": "ok",
+    "note": "Renamed ghl_payment_get_transaction_by_id -> ghl_payment_transaction_get (sub-resource prefix convention / clarity)."
+  },
+  "GET /products/": {
+    "status": "ok",
+    "note": "Renamed to ghl_product_list. Lists products for a location. (Generated tool name was originally 'ghl_product_list_invoices' — an evident copy-paste artifact unrelated to this operation; corrected here.)"
+  },
+  "POST /products/": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_product_create) already clear. No override needed."
+  },
+  "DELETE /products/{productId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_delete_by_id -> ghl_product_delete (sub-resource prefix convention / clarity)."
+  },
+  "GET /products/{productId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_get_by_id -> ghl_product_get (sub-resource prefix convention / clarity)."
+  },
+  "PUT /products/{productId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_update_by_id -> ghl_product_update (sub-resource prefix convention / clarity)."
+  },
+  "GET /products/{productId}/price": {
+    "status": "ok",
+    "note": "Renamed ghl_product_list_prices_for -> ghl_product_price_list (sub-resource prefix convention / clarity)."
+  },
+  "POST /products/{productId}/price": {
+    "status": "ok",
+    "note": "Renamed ghl_product_create_price_for -> ghl_product_price_create (sub-resource prefix convention / clarity)."
+  },
+  "DELETE /products/{productId}/price/{priceId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_delete_price_by_id_for -> ghl_product_price_delete (sub-resource prefix convention / clarity)."
+  },
+  "GET /products/{productId}/price/{priceId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_get_price_by_id_for -> ghl_product_price_get (sub-resource prefix convention / clarity)."
+  },
+  "PUT /products/{productId}/price/{priceId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_update_price_by_id_for -> ghl_product_price_update (sub-resource prefix convention / clarity)."
+  },
+  "POST /products/bulk-update": {
+    "status": "ok",
+    "note": "Bulk-mutates multiple products in one call — review the target productIds carefully before sending."
+  },
+  "POST /products/bulk-update/edit": {
+    "status": "ok",
+    "note": "Bulk-edits fields across multiple products and their prices in one call — review the target scope carefully before sending."
+  },
+  "GET /products/collections": {
+    "status": "ok",
+    "note": "Renamed ghl_product_get_collection -> ghl_product_collection_list (sub-resource prefix convention / clarity)."
+  },
+  "POST /products/collections": {
+    "status": "ok",
+    "note": "Renamed ghl_product_create_collection -> ghl_product_collection_create (sub-resource prefix convention / clarity)."
+  },
+  "DELETE /products/collections/{collectionId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_delete_collection -> ghl_product_collection_delete (sub-resource prefix convention / clarity)."
+  },
+  "GET /products/collections/{collectionId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_get_collection_id -> ghl_product_collection_get (sub-resource prefix convention / clarity)."
+  },
+  "PUT /products/collections/{collectionId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_update_collection -> ghl_product_collection_update (sub-resource prefix convention / clarity)."
+  },
+  "GET /products/inventory": {
+    "status": "ok",
+    "note": "Renamed ghl_product_get_list_inventory -> ghl_product_inventory_list (sub-resource prefix convention / clarity)."
+  },
+  "POST /products/inventory": {
+    "status": "ok",
+    "note": "Renamed ghl_product_update_inventory -> ghl_product_inventory_update (sub-resource prefix convention / clarity)."
+  },
+  "GET /products/reviews": {
+    "status": "ok",
+    "note": "Renamed ghl_product_get_reviews -> ghl_product_review_list (sub-resource prefix convention / clarity)."
+  },
+  "DELETE /products/reviews/{reviewId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_delete_review -> ghl_product_review_delete (sub-resource prefix convention / clarity)."
+  },
+  "PUT /products/reviews/{reviewId}": {
+    "status": "ok",
+    "note": "Renamed ghl_product_update_review -> ghl_product_review_update (sub-resource prefix convention / clarity)."
+  },
+  "POST /products/reviews/bulk-update": {
+    "status": "ok",
+    "note": "Renamed to ghl_product_review_bulk_update. Bulk-mutates multiple reviews in one call (e.g. approve/reject in batch) — review the target reviewIds carefully before sending."
+  },
+  "GET /products/reviews/count": {
+    "status": "ok",
+    "note": "Renamed ghl_product_get_reviews_count -> ghl_product_review_count (sub-resource prefix convention / clarity)."
+  },
+  "POST /products/store/{storeId}": {
+    "status": "ok",
+    "note": "Renamed to ghl_product_store_set_inclusion. Includes or excludes a product from the given store's storefront listing."
+  },
+  "POST /products/store/{storeId}/priority": {
+    "status": "ok",
+    "note": "Renamed ghl_product_update_display_priority -> ghl_product_store_set_priority (sub-resource prefix convention / clarity)."
+  },
+  "GET /products/store/{storeId}/stats": {
+    "status": "ok",
+    "note": "Renamed ghl_product_get_store_stats -> ghl_product_store_get_stats (sub-resource prefix convention / clarity)."
+  },
+  "GET /proposals/document": {
+    "status": "ok",
+    "note": "Renamed ghl_proposal_list_documents_contracts -> ghl_proposal_list_documents (sub-resource prefix convention / clarity)."
+  },
+  "POST /proposals/document/send": {
+    "status": "ok",
+    "note": "Renamed ghl_proposal_send_documents_contracts -> ghl_proposal_send_document (sub-resource prefix convention / clarity)."
+  },
+  "GET /proposals/templates": {
+    "status": "ok",
+    "note": "Renamed ghl_proposal_list_documents_contracts_templates -> ghl_proposal_list_templates (sub-resource prefix convention / clarity)."
+  },
+  "POST /proposals/templates/send": {
+    "status": "ok",
+    "note": "Renamed ghl_proposal_send_documents_contracts_template -> ghl_proposal_send_template (sub-resource prefix convention / clarity)."
+  },
+  "GET /store/shipping-carrier": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_list_shipping_carriers) already clear. No override needed."
+  },
+  "POST /store/shipping-carrier": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_create_shipping_carrier) already clear. No override needed."
+  },
+  "DELETE /store/shipping-carrier/{shippingCarrierId}": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_delete_shipping_carrier) already clear. No override needed."
+  },
+  "GET /store/shipping-carrier/{shippingCarrierId}": {
+    "status": "ok",
+    "note": "Renamed ghl_store_get_shipping_carriers -> ghl_store_get_shipping_carrier (sub-resource prefix convention / clarity)."
+  },
+  "PUT /store/shipping-carrier/{shippingCarrierId}": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_update_shipping_carrier) already clear. No override needed."
+  },
+  "GET /store/shipping-zone": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_list_shipping_zones) already clear. No override needed."
+  },
+  "POST /store/shipping-zone": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_create_shipping_zone) already clear. No override needed."
+  },
+  "DELETE /store/shipping-zone/{shippingZoneId}": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_delete_shipping_zone) already clear. No override needed."
+  },
+  "GET /store/shipping-zone/{shippingZoneId}": {
+    "status": "ok",
+    "note": "Renamed ghl_store_get_shipping_zones -> ghl_store_get_shipping_zone (sub-resource prefix convention / clarity)."
+  },
+  "PUT /store/shipping-zone/{shippingZoneId}": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_update_shipping_zone) already clear. No override needed."
+  },
+  "GET /store/shipping-zone/{shippingZoneId}/shipping-rate": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_list_shipping_rates) already clear. No override needed."
+  },
+  "POST /store/shipping-zone/{shippingZoneId}/shipping-rate": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_create_shipping_rate) already clear. No override needed."
+  },
+  "DELETE /store/shipping-zone/{shippingZoneId}/shipping-rate/{shippingRateId}": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_delete_shipping_rate) already clear. No override needed."
+  },
+  "GET /store/shipping-zone/{shippingZoneId}/shipping-rate/{shippingRateId}": {
+    "status": "ok",
+    "note": "Renamed ghl_store_get_shipping_rates -> ghl_store_get_shipping_rate (sub-resource prefix convention / clarity)."
+  },
+  "PUT /store/shipping-zone/{shippingZoneId}/shipping-rate/{shippingRateId}": {
+    "status": "ok",
+    "note": "Verified: request/response schema complete, pagination/required params correct, name (ghl_store_update_shipping_rate) already clear. No override needed."
+  },
+  "POST /store/shipping-zone/shipping-rates": {
+    "status": "ok",
+    "note": "Renamed to ghl_store_get_available_shipping_rates. Returns the shipping rates available for a given country/order-amount combination. (Generated tool name was originally 'ghl_store_get_available_shipping_zones', which misdescribed the response — this endpoint returns rates, not zones; corrected here.)"
+  },
+  "GET /store/store-setting": {
+    "status": "ok",
+    "note": "Renamed ghl_store_get_settings -> ghl_store_get_settings (sub-resource prefix convention / clarity)."
+  },
+  "POST /store/store-setting": {
+    "status": "ok",
+    "note": "Renamed to ghl_store_upsert_settings. Creates the store settings record if none exists yet, otherwise updates it in place (per spec summary 'Create/Update Store Settings')."
+  }
+}

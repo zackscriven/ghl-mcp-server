@@ -1,0 +1,4671 @@
+{
+ "PUT /ad-publishing/facebook/ads-v2": {
+  "name": "ghl_ad_fb_upsert",
+  "spec": "ad-manager.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert ad"
+ },
+ "POST /ad-publishing/facebook/adsets/{adsetId}/duplicate": {
+  "name": "ghl_ad_fb_duplicate_adset",
+  "spec": "ad-manager.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Duplicate ad set"
+ },
+ "POST /ad-publishing/facebook/adsets/{adsetId}/pause": {
+  "name": "ghl_ad_fb_pause_adset",
+  "spec": "ad-manager.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Pause ad set"
+ },
+ "POST /ad-publishing/facebook/adsets/{adsetId}/resume": {
+  "name": "ghl_ad_fb_resume_adset",
+  "spec": "ad-manager.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Resume ad set"
+ },
+ "DELETE /ad-publishing/facebook/adsets/{adsetId}": {
+  "name": "ghl_ad_fb_delete_adset",
+  "spec": "ad-manager.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete ad set"
+ },
+ "DELETE /contacts/{contactId}/campaigns/removeAll": {
+  "name": "ghl_contact_remove_from_every_campaign",
+  "spec": "contacts.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Remove Contact From Every Campaign"
+ },
+ "GET /contacts/": {
+  "name": "ghl_contact_get",
+  "spec": "contacts.json",
+  "version": "2021-07-28",
+  "deprecated": true,
+  "summary": "Get Contacts"
+ },
+ "PUT /conversations/preferences/custom-subtypes/{id}": {
+  "name": "ghl_conversation_update_custom_subtype",
+  "spec": "conversations.json",
+  "version": "2021-04-15",
+  "deprecated": false,
+  "summary": "Update Custom Subtype"
+ },
+ "GET /conversations/preferences/custom-subtypes": {
+  "name": "ghl_conversation_get_all_custom_subtypes",
+  "spec": "conversations.json",
+  "version": "2021-04-15",
+  "deprecated": false,
+  "summary": "Get All Custom Subtypes"
+ },
+ "POST /conversations/preferences/custom-subtypes": {
+  "name": "ghl_conversation_create_custom_subtype",
+  "spec": "conversations.json",
+  "version": "2021-04-15",
+  "deprecated": false,
+  "summary": "Create Custom Subtype"
+ },
+ "GET /conversations/preferences/unsubscriptions/status": {
+  "name": "ghl_conversation_get_contact_unsubscription_status",
+  "spec": "conversations.json",
+  "version": "2021-04-15",
+  "deprecated": false,
+  "summary": "Get Contact Unsubscription Status"
+ },
+ "POST /conversations/preferences/unsubscriptions/user-change": {
+  "name": "ghl_conversation_user_subscription_change",
+  "spec": "conversations.json",
+  "version": "2021-04-15",
+  "deprecated": false,
+  "summary": "User Subscription Change"
+ },
+ "DELETE /emails/builder/{locationId}/{templateId}": {
+  "name": "ghl_email_delete_template",
+  "spec": "emails.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete a template"
+ },
+ "POST /emails/builder/data": {
+  "name": "ghl_email_update_template",
+  "spec": "emails.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Update a template"
+ },
+ "GET /emails/builder": {
+  "name": "ghl_email_fetch_template",
+  "spec": "emails.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Fetch email templates"
+ },
+ "POST /emails/builder": {
+  "name": "ghl_email_create_template",
+  "spec": "emails.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Create a new template"
+ },
+ "GET /emails/schedule": {
+  "name": "ghl_email_fetch_campaigns",
+  "spec": "emails.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Campaigns"
+ },
+ "GET /oauth/installedLocations": {
+  "name": "ghl_oauth_get_installed_location",
+  "spec": "oauth.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Location where app is installed"
+ },
+ "POST /oauth/locationToken": {
+  "name": "ghl_oauth_get_location_access_token",
+  "spec": "oauth.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Location Access Token from Agency Token"
+ },
+ "GET /social-media-posting/oauth/{locationId}/facebook/accounts/{accountId}": {
+  "name": "ghl_social_get_facebook_page_group",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get facebook pages"
+ },
+ "POST /social-media-posting/oauth/{locationId}/facebook/accounts/{accountId}": {
+  "name": "ghl_social_attach_facebook_page_group",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Attach facebook pages"
+ },
+ "GET /social-media-posting/oauth/{locationId}/google/locations/{accountId}": {
+  "name": "ghl_social_get_google_locations",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get google business locations"
+ },
+ "POST /social-media-posting/oauth/{locationId}/google/locations/{accountId}": {
+  "name": "ghl_social_set_google_locations",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Set google business locations"
+ },
+ "GET /social-media-posting/oauth/{locationId}/instagram/accounts/{accountId}": {
+  "name": "ghl_social_get_instagram_page_group",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Instagram Professional Accounts"
+ },
+ "POST /social-media-posting/oauth/{locationId}/instagram/accounts/{accountId}": {
+  "name": "ghl_social_attach_instagram_page_group",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Attach Instagram Professional Accounts"
+ },
+ "GET /social-media-posting/oauth/{locationId}/linkedin/accounts/{accountId}": {
+  "name": "ghl_social_get_linkedin_page_profile",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Linkedin pages and profile"
+ },
+ "POST /social-media-posting/oauth/{locationId}/linkedin/accounts/{accountId}": {
+  "name": "ghl_social_attach_linkedin_page_profile",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Attach linkedin pages and profile"
+ },
+ "GET /social-media-posting/oauth/{locationId}/tiktok-business/accounts/{accountId}": {
+  "name": "ghl_social_get_tiktok_business_profile",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Tiktok Business profile"
+ },
+ "GET /social-media-posting/oauth/{locationId}/tiktok/accounts/{accountId}": {
+  "name": "ghl_social_get_tiktok_profile",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Tiktok profile"
+ },
+ "POST /social-media-posting/oauth/{locationId}/tiktok/accounts/{accountId}": {
+  "name": "ghl_social_attach_tiktok_profile",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Attach Tiktok profile"
+ },
+ "GET /social-media-posting/oauth/{locationId}/twitter/accounts/{accountId}": {
+  "name": "ghl_social_get_twitter_profile",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": true,
+  "summary": "Get Twitter profile"
+ },
+ "POST /social-media-posting/oauth/{locationId}/twitter/accounts/{accountId}": {
+  "name": "ghl_social_attach_twitter_profile",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": true,
+  "summary": "Attach Twitter profile"
+ },
+ "GET /social-media-posting/oauth/facebook/start": {
+  "name": "ghl_social_start_facebook_oauth",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Starts OAuth For Facebook Account"
+ },
+ "GET /social-media-posting/oauth/google/start": {
+  "name": "ghl_social_start_google_oauth",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Starts OAuth For Google Account"
+ },
+ "GET /social-media-posting/oauth/instagram/start": {
+  "name": "ghl_social_start_instagram_oauth",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Starts OAuth For Instagram Account"
+ },
+ "GET /social-media-posting/oauth/linkedin/start": {
+  "name": "ghl_social_start_linkedin_oauth",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Starts OAuth For LinkedIn Account"
+ },
+ "GET /social-media-posting/oauth/tiktok-business/start": {
+  "name": "ghl_social_start_tiktok_business_oauth",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Starts OAuth For Tiktok Business Account"
+ },
+ "GET /social-media-posting/oauth/tiktok/start": {
+  "name": "ghl_social_start_tiktok_oauth",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Starts OAuth For Tiktok Account"
+ },
+ "GET /social-media-posting/oauth/twitter/start": {
+  "name": "ghl_social_start_twitter_oauth",
+  "spec": "social-media-posting.json",
+  "version": "2021-07-28",
+  "deprecated": true,
+  "summary": "Starts OAuth For Twitter Account"
+ },
+ "GET /users/": {
+  "name": "ghl_user_get_by_location",
+  "spec": "users.json",
+  "version": "2021-07-28",
+  "deprecated": true,
+  "summary": "Get User by Location"
+ },
+ "DELETE /ad-publishing/facebook/ad-accounts/{adAccountId}": {
+  "name": "ghl_ad_fb_delete_account",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete ad account"
+ },
+ "GET /ad-publishing/facebook/ad-accounts/{adAccountId}": {
+  "name": "ghl_ad_fb_get_account",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get ad account details"
+ },
+ "GET /ad-publishing/facebook/ad-accounts": {
+  "name": "ghl_ad_fb_get_accounts",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get ad accounts"
+ },
+ "POST /ad-publishing/facebook/ads/{adId}/duplicate": {
+  "name": "ghl_ad_fb_duplicate",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Duplicate ad"
+ },
+ "POST /ad-publishing/facebook/ads/{adId}/pause": {
+  "name": "ghl_ad_fb_pause",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Pause ad"
+ },
+ "POST /ad-publishing/facebook/ads/{adId}/resume": {
+  "name": "ghl_ad_fb_resume",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Resume ad"
+ },
+ "DELETE /ad-publishing/facebook/ads/{adId}": {
+  "name": "ghl_ad_fb_delete",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete ad"
+ },
+ "POST /ad-publishing/facebook/adsets/{adSetId}/duplicate": {
+  "name": "ghl_ad_fb_duplicate_adset_post2",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Duplicate ad set"
+ },
+ "POST /ad-publishing/facebook/adsets/{adSetId}/pause": {
+  "name": "ghl_ad_fb_pause_adset_post2",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Pause ad set"
+ },
+ "POST /ad-publishing/facebook/adsets/{adSetId}/resume": {
+  "name": "ghl_ad_fb_resume_adset_post2",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Resume ad set"
+ },
+ "DELETE /ad-publishing/facebook/adsets/{adSetId}": {
+  "name": "ghl_ad_fb_delete_adset_delete2",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete ad set"
+ },
+ "PUT /ad-publishing/facebook/adsets": {
+  "name": "ghl_ad_fb_upsert_adset",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert adset"
+ },
+ "PUT /ad-publishing/facebook/ads": {
+  "name": "ghl_ad_fb_upsert_put2",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert ad"
+ },
+ "GET /ad-publishing/facebook/campaign/{campaignId}": {
+  "name": "ghl_ad_fb_get_campaign",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get campaign with linked entities"
+ },
+ "POST /ad-publishing/facebook/campaigns/{campaignId}/duplicate": {
+  "name": "ghl_ad_fb_duplicate_campaign",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Duplicate campaign"
+ },
+ "POST /ad-publishing/facebook/campaigns/{campaignId}/pause": {
+  "name": "ghl_ad_fb_pause_campaign",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Pause campaign"
+ },
+ "GET /ad-publishing/facebook/campaigns/{campaignId}/publishing-progress": {
+  "name": "ghl_ad_fb_get_campaign_publishing_progress",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get campaign publishing progress"
+ },
+ "POST /ad-publishing/facebook/campaigns/{campaignId}/publish": {
+  "name": "ghl_ad_fb_publish_campaign",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Publish campaign"
+ },
+ "POST /ad-publishing/facebook/campaigns/{campaignId}/resume": {
+  "name": "ghl_ad_fb_resume_campaign",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Resume campaign"
+ },
+ "DELETE /ad-publishing/facebook/campaigns/{campaignId}": {
+  "name": "ghl_ad_fb_delete_campaign",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete campaign"
+ },
+ "PUT /ad-publishing/facebook/campaigns": {
+  "name": "ghl_ad_fb_upsert_campaign",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert campaign"
+ },
+ "GET /ad-publishing/facebook/conversation-forms": {
+  "name": "ghl_ad_fb_get_conversation_forms",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get conversation forms"
+ },
+ "POST /ad-publishing/facebook/conversation-forms": {
+  "name": "ghl_ad_fb_create_conversation_form",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Create conversation form"
+ },
+ "PUT /ad-publishing/facebook/custom-audience/{audienceId}/member/batch": {
+  "name": "ghl_ad_fb_batch_update_audience_members",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Batch update audience members"
+ },
+ "DELETE /ad-publishing/facebook/custom-audience/{audienceId}/member": {
+  "name": "ghl_ad_fb_remove_custom_audience_member",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Remove custom audience member"
+ },
+ "PUT /ad-publishing/facebook/custom-audience/{audienceId}/member": {
+  "name": "ghl_ad_fb_add_custom_audience_member",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Add custom audience member"
+ },
+ "DELETE /ad-publishing/facebook/custom-audience/{audienceId}": {
+  "name": "ghl_ad_fb_delete_custom_audience",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete custom audience"
+ },
+ "GET /ad-publishing/facebook/custom-audience/{audienceId}": {
+  "name": "ghl_ad_fb_get_custom_audience_by_id",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get custom audience by ID"
+ },
+ "PUT /ad-publishing/facebook/custom-audience/{audienceId}": {
+  "name": "ghl_ad_fb_update_custom_audience",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Update custom audience"
+ },
+ "GET /ad-publishing/facebook/custom-audience": {
+  "name": "ghl_ad_fb_get_custom_audiences",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get custom audiences"
+ },
+ "GET /ad-publishing/facebook/entity": {
+  "name": "ghl_ad_fb_get_entity",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get entities"
+ },
+ "DELETE /ad-publishing/facebook/integration": {
+  "name": "ghl_ad_fb_delete_integration",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete Facebook integration"
+ },
+ "GET /ad-publishing/facebook/integration": {
+  "name": "ghl_ad_fb_get_integration",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Facebook integration"
+ },
+ "POST /ad-publishing/facebook/integration": {
+  "name": "ghl_ad_fb_create_integration",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Create Facebook integration"
+ },
+ "GET /ad-publishing/facebook/lead-form/{leadFormId}": {
+  "name": "ghl_ad_fb_get_lead_form",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get lead form by ID"
+ },
+ "GET /ad-publishing/facebook/me": {
+  "name": "ghl_ad_fb_get_current_user",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get current Facebook user"
+ },
+ "GET /ad-publishing/facebook/page/{pageId}/forms": {
+  "name": "ghl_ad_fb_get_page_lead_forms",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get page lead forms"
+ },
+ "POST /ad-publishing/facebook/page/{pageId}/forms": {
+  "name": "ghl_ad_fb_create_page_lead_form",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Create page lead form"
+ },
+ "GET /ad-publishing/facebook/page/{pageId}/instagram": {
+  "name": "ghl_ad_fb_get_instagram_accounts",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Instagram accounts for page"
+ },
+ "PUT /ad-publishing/facebook/page/default": {
+  "name": "ghl_ad_fb_set_default_page",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Set default page"
+ },
+ "DELETE /ad-publishing/facebook/page": {
+  "name": "ghl_ad_fb_delete_page",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete page connection"
+ },
+ "GET /ad-publishing/facebook/pages": {
+  "name": "ghl_ad_fb_get_pages",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Facebook pages"
+ },
+ "GET /ad-publishing/facebook/pixels": {
+  "name": "ghl_ad_fb_get_pixels",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get conversion pixels"
+ },
+ "PUT /ad-publishing/facebook/pixels": {
+  "name": "ghl_ad_fb_upsert_pixel",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert conversion pixel"
+ },
+ "GET /ad-publishing/facebook/reporting/campaign/{campaignId}": {
+  "name": "ghl_ad_fb_get_campaign_reporting",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get campaign reporting"
+ },
+ "GET /ad-publishing/facebook/reporting/list": {
+  "name": "ghl_ad_fb_get_reporting_list",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get reporting list"
+ },
+ "GET /ad-publishing/facebook/reporting": {
+  "name": "ghl_ad_fb_get_reporting",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get reporting data"
+ },
+ "GET /ad-publishing/facebook/targeting/search": {
+  "name": "ghl_ad_fb_search_targeting",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Search targeting options"
+ },
+ "DELETE /ad-publishing/google/ad-accounts/{adAccountId}": {
+  "name": "ghl_ad_google_delete_account",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete ad account"
+ },
+ "GET /ad-publishing/google/ad-accounts/{adAccountId}": {
+  "name": "ghl_ad_google_get_account_details",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get ad account details"
+ },
+ "GET /ad-publishing/google/ad-accounts": {
+  "name": "ghl_ad_google_get_accounts",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Google ad accounts"
+ },
+ "POST /ad-publishing/google/ads/{adId}/publish": {
+  "name": "ghl_ad_google_publish",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Publish ad"
+ },
+ "GET /ad-publishing/google/ads/{adId}": {
+  "name": "ghl_ad_google_get_campaign_by_id",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Google campaign by ID"
+ },
+ "PUT /ad-publishing/google/ads": {
+  "name": "ghl_ad_google_upsert_campaign",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert Google campaign"
+ },
+ "GET /ad-publishing/google/assets": {
+  "name": "ghl_ad_google_get_assets",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get assets"
+ },
+ "POST /ad-publishing/google/assets": {
+  "name": "ghl_ad_google_upsert_assets",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert assets"
+ },
+ "GET /ad-publishing/google/audiences/{audienceId}": {
+  "name": "ghl_ad_google_get_audience_by_id",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get audience by ID"
+ },
+ "GET /ad-publishing/google/audiences": {
+  "name": "ghl_ad_google_get_audiences",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get audiences"
+ },
+ "PUT /ad-publishing/google/audiences": {
+  "name": "ghl_ad_google_upsert_audience",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert audience"
+ },
+ "GET /ad-publishing/google/conversion-goals": {
+  "name": "ghl_ad_google_get_conversion_goals",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get conversion goals"
+ },
+ "DELETE /ad-publishing/google/conversions/{conversionId}": {
+  "name": "ghl_ad_google_delete_conversion",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete conversion"
+ },
+ "GET /ad-publishing/google/conversions/{conversionId}": {
+  "name": "ghl_ad_google_get_conversion_by_id",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get conversion by ID"
+ },
+ "GET /ad-publishing/google/conversions": {
+  "name": "ghl_ad_google_get_conversions",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get conversions"
+ },
+ "PUT /ad-publishing/google/conversions": {
+  "name": "ghl_ad_google_upsert_conversion",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert conversion"
+ },
+ "GET /ad-publishing/google/entity": {
+  "name": "ghl_ad_google_get_entity",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get entities"
+ },
+ "GET /ad-publishing/google/integration": {
+  "name": "ghl_ad_google_get_integration",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get Google integration"
+ },
+ "POST /ad-publishing/google/integration": {
+  "name": "ghl_ad_google_create_integration",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Create Google integration"
+ },
+ "POST /ad-publishing/google/keyword-ideas": {
+  "name": "ghl_ad_google_get_keyword_ideas",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get keyword ideas"
+ },
+ "GET /ad-publishing/google/me": {
+  "name": "ghl_ad_google_get_current_user",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get current Google user"
+ },
+ "GET /ad-publishing/google/reporting/campaign/{campaignId}": {
+  "name": "ghl_ad_google_get_campaign_reporting",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get campaign reporting"
+ },
+ "GET /ad-publishing/google/reporting/list": {
+  "name": "ghl_ad_google_get_reporting_list",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get reporting list"
+ },
+ "GET /ad-publishing/google/reporting": {
+  "name": "ghl_ad_google_get_reporting",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get reporting data"
+ },
+ "DELETE /ad-publishing/google/segments/{segmentId}": {
+  "name": "ghl_ad_google_delete_segment",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete segment"
+ },
+ "GET /ad-publishing/google/segments/{segmentId}": {
+  "name": "ghl_ad_google_get_segment_by_id",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get segment by ID"
+ },
+ "POST /ad-publishing/google/segments/offline-user-list-job": {
+  "name": "ghl_ad_google_create_offline_user_list_job",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Create offline user list job"
+ },
+ "GET /ad-publishing/google/segments": {
+  "name": "ghl_ad_google_get_segments",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get segments"
+ },
+ "PUT /ad-publishing/google/segments": {
+  "name": "ghl_ad_google_upsert_segment",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert segment"
+ },
+ "GET /ad-publishing/google/target-interests": {
+  "name": "ghl_ad_google_get_target_interests",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get target interests"
+ },
+ "GET /ad-publishing/google/targeting/search": {
+  "name": "ghl_ad_google_search_targeting",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Search targeting options"
+ },
+ "POST /ad-publishing/linkedin/{accountId}/form": {
+  "name": "ghl_ad_li_create_lead_form",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Create lead form"
+ },
+ "GET /ad-publishing/linkedin/{accountId}/forms": {
+  "name": "ghl_ad_li_get_lead_forms",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get lead forms"
+ },
+ "PATCH /ad-publishing/linkedin/{adId}/status": {
+  "name": "ghl_ad_li_update_status",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Update ad status"
+ },
+ "DELETE /ad-publishing/linkedin/ad-account": {
+  "name": "ghl_ad_li_delete_account",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Delete ad account"
+ },
+ "GET /ad-publishing/linkedin/ad-account": {
+  "name": "ghl_ad_li_get_account_details",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get ad account details"
+ },
+ "GET /ad-publishing/linkedin/ad-accounts": {
+  "name": "ghl_ad_li_get_accounts",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get LinkedIn ad accounts"
+ },
+ "POST /ad-publishing/linkedin/ads/{adId}/publish": {
+  "name": "ghl_ad_li_publish_campaign_group",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Publish ad campaign group"
+ },
+ "GET /ad-publishing/linkedin/ads/{adId}": {
+  "name": "ghl_ad_li_get_campaign_group",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get ad campaign group"
+ },
+ "PUT /ad-publishing/linkedin/ads": {
+  "name": "ghl_ad_li_upsert_campaign_group",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Upsert ad campaign group"
+ },
+ "GET /ad-publishing/linkedin/integration": {
+  "name": "ghl_ad_li_get_integration",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get LinkedIn integration"
+ },
+ "POST /ad-publishing/linkedin/integration": {
+  "name": "ghl_ad_li_create_integration",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Create LinkedIn integration"
+ },
+ "GET /ad-publishing/linkedin/me": {
+  "name": "ghl_ad_li_get_current_user",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get current LinkedIn user"
+ },
+ "GET /ad-publishing/linkedin/reporting/campaign-group/{campaignGroupId}": {
+  "name": "ghl_ad_li_get_campaign_group_reporting",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get campaign group reporting"
+ },
+ "GET /ad-publishing/linkedin/reporting/list": {
+  "name": "ghl_ad_li_get_reporting_list",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get reporting list"
+ },
+ "GET /ad-publishing/linkedin/reporting": {
+  "name": "ghl_ad_li_get_analytics",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Get ad analytics"
+ },
+ "GET /ad-publishing/linkedin/targeting/search": {
+  "name": "ghl_ad_li_search_targeting",
+  "spec": "v3/ad-publishing-v3.json",
+  "version": "2021-07-28",
+  "deprecated": false,
+  "summary": "Search targeting options"
+ },
+ "GET /affiliate-manager/{locationId}/affiliates/{affiliateId}": {
+  "name": "ghl_affiliate_get",
+  "spec": "v3/affiliate-manager-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Affiliate"
+ },
+ "GET /affiliate-manager/{locationId}/affiliates": {
+  "name": "ghl_affiliate_list",
+  "spec": "v3/affiliate-manager-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Affiliates"
+ },
+ "GET /affiliate-manager/{locationId}/commissions": {
+  "name": "ghl_affiliate_list_commissions",
+  "spec": "v3/affiliate-manager-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Commissions"
+ },
+ "GET /affiliate-manager/{locationId}/payouts": {
+  "name": "ghl_affiliate_list_payouts",
+  "spec": "v3/affiliate-manager-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Payouts"
+ },
+ "POST /agent-studio/agent/{agentId}/execute": {
+  "name": "ghl_agent_studio_execute",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Execute Agent"
+ },
+ "DELETE /agent-studio/agent/{agentId}": {
+  "name": "ghl_agent_studio_delete",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Agent"
+ },
+ "GET /agent-studio/agent/{agentId}": {
+  "name": "ghl_agent_studio_get_by_id",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Agent"
+ },
+ "PATCH /agent-studio/agent/{agentId}": {
+  "name": "ghl_agent_studio_update_metadata",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Agent Metadata"
+ },
+ "POST /agent-studio/agent/versions/{versionId}/publish": {
+  "name": "ghl_agent_studio_promote_and_publish",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Promote to Production"
+ },
+ "PATCH /agent-studio/agent/versions/{versionId}": {
+  "name": "ghl_agent_studio_update_version",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Agent"
+ },
+ "GET /agent-studio/agent": {
+  "name": "ghl_agent_studio_get",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Agents"
+ },
+ "POST /agent-studio/agent": {
+  "name": "ghl_agent_studio_create",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Agent"
+ },
+ "POST /agent-studio/public-api/agents/{agentId}/execute": {
+  "name": "ghl_agent_studio_execute_deprecated",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Execute Agent (Deprecated)"
+ },
+ "GET /agent-studio/public-api/agents/{agentId}": {
+  "name": "ghl_agent_studio_get_by_id_deprecated",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Get Agent (Deprecated)"
+ },
+ "GET /agent-studio/public-api/agents": {
+  "name": "ghl_agent_studio_get_deprecated",
+  "spec": "v3/agent-studio-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "List Agents (Deprecated)"
+ },
+ "DELETE /associations/{associationId}": {
+  "name": "ghl_association_delete",
+  "spec": "v3/associations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Association"
+ },
+ "GET /associations/{associationId}": {
+  "name": "ghl_association_get_by_id",
+  "spec": "v3/associations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get association by ID"
+ },
+ "PUT /associations/{associationId}": {
+  "name": "ghl_association_update",
+  "spec": "v3/associations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Association By Id"
+ },
+ "GET /associations/": {
+  "name": "ghl_association_find",
+  "spec": "v3/associations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get all associations for a sub-account / location"
+ },
+ "GET /associations/key/{key_name}": {
+  "name": "ghl_association_get_key_by_key_name",
+  "spec": "v3/associations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get association key by key name"
+ },
+ "GET /associations/objectKey/{objectKey}": {
+  "name": "ghl_association_get_by_object_keys",
+  "spec": "v3/associations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get association by object keys"
+ },
+ "POST /associations/": {
+  "name": "ghl_association_create",
+  "spec": "v3/associations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Association"
+ },
+ "GET /associations/relations/{recordId}": {
+  "name": "ghl_association_get_relations_by_record_id",
+  "spec": "v3/associations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get all relations By record Id"
+ },
+ "DELETE /associations/relations/{relationId}": {
+  "name": "ghl_association_delete_relation",
+  "spec": "v3/associations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Relation"
+ },
+ "POST /associations/relations": {
+  "name": "ghl_association_create_relation",
+  "spec": "v3/associations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Relation for you associated entities."
+ },
+ "GET /blogs/authors": {
+  "name": "ghl_blog_get_all_authors_by_location",
+  "spec": "v3/blogs-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get all authors"
+ },
+ "GET /blogs/categories": {
+  "name": "ghl_blog_get_all_categories_by_location",
+  "spec": "v3/blogs-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get all categories"
+ },
+ "PUT /blogs/posts/{postId}": {
+  "name": "ghl_blog_update_post",
+  "spec": "v3/blogs-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Blog Post"
+ },
+ "GET /blogs/posts/all": {
+  "name": "ghl_blog_get_post",
+  "spec": "v3/blogs-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Blog posts by Blog ID"
+ },
+ "GET /blogs/posts/url-slug-exists": {
+  "name": "ghl_blog_check_url_slug_exists",
+  "spec": "v3/blogs-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Check url slug"
+ },
+ "POST /blogs/posts": {
+  "name": "ghl_blog_create_post",
+  "spec": "v3/blogs-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Blog Post"
+ },
+ "GET /blogs/site/all": {
+  "name": "ghl_blog_get",
+  "spec": "v3/blogs-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Blogs by Location ID"
+ },
+ "DELETE /brand-boards/{locationId}/{id}": {
+  "name": "ghl_brand_board_delete",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete a Brand Board"
+ },
+ "GET /brand-boards/{locationId}/{id}": {
+  "name": "ghl_brand_board_get_by_id",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Brand Board"
+ },
+ "PATCH /brand-boards/{locationId}/{id}": {
+  "name": "ghl_brand_board_update",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update a Brand Board"
+ },
+ "GET /brand-boards/{locationId}": {
+  "name": "ghl_brand_board_get_by_location",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Brand Boards"
+ },
+ "POST /brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}/default": {
+  "name": "ghl_brand_board_set_default_voice",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Set Default Brand Voice"
+ },
+ "DELETE /brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}": {
+  "name": "ghl_brand_board_delete_voice",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Brand Voice"
+ },
+ "GET /brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}": {
+  "name": "ghl_brand_board_get_voice",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Brand Voice"
+ },
+ "PATCH /brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}": {
+  "name": "ghl_brand_board_update_voice",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Brand Voice"
+ },
+ "GET /brand-boards/locations/{locationId}/brand-voices": {
+  "name": "ghl_brand_board_list_voices",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Brand Voices"
+ },
+ "POST /brand-boards/locations/{locationId}/brand-voices": {
+  "name": "ghl_brand_board_create_voice",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Brand Voice"
+ },
+ "POST /brand-boards/": {
+  "name": "ghl_brand_board_create",
+  "spec": "v3/brand-boards-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create a new brand board"
+ },
+ "DELETE /businesses/{businessId}": {
+  "name": "ghl_business_delete",
+  "spec": "v3/businesses-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Business"
+ },
+ "GET /businesses/{businessId}": {
+  "name": "ghl_business_get",
+  "spec": "v3/businesses-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Business"
+ },
+ "PUT /businesses/{businessId}": {
+  "name": "ghl_business_update",
+  "spec": "v3/businesses-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Business"
+ },
+ "GET /businesses/": {
+  "name": "ghl_business_get_businesses_by_location",
+  "spec": "v3/businesses-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Businesses by Location"
+ },
+ "POST /businesses/": {
+  "name": "ghl_business_create",
+  "spec": "v3/businesses-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Business"
+ },
+ "GET /calendars/{calendarId}/free-slots": {
+  "name": "ghl_calendar_get_slots",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Free Slots"
+ },
+ "DELETE /calendars/{calendarId}/notifications/{notificationId}": {
+  "name": "ghl_calendar_delete_event_notification",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Notification"
+ },
+ "GET /calendars/{calendarId}/notifications/{notificationId}": {
+  "name": "ghl_calendar_find_event_notification",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get notification"
+ },
+ "PUT /calendars/{calendarId}/notifications/{notificationId}": {
+  "name": "ghl_calendar_update_event_notification",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update notification"
+ },
+ "GET /calendars/{calendarId}/notifications": {
+  "name": "ghl_calendar_get_event_notification",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get notifications"
+ },
+ "POST /calendars/{calendarId}/notifications": {
+  "name": "ghl_calendar_create_event_notification",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create notification"
+ },
+ "DELETE /calendars/{calendarId}": {
+  "name": "ghl_calendar_delete",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Calendar"
+ },
+ "GET /calendars/{calendarId}": {
+  "name": "ghl_calendar_get",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Calendar"
+ },
+ "PUT /calendars/{calendarId}": {
+  "name": "ghl_calendar_update",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Calendar"
+ },
+ "DELETE /calendars/appointments/{appointmentId}/notes/{noteId}": {
+  "name": "ghl_calendar_delete_appointment_note",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Note"
+ },
+ "PUT /calendars/appointments/{appointmentId}/notes/{noteId}": {
+  "name": "ghl_calendar_update_appointment_note",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Note"
+ },
+ "GET /calendars/appointments/{appointmentId}/notes": {
+  "name": "ghl_calendar_get_appointment_notes",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Notes"
+ },
+ "POST /calendars/appointments/{appointmentId}/notes": {
+  "name": "ghl_calendar_create_appointment_note",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Note"
+ },
+ "GET /calendars/blocked-slots": {
+  "name": "ghl_calendar_get_blocked_slots",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Blocked Slots"
+ },
+ "DELETE /calendars/events/{eventId}": {
+  "name": "ghl_calendar_delete_event",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Event"
+ },
+ "GET /calendars/events/appointments/{eventId}": {
+  "name": "ghl_calendar_get_appointment",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Appointment"
+ },
+ "PUT /calendars/events/appointments/{eventId}": {
+  "name": "ghl_calendar_edit_appointment",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Appointment"
+ },
+ "POST /calendars/events/appointments": {
+  "name": "ghl_calendar_create_appointment",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create appointment"
+ },
+ "PUT /calendars/events/block-slots/{eventId}": {
+  "name": "ghl_calendar_edit_block_slot",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Block Slot"
+ },
+ "POST /calendars/events/block-slots": {
+  "name": "ghl_calendar_create_block_slot",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Block Slot"
+ },
+ "GET /calendars/events": {
+  "name": "ghl_calendar_get_events",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Calendar Events"
+ },
+ "GET /calendars/": {
+  "name": "ghl_calendar_get_get2",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Calendars"
+ },
+ "PUT /calendars/groups/{groupId}/status": {
+  "name": "ghl_calendar_disable_group",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Disable Group"
+ },
+ "DELETE /calendars/groups/{groupId}": {
+  "name": "ghl_calendar_delete_group",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Group"
+ },
+ "PUT /calendars/groups/{groupId}": {
+  "name": "ghl_calendar_edit_group",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Group"
+ },
+ "POST /calendars/groups/validate-slug": {
+  "name": "ghl_calendar_validate_groups_slug",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Validate group slug"
+ },
+ "GET /calendars/groups": {
+  "name": "ghl_calendar_get_groups",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Groups"
+ },
+ "POST /calendars/groups": {
+  "name": "ghl_calendar_create_group",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Calendar Group"
+ },
+ "POST /calendars/": {
+  "name": "ghl_calendar_create",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Calendar"
+ },
+ "DELETE /calendars/resources/{resourceType}/{id}": {
+  "name": "ghl_calendar_delete_resource",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Delete Calendar Resource"
+ },
+ "GET /calendars/resources/{resourceType}/{id}": {
+  "name": "ghl_calendar_get_resource",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Get Calendar Resource"
+ },
+ "PUT /calendars/resources/{resourceType}/{id}": {
+  "name": "ghl_calendar_update_resource",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Update Calendar Resource"
+ },
+ "GET /calendars/resources/{resourceType}": {
+  "name": "ghl_calendar_fetch_resources",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "List Calendar Resources"
+ },
+ "POST /calendars/resources/{resourceType}": {
+  "name": "ghl_calendar_create_resource",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Create Calendar Resource"
+ },
+ "DELETE /calendars/schedules/{id}/associations/{calendarId}": {
+  "name": "ghl_calendar_remove_from_schedule",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Remove user availability schedule from a calendar"
+ },
+ "PUT /calendars/schedules/{id}/associations/{calendarId}": {
+  "name": "ghl_calendar_add_to_schedule",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Apply user availability schedule to a calendar"
+ },
+ "DELETE /calendars/schedules/{id}": {
+  "name": "ghl_calendar_delete_schedule",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete user availability schedule"
+ },
+ "GET /calendars/schedules/{id}": {
+  "name": "ghl_calendar_get_schedule_by_id",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get user availability schedule"
+ },
+ "PUT /calendars/schedules/{id}": {
+  "name": "ghl_calendar_update_schedule",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update user availability schedule"
+ },
+ "GET /calendars/schedules/event-calendar/{calendarId}": {
+  "name": "ghl_calendar_get_schedule",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get event calendar availability schedule"
+ },
+ "POST /calendars/schedules/event-calendar/{calendarId}": {
+  "name": "ghl_calendar_create_schedule",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create event calendar availability schedule"
+ },
+ "PUT /calendars/schedules/event-calendar/{calendarId}": {
+  "name": "ghl_calendar_update_schedule_put2",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update event calendar availability schedule"
+ },
+ "GET /calendars/schedules/search": {
+  "name": "ghl_calendar_get_all_schedules",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List user availability schedule"
+ },
+ "POST /calendars/schedules": {
+  "name": "ghl_calendar_create_schedule_post2",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create user availability schedule"
+ },
+ "DELETE /calendars/services/bookings/{bookingId}": {
+  "name": "ghl_calendar_delete_service_booking",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Service Booking"
+ },
+ "GET /calendars/services/bookings/{bookingId}": {
+  "name": "ghl_calendar_get_service_booking_by_id",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Service Booking by ID"
+ },
+ "PUT /calendars/services/bookings/{bookingId}": {
+  "name": "ghl_calendar_update_service_booking",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Service Booking"
+ },
+ "GET /calendars/services/bookings": {
+  "name": "ghl_calendar_get_service_bookings",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Service Bookings"
+ },
+ "POST /calendars/services/bookings": {
+  "name": "ghl_calendar_create_service_booking",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Service Booking"
+ },
+ "DELETE /calendars/services/catalog/{serviceId}": {
+  "name": "ghl_calendar_delete_service_catalog",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Service"
+ },
+ "GET /calendars/services/catalog/{serviceId}": {
+  "name": "ghl_calendar_get_service_catalog_by_id",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Service by ID"
+ },
+ "PUT /calendars/services/catalog/{serviceId}": {
+  "name": "ghl_calendar_update_service_catalog",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Service"
+ },
+ "GET /calendars/services/catalog": {
+  "name": "ghl_calendar_get_services_catalog",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Services"
+ },
+ "POST /calendars/services/catalog": {
+  "name": "ghl_calendar_create_service_catalog",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Service"
+ },
+ "DELETE /calendars/services/locations/{serviceLocationId}": {
+  "name": "ghl_calendar_delete_service_location",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Service Location"
+ },
+ "GET /calendars/services/locations/{serviceLocationId}": {
+  "name": "ghl_calendar_get_service_location_by_id",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Service Location by ID"
+ },
+ "PUT /calendars/services/locations/{serviceLocationId}": {
+  "name": "ghl_calendar_update_service_location",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Service Location"
+ },
+ "GET /calendars/services/locations": {
+  "name": "ghl_calendar_get_service_locations",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Service Locations"
+ },
+ "POST /calendars/services/locations": {
+  "name": "ghl_calendar_create_service_location",
+  "spec": "v3/calendars-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Service Location"
+ },
+ "GET /campaigns/": {
+  "name": "ghl_campaign_get",
+  "spec": "v3/campaigns-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Campaigns"
+ },
+ "DELETE /chat-widget/{locationId}/{id}": {
+  "name": "ghl_chat_widget_delete",
+  "spec": "v3/chat-widget-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Chat Widget"
+ },
+ "POST /chat-widget/clone": {
+  "name": "ghl_chat_widget_clone",
+  "spec": "v3/chat-widget-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Clone Chat Widget"
+ },
+ "GET /chat-widget/data/{locationId}/{id}": {
+  "name": "ghl_chat_widget_get",
+  "spec": "v3/chat-widget-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Chat Widget"
+ },
+ "PATCH /chat-widget/data/{locationId}/{id}": {
+  "name": "ghl_chat_widget_patch",
+  "spec": "v3/chat-widget-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Patch Chat Widget"
+ },
+ "PUT /chat-widget/data/{locationId}/{id}": {
+  "name": "ghl_chat_widget_update",
+  "spec": "v3/chat-widget-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Chat Widget"
+ },
+ "GET /chat-widget/list": {
+  "name": "ghl_chat_widget_list",
+  "spec": "v3/chat-widget-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Chat Widgets"
+ },
+ "POST /chat-widget/": {
+  "name": "ghl_chat_widget_create",
+  "spec": "v3/chat-widget-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Chat Widget"
+ },
+ "GET /chat-widget/public/config/{id}": {
+  "name": "ghl_chat_widget_get_get2",
+  "spec": "v3/chat-widget-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Widget Config"
+ },
+ "GET /companies/{companyId}": {
+  "name": "ghl_company_get",
+  "spec": "v3/companies-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Company"
+ },
+ "GET /contacts/{contactId}/appointments": {
+  "name": "ghl_contact_get_appointments_for",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Appointments for Contact"
+ },
+ "DELETE /contacts/{contactId}/campaigns/{campaignId}": {
+  "name": "ghl_contact_remove_from_campaign",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Remove Contact From Campaign"
+ },
+ "POST /contacts/{contactId}/campaigns/{campaignId}": {
+  "name": "ghl_contact_add_to_campaign",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Add Contact to Campaign"
+ },
+ "DELETE /contacts/{contactId}/campaigns/remove-all": {
+  "name": "ghl_contact_remove_from_every_campaign_delete2",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Remove Contact From Every Campaign"
+ },
+ "DELETE /contacts/{contactId}/followers": {
+  "name": "ghl_contact_remove_followers",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Remove Followers"
+ },
+ "POST /contacts/{contactId}/followers": {
+  "name": "ghl_contact_add_followers",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Add Followers"
+ },
+ "DELETE /contacts/{contactId}/notes/{id}": {
+  "name": "ghl_contact_delete_note",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Note"
+ },
+ "GET /contacts/{contactId}/notes/{id}": {
+  "name": "ghl_contact_get_note",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Note"
+ },
+ "PUT /contacts/{contactId}/notes/{id}": {
+  "name": "ghl_contact_update_note",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Note"
+ },
+ "GET /contacts/{contactId}/notes": {
+  "name": "ghl_contact_get_all_notes",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get All Notes"
+ },
+ "POST /contacts/{contactId}/notes": {
+  "name": "ghl_contact_create_note",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Note"
+ },
+ "DELETE /contacts/{contactId}/tags": {
+  "name": "ghl_contact_remove_tags",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Remove Tags"
+ },
+ "POST /contacts/{contactId}/tags": {
+  "name": "ghl_contact_add_tags",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Add Tags"
+ },
+ "PUT /contacts/{contactId}/tasks/{taskId}/completed": {
+  "name": "ghl_contact_update_task_completed",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Task Completed"
+ },
+ "DELETE /contacts/{contactId}/tasks/{taskId}": {
+  "name": "ghl_contact_delete_task",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Task"
+ },
+ "GET /contacts/{contactId}/tasks/{taskId}": {
+  "name": "ghl_contact_get_task",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Task"
+ },
+ "PUT /contacts/{contactId}/tasks/{taskId}": {
+  "name": "ghl_contact_update_task",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Task"
+ },
+ "GET /contacts/{contactId}/tasks": {
+  "name": "ghl_contact_get_all_tasks",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get all Tasks"
+ },
+ "POST /contacts/{contactId}/tasks": {
+  "name": "ghl_contact_create_task",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Task"
+ },
+ "DELETE /contacts/{contactId}/workflow/{workflowId}": {
+  "name": "ghl_contact_delete_from_workflow",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Contact from Workflow"
+ },
+ "POST /contacts/{contactId}/workflow/{workflowId}": {
+  "name": "ghl_contact_add_to_workflow",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Add Contact to Workflow"
+ },
+ "DELETE /contacts/{contactId}": {
+  "name": "ghl_contact_delete",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Contact"
+ },
+ "GET /contacts/{contactId}": {
+  "name": "ghl_contact_get_get2",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Contact"
+ },
+ "PUT /contacts/{contactId}": {
+  "name": "ghl_contact_update",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Contact"
+ },
+ "POST /contacts/bulk/business": {
+  "name": "ghl_contact_add_remove_from_business",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Add/Remove Contacts From Business"
+ },
+ "POST /contacts/bulk/tags/update/{type}": {
+  "name": "ghl_contact_create_association",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Contacts Tags"
+ },
+ "GET /contacts/business/{businessId}": {
+  "name": "ghl_contact_get_by_business_id",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Contacts By BusinessId"
+ },
+ "POST /contacts/": {
+  "name": "ghl_contact_create",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Contact"
+ },
+ "GET /contacts/search/duplicate": {
+  "name": "ghl_contact_get_duplicate",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Duplicate Contact"
+ },
+ "POST /contacts/search": {
+  "name": "ghl_contact_search_advanced",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Search Contacts"
+ },
+ "POST /contacts/upsert": {
+  "name": "ghl_contact_upsert",
+  "spec": "v3/contacts-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Upsert Contact"
+ },
+ "DELETE /conversation-ai/agents/{agentId}/actions/{actionId}": {
+  "name": "ghl_conversation_ai_delete_action",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Remove Action from Agent"
+ },
+ "GET /conversation-ai/agents/{agentId}/actions/{actionId}": {
+  "name": "ghl_conversation_ai_get_action_by_id",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Action by ID"
+ },
+ "PUT /conversation-ai/agents/{agentId}/actions/{actionId}": {
+  "name": "ghl_conversation_ai_update_action",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Action"
+ },
+ "GET /conversation-ai/agents/{agentId}/actions/list": {
+  "name": "ghl_conversation_ai_list_actions",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Actions for an Agent"
+ },
+ "POST /conversation-ai/agents/{agentId}/actions": {
+  "name": "ghl_conversation_ai_create_action",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Attach Action to Agent"
+ },
+ "PATCH /conversation-ai/agents/{agentId}/followup-settings": {
+  "name": "ghl_conversation_ai_update_followup_settings",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Followup Settings"
+ },
+ "DELETE /conversation-ai/agents/{agentId}": {
+  "name": "ghl_conversation_ai_delete_agent",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Agent"
+ },
+ "GET /conversation-ai/agents/{agentId}": {
+  "name": "ghl_conversation_ai_get_agent",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Agent"
+ },
+ "PUT /conversation-ai/agents/{agentId}": {
+  "name": "ghl_conversation_ai_update_agent",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Agent"
+ },
+ "GET /conversation-ai/agents/search": {
+  "name": "ghl_conversation_ai_search_agent",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Search Agents"
+ },
+ "POST /conversation-ai/agents": {
+  "name": "ghl_conversation_ai_create_agent",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create an Agent"
+ },
+ "GET /conversation-ai/generations": {
+  "name": "ghl_conversation_ai_get_generation_details",
+  "spec": "v3/conversation-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get the generation details"
+ },
+ "GET /conversations/{conversationId}/messages": {
+  "name": "ghl_conversation_get_messages",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get messages by conversation id"
+ },
+ "DELETE /conversations/{conversationId}": {
+  "name": "ghl_conversation_delete",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Conversation"
+ },
+ "GET /conversations/{conversationId}": {
+  "name": "ghl_conversation_get",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Conversation"
+ },
+ "PUT /conversations/{conversationId}": {
+  "name": "ghl_conversation_update",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Conversation"
+ },
+ "GET /conversations/locations/{locationId}/messages/{messageId}/transcription/download": {
+  "name": "ghl_conversation_download_message_transcription",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Download transcription by Message ID"
+ },
+ "GET /conversations/locations/{locationId}/messages/{messageId}/transcription": {
+  "name": "ghl_conversation_get_message_transcription",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get transcription by Message ID"
+ },
+ "GET /conversations/messages/{id}": {
+  "name": "ghl_conversation_get_message",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get message by message id"
+ },
+ "PUT /conversations/messages/{messageId}/attachments": {
+  "name": "ghl_conversation_add_message_attachments",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Add message attachments"
+ },
+ "GET /conversations/messages/{messageId}/locations/{locationId}/recording": {
+  "name": "ghl_conversation_get_message_recording",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Recording by Message ID"
+ },
+ "DELETE /conversations/messages/{messageId}/schedule": {
+  "name": "ghl_conversation_cancel_scheduled_message",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Cancel a scheduled message."
+ },
+ "PUT /conversations/messages/{messageId}/status": {
+  "name": "ghl_conversation_update_message_status",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update message status"
+ },
+ "DELETE /conversations/messages/email/{emailMessageId}/schedule": {
+  "name": "ghl_conversation_cancel_scheduled_email_message",
+  "spec": "v3/conversations-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Cancel a scheduled email message."
+ },
+ "PUT /conversations/messages/email/{id}/status": {
+  "name": "ghl_conversation_update_email_message_status",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update email message status"
+ },
+ "GET /conversations/messages/email/{id}": {
+  "name": "ghl_conversation_get_email_by_id",
+  "spec": "v3/conversations-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Get email by Id"
+ },
+ "GET /conversations/messages/export": {
+  "name": "ghl_conversation_export_messages_by_location",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Export messages by location ID"
+ },
+ "POST /conversations/messages/inbound": {
+  "name": "ghl_conversation_add_an_inbound_message",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Add an inbound message"
+ },
+ "POST /conversations/messages/outbound": {
+  "name": "ghl_conversation_add_an_outbound_message",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Add an external outbound call"
+ },
+ "POST /conversations/messages/review-reply": {
+  "name": "ghl_conversation_send_review_reply",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Send a review reply to Google My Business"
+ },
+ "POST /conversations/messages/upload/complete": {
+  "name": "ghl_conversation_complete_file_upload",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Complete file upload"
+ },
+ "POST /conversations/messages/upload/initiate": {
+  "name": "ghl_conversation_initiate_file_upload",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Initiate file upload to GCS"
+ },
+ "POST /conversations/messages/upload": {
+  "name": "ghl_conversation_upload_file_attachments",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Upload file attachments"
+ },
+ "POST /conversations/messages": {
+  "name": "ghl_conversation_send_a_new_message",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Send a new message"
+ },
+ "POST /conversations/": {
+  "name": "ghl_conversation_create",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Conversation"
+ },
+ "POST /conversations/providers/live-chat/typing": {
+  "name": "ghl_conversation_live_chat_agent_typing",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Agent/Ai-Bot is typing a message indicator for live chat"
+ },
+ "GET /conversations/search": {
+  "name": "ghl_conversation_search",
+  "spec": "v3/conversations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Search Conversations"
+ },
+ "POST /courses/courses-exporter/public/import": {
+  "name": "ghl_course_import",
+  "spec": "v3/courses-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Import Courses"
+ },
+ "DELETE /custom-fields/{id}": {
+  "name": "ghl_custom_field_delete",
+  "spec": "v3/custom-fields-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Custom Field By Id"
+ },
+ "GET /custom-fields/{id}": {
+  "name": "ghl_custom_field_get_by_id",
+  "spec": "v3/custom-fields-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Custom Field / Folder By Id"
+ },
+ "PUT /custom-fields/{id}": {
+  "name": "ghl_custom_field_update",
+  "spec": "v3/custom-fields-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Custom Field By Id"
+ },
+ "DELETE /custom-fields/folder/{id}": {
+  "name": "ghl_custom_field_delete_folder",
+  "spec": "v3/custom-fields-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Custom Field Folder"
+ },
+ "PUT /custom-fields/folder/{id}": {
+  "name": "ghl_custom_field_update_folder",
+  "spec": "v3/custom-fields-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Custom Field Folder Name"
+ },
+ "POST /custom-fields/folder": {
+  "name": "ghl_custom_field_create_folder",
+  "spec": "v3/custom-fields-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Custom Field Folder"
+ },
+ "GET /custom-fields/object-key/{objectKey}": {
+  "name": "ghl_custom_field_get_by_object_key",
+  "spec": "v3/custom-fields-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Custom Fields By Object Key"
+ },
+ "POST /custom-fields/": {
+  "name": "ghl_custom_field_create",
+  "spec": "v3/custom-fields-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Custom Field"
+ },
+ "DELETE /custom-menus/{customMenuId}": {
+  "name": "ghl_custom_menu_delete",
+  "spec": "v3/custom-menus-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Custom Menu Link"
+ },
+ "GET /custom-menus/{customMenuId}": {
+  "name": "ghl_custom_menu_get_by_id",
+  "spec": "v3/custom-menus-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Custom Menu Link"
+ },
+ "PUT /custom-menus/{customMenuId}": {
+  "name": "ghl_custom_menu_update",
+  "spec": "v3/custom-menus-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Custom Menu Link"
+ },
+ "GET /custom-menus/": {
+  "name": "ghl_custom_menu_get",
+  "spec": "v3/custom-menus-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Custom Menu Links"
+ },
+ "POST /custom-menus/": {
+  "name": "ghl_custom_menu_create",
+  "spec": "v3/custom-menus-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Custom Menu Link"
+ },
+ "POST /email/verify": {
+  "name": "ghl_email_verify_create",
+  "spec": "v3/email-isv-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Email Verification"
+ },
+ "GET /emails/locations/{locationId}/campaigns/bulk-actions/{campaignId}": {
+  "name": "ghl_email_get_bulk_action_campaign",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Bulk Action Campaign by ID"
+ },
+ "GET /emails/locations/{locationId}/campaigns/bulk-actions": {
+  "name": "ghl_email_list_bulk_action_campaigns",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Bulk Action Campaigns"
+ },
+ "POST /emails/locations/{locationId}/campaigns/emails/{campaignId}/schedule": {
+  "name": "ghl_email_schedule_campaign",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Schedule Campaign"
+ },
+ "DELETE /emails/locations/{locationId}/campaigns/emails/{campaignId}": {
+  "name": "ghl_email_delete_campaign",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Campaign"
+ },
+ "GET /emails/locations/{locationId}/campaigns/emails/{campaignId}": {
+  "name": "ghl_email_get_campaign",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Email Campaign by ID"
+ },
+ "PATCH /emails/locations/{locationId}/campaigns/emails/{campaignId}": {
+  "name": "ghl_email_update_campaign",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Email Campaign"
+ },
+ "GET /emails/locations/{locationId}/campaigns/emails": {
+  "name": "ghl_email_list_campaigns",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Email Campaigns"
+ },
+ "POST /emails/locations/{locationId}/campaigns/emails": {
+  "name": "ghl_email_create_campaign",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Email Campaign"
+ },
+ "GET /emails/locations/{locationId}/campaigns/stats/{source}/{sourceId}": {
+  "name": "ghl_email_get_campaign_stats",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Campaign Statistics"
+ },
+ "GET /emails/locations/{locationId}/campaigns/workflows/{campaignId}": {
+  "name": "ghl_email_get_workflow_campaign",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Workflow Campaign by ID"
+ },
+ "GET /emails/locations/{locationId}/campaigns/workflows": {
+  "name": "ghl_email_list_workflow_campaigns",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Workflow Campaigns"
+ },
+ "DELETE /emails/locations/{locationId}/templates/{templateId}": {
+  "name": "ghl_email_delete_template_delete2",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete a template"
+ },
+ "GET /emails/locations/{locationId}/templates/{templateId}": {
+  "name": "ghl_email_get_template",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Email Template by ID"
+ },
+ "PATCH /emails/locations/{locationId}/templates/{templateId}": {
+  "name": "ghl_email_update_template_patch2",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update an email template"
+ },
+ "POST /emails/locations/{locationId}/templates/folders": {
+  "name": "ghl_email_create_template_folder",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create a template folder"
+ },
+ "POST /emails/locations/{locationId}/templates/import": {
+  "name": "ghl_email_import_template",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Import an email template"
+ },
+ "GET /emails/locations/{locationId}/templates": {
+  "name": "ghl_email_list_templates",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List templates"
+ },
+ "POST /emails/locations/{locationId}/templates": {
+  "name": "ghl_email_create_template_post2",
+  "spec": "v3/emails-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create an email template"
+ },
+ "GET /forms/": {
+  "name": "ghl_form_get",
+  "spec": "v3/forms-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Forms"
+ },
+ "GET /forms/submissions": {
+  "name": "ghl_form_get_submissions",
+  "spec": "v3/forms-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Forms Submissions"
+ },
+ "POST /forms/upload-custom-files": {
+  "name": "ghl_form_upload_to_custom_fields",
+  "spec": "v3/forms-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Upload files to custom fields"
+ },
+ "GET /funnels/funnel/list": {
+  "name": "ghl_funnel_get",
+  "spec": "v3/funnels-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Fetch List of Funnels"
+ },
+ "DELETE /funnels/lookup/redirect/{id}": {
+  "name": "ghl_funnel_delete_redirect_by_id",
+  "spec": "v3/funnels-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Redirect By Id"
+ },
+ "PATCH /funnels/lookup/redirect/{id}": {
+  "name": "ghl_funnel_update_redirect_by_id",
+  "spec": "v3/funnels-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Redirect By Id"
+ },
+ "GET /funnels/lookup/redirect/list": {
+  "name": "ghl_funnel_fetch_redirects_list",
+  "spec": "v3/funnels-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch List of Redirects"
+ },
+ "POST /funnels/lookup/redirect": {
+  "name": "ghl_funnel_create_redirect",
+  "spec": "v3/funnels-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Redirect"
+ },
+ "GET /funnels/page/count": {
+  "name": "ghl_funnel_get_pages_count_by_id",
+  "spec": "v3/funnels-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Fetch count of funnel pages"
+ },
+ "GET /funnels/page": {
+  "name": "ghl_funnel_get_pages_by_id",
+  "spec": "v3/funnels-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Fetch list of funnel pages"
+ },
+ "PATCH /invoices/{invoiceId}/late-fees-configuration": {
+  "name": "ghl_invoice_update_late_fees_configuration",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update invoice late fees configuration"
+ },
+ "POST /invoices/{invoiceId}/record-payment": {
+  "name": "ghl_invoice_record",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Record a manual payment for an invoice"
+ },
+ "POST /invoices/{invoiceId}/send": {
+  "name": "ghl_invoice_send",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Send invoice"
+ },
+ "POST /invoices/{invoiceId}/void": {
+  "name": "ghl_invoice_void",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Void invoice"
+ },
+ "DELETE /invoices/{invoiceId}": {
+  "name": "ghl_invoice_delete",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete invoice"
+ },
+ "GET /invoices/{invoiceId}": {
+  "name": "ghl_invoice_get",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get invoice"
+ },
+ "PUT /invoices/{invoiceId}": {
+  "name": "ghl_invoice_update",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update invoice"
+ },
+ "POST /invoices/estimate/{estimateId}/invoice": {
+  "name": "ghl_invoice_create_from_estimate",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Invoice from Estimate"
+ },
+ "POST /invoices/estimate/{estimateId}/send": {
+  "name": "ghl_invoice_send_estimate",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Send Estimate"
+ },
+ "DELETE /invoices/estimate/{estimateId}": {
+  "name": "ghl_invoice_delete_estimate",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Estimate"
+ },
+ "PUT /invoices/estimate/{estimateId}": {
+  "name": "ghl_invoice_update_estimate",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Estimate"
+ },
+ "GET /invoices/estimate/list": {
+  "name": "ghl_invoice_list_estimates",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Estimates"
+ },
+ "GET /invoices/estimate/number/generate": {
+  "name": "ghl_invoice_generate_estimate_number",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Generate Estimate Number"
+ },
+ "PATCH /invoices/estimate/stats/last-visited-at": {
+  "name": "ghl_invoice_update_estimate_last_visited_at",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update estimate last visited at"
+ },
+ "DELETE /invoices/estimate/template/{templateId}": {
+  "name": "ghl_invoice_delete_estimate_template",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Estimate Template"
+ },
+ "PUT /invoices/estimate/template/{templateId}": {
+  "name": "ghl_invoice_update_estimate_template",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Estimate Template"
+ },
+ "GET /invoices/estimate/template/preview": {
+  "name": "ghl_invoice_preview_estimate_template",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Preview Estimate Template"
+ },
+ "GET /invoices/estimate/template": {
+  "name": "ghl_invoice_list_estimate_templates",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Estimate Templates"
+ },
+ "POST /invoices/estimate/template": {
+  "name": "ghl_invoice_create_estimate_template",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Estimate Template"
+ },
+ "POST /invoices/estimate": {
+  "name": "ghl_invoice_create_new_estimate",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create New Estimate"
+ },
+ "GET /invoices/generate-invoice-number": {
+  "name": "ghl_invoice_generate_number",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Generate Invoice Number"
+ },
+ "GET /invoices/": {
+  "name": "ghl_invoice_list",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List invoices"
+ },
+ "POST /invoices/": {
+  "name": "ghl_invoice_create",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Invoice"
+ },
+ "POST /invoices/schedule/{scheduleId}/auto-payment": {
+  "name": "ghl_invoice_auto_payment_schedule",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Manage Auto payment for an schedule invoice"
+ },
+ "POST /invoices/schedule/{scheduleId}/cancel": {
+  "name": "ghl_invoice_cancel_schedule",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Cancel an scheduled invoice"
+ },
+ "POST /invoices/schedule/{scheduleId}/schedule": {
+  "name": "ghl_invoice_schedule_schedule",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Schedule an schedule invoice"
+ },
+ "POST /invoices/schedule/{scheduleId}/updateAndSchedule": {
+  "name": "ghl_invoice_update_and_schedule_schedule",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update scheduled recurring invoice"
+ },
+ "DELETE /invoices/schedule/{scheduleId}": {
+  "name": "ghl_invoice_delete_schedule",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete schedule"
+ },
+ "GET /invoices/schedule/{scheduleId}": {
+  "name": "ghl_invoice_get_schedule",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get an schedule"
+ },
+ "PUT /invoices/schedule/{scheduleId}": {
+  "name": "ghl_invoice_update_schedule",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update schedule"
+ },
+ "GET /invoices/schedule": {
+  "name": "ghl_invoice_list_schedules",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List schedules"
+ },
+ "POST /invoices/schedule": {
+  "name": "ghl_invoice_create_schedule",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Invoice Schedule"
+ },
+ "GET /invoices/settings": {
+  "name": "ghl_invoice_get_settings",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Invoice Settings"
+ },
+ "PATCH /invoices/stats/last-visited-at": {
+  "name": "ghl_invoice_update_last_visited_at",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update invoice last visited at"
+ },
+ "PATCH /invoices/template/{templateId}/late-fees-configuration": {
+  "name": "ghl_invoice_update_template_late_fees_configuration",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update template late fees configuration"
+ },
+ "PATCH /invoices/template/{templateId}/payment-methods-configuration": {
+  "name": "ghl_invoice_update_payment_methods_configuration",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update template late fees configuration"
+ },
+ "DELETE /invoices/template/{templateId}": {
+  "name": "ghl_invoice_delete_template",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete template"
+ },
+ "GET /invoices/template/{templateId}": {
+  "name": "ghl_invoice_get_template",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get an template"
+ },
+ "PUT /invoices/template/{templateId}": {
+  "name": "ghl_invoice_update_template",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update template"
+ },
+ "GET /invoices/template": {
+  "name": "ghl_invoice_list_templates",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List templates"
+ },
+ "POST /invoices/template": {
+  "name": "ghl_invoice_create_template",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create template"
+ },
+ "POST /invoices/text2pay": {
+  "name": "ghl_invoice_text2pay",
+  "spec": "v3/invoices-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create & Send"
+ },
+ "PUT /knowledge-bases/{id}": {
+  "name": "ghl_kb_update_knowledge_base",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update a knowledge base"
+ },
+ "DELETE /knowledge-bases/{knowledgeBaseId}": {
+  "name": "ghl_kb_delete_knowledge_base",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete a knowledge base"
+ },
+ "GET /knowledge-bases/{knowledgeBaseId}": {
+  "name": "ghl_kb_get_knowledge_base_by_id",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get knowledge base by ID"
+ },
+ "GET /knowledge-bases/crawler/status": {
+  "name": "ghl_kb_get_crawling_status_for_latest_operation",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get crawling status for the latest operation"
+ },
+ "POST /knowledge-bases/crawler/train": {
+  "name": "ghl_kb_train_discovered_urls",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Train discovered website pages and ingest into the knowledge base"
+ },
+ "DELETE /knowledge-bases/crawler": {
+  "name": "ghl_kb_delete_trained_urls_for_knowledge_base",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete trained pages"
+ },
+ "GET /knowledge-bases/crawler": {
+  "name": "ghl_kb_get_all_website_urls_data_by_knowledge_base",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get all trained page links by knowledge base"
+ },
+ "POST /knowledge-bases/crawler": {
+  "name": "ghl_kb_discover_website",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Start crawling and discover pages for training"
+ },
+ "DELETE /knowledge-bases/faqs/{id}": {
+  "name": "ghl_kb_delete",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete an existing knowledge base FAQ"
+ },
+ "PUT /knowledge-bases/faqs/{id}": {
+  "name": "ghl_kb_update",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update an existing knowledge base FAQ"
+ },
+ "GET /knowledge-bases/faqs": {
+  "name": "ghl_kb_list",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get all FAQs by knowledge base with pagination support"
+ },
+ "POST /knowledge-bases/faqs": {
+  "name": "ghl_kb_create",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create a new FAQ inside knowledge base"
+ },
+ "GET /knowledge-bases/": {
+  "name": "ghl_kb_list_all_knowledge_bases_paginated",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get all knowledge bases for a location by location Id (paginated)"
+ },
+ "POST /knowledge-bases/": {
+  "name": "ghl_kb_create_knowledge_base",
+  "spec": "v3/knowledge-base-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create a new knowledge base (max 15 knowledge bases per location)"
+ },
+ "DELETE /links/{linkId}": {
+  "name": "ghl_link_delete",
+  "spec": "v3/links-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Link"
+ },
+ "PUT /links/{linkId}": {
+  "name": "ghl_link_update",
+  "spec": "v3/links-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Link"
+ },
+ "GET /links/": {
+  "name": "ghl_link_get",
+  "spec": "v3/links-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Links"
+ },
+ "GET /links/id/{linkId}": {
+  "name": "ghl_link_get_by_id",
+  "spec": "v3/links-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Link by ID"
+ },
+ "POST /links/": {
+  "name": "ghl_link_create",
+  "spec": "v3/links-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Link"
+ },
+ "GET /links/search": {
+  "name": "ghl_link_search_trigger",
+  "spec": "v3/links-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Search Trigger Links"
+ },
+ "GET /locations/{locationId}/conversationChannels/{type}": {
+  "name": "ghl_location_get_conversation_channel",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Conversation Channel"
+ },
+ "DELETE /locations/{locationId}/customFields/{id}": {
+  "name": "ghl_location_delete_custom_field",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Custom Field"
+ },
+ "GET /locations/{locationId}/customFields/{id}": {
+  "name": "ghl_location_get_custom_field",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Custom Field"
+ },
+ "PUT /locations/{locationId}/customFields/{id}": {
+  "name": "ghl_location_update_custom_field",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Custom Field"
+ },
+ "POST /locations/{locationId}/customFields/upload": {
+  "name": "ghl_location_upload_file_custom_fields",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Uploads File to customFields"
+ },
+ "GET /locations/{locationId}/customFields": {
+  "name": "ghl_location_get_custom_fields",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Custom Fields"
+ },
+ "POST /locations/{locationId}/customFields": {
+  "name": "ghl_location_create_custom_field",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Custom Field"
+ },
+ "DELETE /locations/{locationId}/customValues/{id}": {
+  "name": "ghl_location_delete_custom_value",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Custom Value"
+ },
+ "GET /locations/{locationId}/customValues/{id}": {
+  "name": "ghl_location_get_custom_value",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Custom Value"
+ },
+ "PUT /locations/{locationId}/customValues/{id}": {
+  "name": "ghl_location_update_custom_value",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Custom Value"
+ },
+ "GET /locations/{locationId}/customValues": {
+  "name": "ghl_location_get_custom_values",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Custom Values"
+ },
+ "POST /locations/{locationId}/customValues": {
+  "name": "ghl_location_create_custom_value",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Custom Value"
+ },
+ "GET /locations/{locationId}/permissions": {
+  "name": "ghl_location_get_permissions",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Permissions"
+ },
+ "PUT /locations/{locationId}/permissions": {
+  "name": "ghl_location_update_permissions",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Permissions"
+ },
+ "DELETE /locations/{locationId}/recurring-tasks/{id}": {
+  "name": "ghl_location_delete_recurring_task",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Recurring Task"
+ },
+ "GET /locations/{locationId}/recurring-tasks/{id}": {
+  "name": "ghl_location_get_recurring_task_by_id",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Recurring Task By Id"
+ },
+ "PUT /locations/{locationId}/recurring-tasks/{id}": {
+  "name": "ghl_location_update_recurring_task",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Recurring Task"
+ },
+ "POST /locations/{locationId}/recurring-tasks": {
+  "name": "ghl_location_create_recurring_task",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Recurring Task"
+ },
+ "DELETE /locations/{locationId}/tags/{tagId}": {
+  "name": "ghl_location_delete_tag",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete tag"
+ },
+ "GET /locations/{locationId}/tags/{tagId}": {
+  "name": "ghl_location_get_tag_by_id",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get tag by id"
+ },
+ "PUT /locations/{locationId}/tags/{tagId}": {
+  "name": "ghl_location_update_tag",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update tag"
+ },
+ "GET /locations/{locationId}/tags": {
+  "name": "ghl_location_get_tags",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Tags"
+ },
+ "POST /locations/{locationId}/tags": {
+  "name": "ghl_location_create_tag",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Tag"
+ },
+ "POST /locations/{locationId}/tasks/search": {
+  "name": "ghl_location_task_search",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Task Search Filter"
+ },
+ "DELETE /locations/{locationId}/templates/{id}": {
+  "name": "ghl_location_delete_an_email_sms_template",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "DELETE an email/sms template"
+ },
+ "GET /locations/{locationId}/templates": {
+  "name": "ghl_location_get_all_or_email_sms_templates",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "GET all or email/sms templates"
+ },
+ "GET /locations/{locationId}/timezones": {
+  "name": "ghl_location_get_timezones",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch Timezones"
+ },
+ "DELETE /locations/{locationId}": {
+  "name": "ghl_location_delete",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Sub-Account (Formerly Location)"
+ },
+ "GET /locations/{locationId}": {
+  "name": "ghl_location_get",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Sub-Account (Formerly Location)"
+ },
+ "PUT /locations/{locationId}": {
+  "name": "ghl_location_put",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Put Sub-Account (Formerly Location)"
+ },
+ "POST /locations/": {
+  "name": "ghl_location_create",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Sub-Account (Formerly Location)"
+ },
+ "GET /locations/search": {
+  "name": "ghl_location_search",
+  "spec": "v3/locations-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Search"
+ },
+ "DELETE /marketplace/app/{appId}/installations": {
+  "name": "ghl_marketplace_uninstall_application",
+  "spec": "v3/marketplace-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Uninstall an application"
+ },
+ "GET /marketplace/app/{appId}/installations": {
+  "name": "ghl_marketplace_get_installer_details",
+  "spec": "v3/marketplace-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Installer Details"
+ },
+ "GET /marketplace/app/{appId}/rebilling-config/location/{locationId}": {
+  "name": "ghl_marketplace_get_rebilling_config_for_app",
+  "spec": "v3/marketplace-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get rebilling config for an app subscription and usage plans"
+ },
+ "DELETE /marketplace/billing/charges/{chargeId}": {
+  "name": "ghl_marketplace_delete_charge",
+  "spec": "v3/marketplace-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Delete a wallet charge"
+ },
+ "GET /marketplace/billing/charges/{chargeId}": {
+  "name": "ghl_marketplace_get_specific_charge",
+  "spec": "v3/marketplace-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Get specific wallet charge details"
+ },
+ "GET /marketplace/billing/charges/has-funds": {
+  "name": "ghl_marketplace_has_funds",
+  "spec": "v3/marketplace-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Check if account has sufficient funds"
+ },
+ "GET /marketplace/billing/charges": {
+  "name": "ghl_marketplace_get_charges",
+  "spec": "v3/marketplace-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Get all wallet charges"
+ },
+ "POST /marketplace/billing/charges": {
+  "name": "ghl_marketplace_charge",
+  "spec": "v3/marketplace-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Create a new wallet charge"
+ },
+ "POST /marketplace/external-auth/migration": {
+  "name": "ghl_marketplace_migrate_connection",
+  "spec": "v3/marketplace-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Migrate external authentication connection"
+ },
+ "DELETE /medias/{id}": {
+  "name": "ghl_media_delete_content",
+  "spec": "v3/medias-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete File or Folder"
+ },
+ "POST /medias/{id}": {
+  "name": "ghl_media_update_object",
+  "spec": "v3/medias-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update File/ Folder"
+ },
+ "PUT /medias/delete-files": {
+  "name": "ghl_media_bulk_delete_objects",
+  "spec": "v3/medias-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Bulk Delete / Trash Files or Folders"
+ },
+ "GET /medias/files": {
+  "name": "ghl_media_fetch_content",
+  "spec": "v3/medias-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get List of Files/ Folders"
+ },
+ "POST /medias/folder": {
+  "name": "ghl_media_create_folder",
+  "spec": "v3/medias-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Folder"
+ },
+ "PUT /medias/update-files": {
+  "name": "ghl_media_bulk_update_objects",
+  "spec": "v3/medias-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Bulk Update Files/ Folders"
+ },
+ "POST /medias/upload-file": {
+  "name": "ghl_media_upload_content",
+  "spec": "v3/medias-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Upload File into Media Storage"
+ },
+ "GET /oauth/installed-locations": {
+  "name": "ghl_oauth_get_installed_location_get2",
+  "spec": "v3/oauth-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Location where app is installed"
+ },
+ "POST /oauth/location-token": {
+  "name": "ghl_oauth_get_location_access_token_post2",
+  "spec": "v3/oauth-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Location Access Token from Agency Token"
+ },
+ "POST /oauth/token": {
+  "name": "ghl_oauth_get_access_token",
+  "spec": "v3/oauth-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Access Token"
+ },
+ "GET /objects/{key}": {
+  "name": "ghl_object_get_schema_by_key",
+  "spec": "v3/objects-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Object Schema by key / id"
+ },
+ "PUT /objects/{key}": {
+  "name": "ghl_object_update_custom",
+  "spec": "v3/objects-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Object Schema By Key / Id"
+ },
+ "DELETE /objects/{schemaKey}/records/{id}": {
+  "name": "ghl_object_delete_record",
+  "spec": "v3/objects-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Record"
+ },
+ "GET /objects/{schemaKey}/records/{id}": {
+  "name": "ghl_object_get_record_by_id",
+  "spec": "v3/objects-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Record By Id"
+ },
+ "PUT /objects/{schemaKey}/records/{id}": {
+  "name": "ghl_object_update_record",
+  "spec": "v3/objects-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Record"
+ },
+ "POST /objects/{schemaKey}/records/search": {
+  "name": "ghl_object_search_records",
+  "spec": "v3/objects-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Search Object Records"
+ },
+ "POST /objects/{schemaKey}/records": {
+  "name": "ghl_object_create_record",
+  "spec": "v3/objects-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Record"
+ },
+ "GET /objects/": {
+  "name": "ghl_object_get_by_location_id",
+  "spec": "v3/objects-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get all objects for a location"
+ },
+ "POST /objects/": {
+  "name": "ghl_object_create_custom_schema",
+  "spec": "v3/objects-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Custom Object"
+ },
+ "DELETE /opportunities/{id}/followers": {
+  "name": "ghl_opportunity_remove_followers",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Remove Followers"
+ },
+ "POST /opportunities/{id}/followers": {
+  "name": "ghl_opportunity_add_followers",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Add Followers"
+ },
+ "PUT /opportunities/{id}/status": {
+  "name": "ghl_opportunity_update_status",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Opportunity Status"
+ },
+ "DELETE /opportunities/{id}": {
+  "name": "ghl_opportunity_delete",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Opportunity"
+ },
+ "GET /opportunities/{id}": {
+  "name": "ghl_opportunity_get",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Opportunity"
+ },
+ "PUT /opportunities/{id}": {
+  "name": "ghl_opportunity_update",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Opportunity"
+ },
+ "GET /opportunities/lost-reason": {
+  "name": "ghl_opportunity_get_lost_reason",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get lost reason"
+ },
+ "GET /opportunities/pipelines": {
+  "name": "ghl_opportunity_get_pipelines",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Pipelines"
+ },
+ "POST /opportunities/": {
+  "name": "ghl_opportunity_create",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Opportunity"
+ },
+ "GET /opportunities/search": {
+  "name": "ghl_opportunity_search",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Search Opportunity"
+ },
+ "POST /opportunities/search": {
+  "name": "ghl_opportunity_search_opportunities_advanced",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Search Opportunities"
+ },
+ "POST /opportunities/upsert": {
+  "name": "ghl_opportunity_upsert",
+  "spec": "v3/opportunities-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Upsert Opportunity"
+ },
+ "GET /payments/coupon/list": {
+  "name": "ghl_payment_list_coupons",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Coupons"
+ },
+ "DELETE /payments/coupon": {
+  "name": "ghl_payment_delete_coupon",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Coupon"
+ },
+ "GET /payments/coupon": {
+  "name": "ghl_payment_get_coupon",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch Coupon"
+ },
+ "POST /payments/coupon": {
+  "name": "ghl_payment_create_coupon",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Coupon"
+ },
+ "PUT /payments/coupon": {
+  "name": "ghl_payment_update_coupon",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Coupon"
+ },
+ "PUT /payments/custom-provider/capabilities": {
+  "name": "ghl_payment_custom_provider_marketplace_app_update_capabilities",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Custom-provider marketplace app update capabilities"
+ },
+ "GET /payments/custom-provider/connect": {
+  "name": "ghl_payment_fetch_config",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch given provider config"
+ },
+ "POST /payments/custom-provider/connect": {
+  "name": "ghl_payment_create_config",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create new provider config"
+ },
+ "POST /payments/custom-provider/disconnect": {
+  "name": "ghl_payment_disconnect_config",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Disconnect existing provider config"
+ },
+ "DELETE /payments/custom-provider/provider": {
+  "name": "ghl_payment_delete_integration",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Deleting an existing integration"
+ },
+ "POST /payments/custom-provider/provider": {
+  "name": "ghl_payment_create_integration",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create new integration"
+ },
+ "GET /payments/integrations/provider/whitelabel": {
+  "name": "ghl_payment_list_integration_providers",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List White-label Integration Providers"
+ },
+ "POST /payments/integrations/provider/whitelabel": {
+  "name": "ghl_payment_create_integration_provider",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create White-label Integration Provider"
+ },
+ "GET /payments/orders/{orderId}/fulfillments": {
+  "name": "ghl_payment_list_order_fulfillment",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List fulfillment"
+ },
+ "POST /payments/orders/{orderId}/fulfillments": {
+  "name": "ghl_payment_create_order_fulfillment",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create order fulfillment"
+ },
+ "GET /payments/orders/{orderId}/notes": {
+  "name": "ghl_payment_list_order_notes",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Order Notes"
+ },
+ "POST /payments/orders/{orderId}/record-payment": {
+  "name": "ghl_payment_record_order",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Record Order Payment"
+ },
+ "GET /payments/orders/{orderId}": {
+  "name": "ghl_payment_get_order_by_id",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Order by ID"
+ },
+ "GET /payments/orders": {
+  "name": "ghl_payment_list_orders",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Orders"
+ },
+ "GET /payments/subscriptions/{subscriptionId}": {
+  "name": "ghl_payment_get_subscription_by_id",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Subscription by ID"
+ },
+ "GET /payments/subscriptions": {
+  "name": "ghl_payment_list_subscriptions",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Subscriptions"
+ },
+ "GET /payments/transactions/{transactionId}": {
+  "name": "ghl_payment_get_transaction_by_id",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Transaction by ID"
+ },
+ "GET /payments/transactions": {
+  "name": "ghl_payment_list_transactions",
+  "spec": "v3/payments-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Transactions"
+ },
+ "GET /phone-system/number-pools": {
+  "name": "ghl_phone_get_number_pool_list",
+  "spec": "v3/phone-system-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "List number pools"
+ },
+ "GET /phone-system/numbers/location/{locationId}/available": {
+  "name": "ghl_phone_list_available_numbers_for_acountry",
+  "spec": "v3/phone-system-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "List available phone numbers"
+ },
+ "POST /phone-system/numbers/location/{locationId}/purchase": {
+  "name": "ghl_phone_purchase_number_for_location",
+  "spec": "v3/phone-system-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Purchase number for location"
+ },
+ "GET /phone-system/numbers/location/{locationId}": {
+  "name": "ghl_phone_active_numbers",
+  "spec": "v3/phone-system-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List active numbers"
+ },
+ "DELETE /products/{productId}/price/{priceId}": {
+  "name": "ghl_product_delete_price_by_id_for",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Price by ID for a Product"
+ },
+ "GET /products/{productId}/price/{priceId}": {
+  "name": "ghl_product_get_price_by_id_for",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Price by ID for a Product"
+ },
+ "PUT /products/{productId}/price/{priceId}": {
+  "name": "ghl_product_update_price_by_id_for",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Price by ID for a Product"
+ },
+ "GET /products/{productId}/price": {
+  "name": "ghl_product_list_prices_for",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Prices for a Product"
+ },
+ "POST /products/{productId}/price": {
+  "name": "ghl_product_create_price_for",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Price for a Product"
+ },
+ "DELETE /products/{productId}": {
+  "name": "ghl_product_delete_by_id",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Product by ID"
+ },
+ "GET /products/{productId}": {
+  "name": "ghl_product_get_by_id",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Product by ID"
+ },
+ "PUT /products/{productId}": {
+  "name": "ghl_product_update_by_id",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Product by ID"
+ },
+ "POST /products/bulk-update/edit": {
+  "name": "ghl_product_bulk_edit",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Bulk Edit Products and Prices"
+ },
+ "POST /products/bulk-update": {
+  "name": "ghl_product_bulk_update",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Bulk Update Products"
+ },
+ "DELETE /products/collections/{collectionId}": {
+  "name": "ghl_product_delete_collection",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Product Collection"
+ },
+ "GET /products/collections/{collectionId}": {
+  "name": "ghl_product_get_collection_id",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Details about individual product collection"
+ },
+ "PUT /products/collections/{collectionId}": {
+  "name": "ghl_product_update_collection",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Product Collection"
+ },
+ "GET /products/collections": {
+  "name": "ghl_product_get_collection",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch Product Collections"
+ },
+ "POST /products/collections": {
+  "name": "ghl_product_create_collection",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Product Collection"
+ },
+ "GET /products/": {
+  "name": "ghl_product_list_invoices",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Products"
+ },
+ "GET /products/inventory": {
+  "name": "ghl_product_get_list_inventory",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Inventory"
+ },
+ "POST /products/inventory": {
+  "name": "ghl_product_update_inventory",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Inventory"
+ },
+ "POST /products/": {
+  "name": "ghl_product_create",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Product"
+ },
+ "DELETE /products/reviews/{reviewId}": {
+  "name": "ghl_product_delete_review",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Product Review"
+ },
+ "PUT /products/reviews/{reviewId}": {
+  "name": "ghl_product_update_review",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Product Reviews"
+ },
+ "POST /products/reviews/bulk-update": {
+  "name": "ghl_product_bulk_update_review",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Product Reviews"
+ },
+ "GET /products/reviews/count": {
+  "name": "ghl_product_get_reviews_count",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch Review Count as per status"
+ },
+ "GET /products/reviews": {
+  "name": "ghl_product_get_reviews",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch Product Reviews"
+ },
+ "POST /products/store/{storeId}/priority": {
+  "name": "ghl_product_update_display_priority",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update product display priorities in store"
+ },
+ "GET /products/store/{storeId}/stats": {
+  "name": "ghl_product_get_store_stats",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch Product Store Stats"
+ },
+ "POST /products/store/{storeId}": {
+  "name": "ghl_product_update_store_status",
+  "spec": "v3/products-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Action to include/exclude the product in store"
+ },
+ "POST /proposals/document/send": {
+  "name": "ghl_proposal_send_documents_contracts",
+  "spec": "v3/proposals-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Send document"
+ },
+ "GET /proposals/document": {
+  "name": "ghl_proposal_list_documents_contracts",
+  "spec": "v3/proposals-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List documents"
+ },
+ "POST /proposals/templates/send": {
+  "name": "ghl_proposal_send_documents_contracts_template",
+  "spec": "v3/proposals-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Send template"
+ },
+ "GET /proposals/templates": {
+  "name": "ghl_proposal_list_documents_contracts_templates",
+  "spec": "v3/proposals-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List templates"
+ },
+ "GET /saas-api/public-api/agency-plans/{companyId}": {
+  "name": "ghl_saas_get_agency_plans_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Get Agency Plans"
+ },
+ "POST /saas-api/public-api/bulk-disable-saas/{companyId}": {
+  "name": "ghl_saas_bulk_disable_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Disable SaaS for locations"
+ },
+ "POST /saas-api/public-api/bulk-enable-saas/{companyId}": {
+  "name": "ghl_saas_bulk_enable_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Bulk Enable SaaS"
+ },
+ "POST /saas-api/public-api/companies/{companyId}/locations/{locationId}/wallet-balance/complimentary-credits": {
+  "name": "ghl_saas_update_location_wallet_balance",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Location Wallet Balance"
+ },
+ "GET /saas-api/public-api/companies/{companyId}/locations/{locationId}/wallet-balance": {
+  "name": "ghl_saas_get_location_wallet_balance",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Location Wallet Balance"
+ },
+ "POST /saas-api/public-api/enable-saas/{locationId}": {
+  "name": "ghl_saas_enable_location_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Enable SaaS for Sub-Account (Formerly Location)"
+ },
+ "GET /saas-api/public-api/get-saas-subscription/{locationId}": {
+  "name": "ghl_saas_get_location_subscription_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Get Location Subscription Details"
+ },
+ "GET /saas-api/public-api/locations": {
+  "name": "ghl_saas_locations_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Get locations by stripeId with companyId"
+ },
+ "POST /saas-api/public-api/pause/{locationId}": {
+  "name": "ghl_saas_pause_location_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Pause location"
+ },
+ "GET /saas-api/public-api/saas-locations/{companyId}": {
+  "name": "ghl_saas_get_locations_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Get SaaS Locations"
+ },
+ "GET /saas-api/public-api/saas-plan/{planId}": {
+  "name": "ghl_saas_get_plan_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Get SaaS Plan"
+ },
+ "POST /saas-api/public-api/update-rebilling/{companyId}": {
+  "name": "ghl_saas_update_rebilling_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Update Rebilling"
+ },
+ "PUT /saas-api/public-api/update-saas-subscription/{locationId}": {
+  "name": "ghl_saas_generate_payment_link_deprecated",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": true,
+  "summary": "Update SaaS subscription"
+ },
+ "GET /saas/agency-plans/{companyId}": {
+  "name": "ghl_saas_get_agency_plans",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Agency Plans"
+ },
+ "POST /saas/allow-attach-rebilling/{locationId}": {
+  "name": "ghl_saas_allow_attach_rebilling",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Allow Attach Rebilling"
+ },
+ "POST /saas/bulk-disable-saas/{companyId}": {
+  "name": "ghl_saas_bulk_disable",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Disable SaaS for locations"
+ },
+ "POST /saas/bulk-enable-saas/{companyId}": {
+  "name": "ghl_saas_bulk_enable",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Bulk Enable SaaS"
+ },
+ "POST /saas/enable-saas/{locationId}": {
+  "name": "ghl_saas_enable_location",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Enable SaaS for Sub-Account (Formerly Location)"
+ },
+ "GET /saas/get-saas-subscription/{locationId}": {
+  "name": "ghl_saas_get_location_subscription",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Location Subscription Details"
+ },
+ "GET /saas/locations": {
+  "name": "ghl_saas_locations",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get locations by stripeId with companyId"
+ },
+ "POST /saas/pause/{locationId}": {
+  "name": "ghl_saas_pause_location",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Pause location"
+ },
+ "GET /saas/saas-locations/{companyId}": {
+  "name": "ghl_saas_get_locations",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get SaaS Locations"
+ },
+ "GET /saas/saas-plan/{planId}": {
+  "name": "ghl_saas_get_plan",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get SaaS Plan"
+ },
+ "POST /saas/update-rebilling/{companyId}": {
+  "name": "ghl_saas_update_rebilling",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Rebilling"
+ },
+ "PUT /saas/update-saas-subscription/{locationId}": {
+  "name": "ghl_saas_generate_payment_link",
+  "spec": "v3/saas-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update SaaS subscription"
+ },
+ "GET /snapshots/": {
+  "name": "ghl_snapshot_get_custom",
+  "spec": "v3/snapshots-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Snapshots"
+ },
+ "POST /snapshots/share/link": {
+  "name": "ghl_snapshot_create_share_link",
+  "spec": "v3/snapshots-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Snapshot Share Link"
+ },
+ "GET /snapshots/snapshot-status/{snapshotId}/location/{locationId}": {
+  "name": "ghl_snapshot_get_latest_push",
+  "spec": "v3/snapshots-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Last Snapshot Push"
+ },
+ "GET /snapshots/snapshot-status/{snapshotId}": {
+  "name": "ghl_snapshot_get_push",
+  "spec": "v3/snapshots-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Snapshot Push between Dates"
+ },
+ "DELETE /social-media-posting/{locationId}/accounts/{id}": {
+  "name": "ghl_social_delete_account",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Account"
+ },
+ "GET /social-media-posting/{locationId}/accounts": {
+  "name": "ghl_social_get_account",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Accounts"
+ },
+ "GET /social-media-posting/{locationId}/categories/{id}": {
+  "name": "ghl_social_get_categories_id",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get categories by id"
+ },
+ "GET /social-media-posting/{locationId}/categories": {
+  "name": "ghl_social_get_categories_location_id",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get categories by location id"
+ },
+ "DELETE /social-media-posting/{locationId}/csv/{csvId}/post/{postId}": {
+  "name": "ghl_social_delete_csv_post",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete CSV Post"
+ },
+ "DELETE /social-media-posting/{locationId}/csv/{id}": {
+  "name": "ghl_social_delete_csv",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete CSV"
+ },
+ "GET /social-media-posting/{locationId}/csv/{id}": {
+  "name": "ghl_social_get_csv_post",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get CSV Post"
+ },
+ "PATCH /social-media-posting/{locationId}/csv/{id}": {
+  "name": "ghl_social_start_csv_finalize",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Start CSV Finalize"
+ },
+ "GET /social-media-posting/{locationId}/csv": {
+  "name": "ghl_social_get_upload_status",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Upload Status"
+ },
+ "POST /social-media-posting/{locationId}/csv": {
+  "name": "ghl_social_upload_csv",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Upload CSV"
+ },
+ "DELETE /social-media-posting/{locationId}/posts/{id}": {
+  "name": "ghl_social_delete_post",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Post"
+ },
+ "GET /social-media-posting/{locationId}/posts/{id}": {
+  "name": "ghl_social_get_post",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get post"
+ },
+ "PUT /social-media-posting/{locationId}/posts/{id}": {
+  "name": "ghl_social_edit_post",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Edit post"
+ },
+ "POST /social-media-posting/{locationId}/posts/bulk-delete": {
+  "name": "ghl_social_bulk_delete_planner_posts",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Bulk Delete Social Planner Posts"
+ },
+ "POST /social-media-posting/{locationId}/posts/list": {
+  "name": "ghl_social_get_posts",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get posts"
+ },
+ "POST /social-media-posting/{locationId}/posts": {
+  "name": "ghl_social_create_post",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create post"
+ },
+ "POST /social-media-posting/{locationId}/set-accounts": {
+  "name": "ghl_social_set_accounts",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Set Accounts"
+ },
+ "POST /social-media-posting/{locationId}/tags/details": {
+  "name": "ghl_social_get_tags_by_ids",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get tags by ids"
+ },
+ "GET /social-media-posting/{locationId}/tags": {
+  "name": "ghl_social_get_tags_location_id",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get tags by location id"
+ },
+ "DELETE /social-media-posting/category/queues/{postId}/active-post": {
+  "name": "ghl_social_delete_current_active_post_and_schedule_next",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete an active post and schedule the next one"
+ },
+ "POST /social-media-posting/category/queues/{queueId}/create/item": {
+  "name": "ghl_social_create_queue_item",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create a new item in the queue"
+ },
+ "POST /social-media-posting/category/queues/{queueId}/edit/calendar": {
+  "name": "ghl_social_fetch_edit_session_calendar",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch calendar view for an edit session"
+ },
+ "POST /social-media-posting/category/queues/{queueId}/edit/discard": {
+  "name": "ghl_social_discard_edit_session",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Discard edit session changes"
+ },
+ "POST /social-media-posting/category/queues/{queueId}/edit/save": {
+  "name": "ghl_social_save_edit_session",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Save edit session changes"
+ },
+ "POST /social-media-posting/category/queues/{queueId}/edit/start": {
+  "name": "ghl_social_start_edit_session",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Start or resume an edit session"
+ },
+ "POST /social-media-posting/category/queues/{queueId}/items/{itemId}/clone": {
+  "name": "ghl_social_clone_queue_item",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Clone a queue item"
+ },
+ "PUT /social-media-posting/category/queues/{queueId}/items/{itemId}/reset": {
+  "name": "ghl_social_reset_queue_item",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Reset an item in a queue"
+ },
+ "DELETE /social-media-posting/category/queues/{queueId}/items/{itemId}": {
+  "name": "ghl_social_delete_queue_item",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete an item from a queue"
+ },
+ "PUT /social-media-posting/category/queues/{queueId}/items/{itemId}": {
+  "name": "ghl_social_update_queue_item",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update an item in a queue"
+ },
+ "POST /social-media-posting/category/queues/{queueId}/items": {
+  "name": "ghl_social_fetch_queue_items",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch items from a queue"
+ },
+ "POST /social-media-posting/category/queues/{queueId}/slots": {
+  "name": "ghl_social_fetch_slots",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch slot information for queue items"
+ },
+ "GET /social-media-posting/category/queues/{queueId}": {
+  "name": "ghl_social_fetch_queue_by_id",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch a category queue by ID"
+ },
+ "PUT /social-media-posting/category/queues/{queueId}": {
+  "name": "ghl_social_update_queue",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update queue settings or status"
+ },
+ "GET /social-media-posting/category/queues/available-categories": {
+  "name": "ghl_social_fetch_available_categories",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get all categories with their queue status"
+ },
+ "POST /social-media-posting/category/queues/list/calendar": {
+  "name": "ghl_social_fetch_calendar_list",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get scheduled posts calendar view"
+ },
+ "POST /social-media-posting/category/queues/list": {
+  "name": "ghl_social_fetch_queues",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Fetch category queues for a location"
+ },
+ "POST /social-media-posting/category/queues": {
+  "name": "ghl_social_create_queue",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create a new category queue"
+ },
+ "DELETE /social-media-posting/comments/{platform}/{id}/like": {
+  "name": "ghl_social_delete_like",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Unlike a comment"
+ },
+ "POST /social-media-posting/comments/{platform}/{id}/like": {
+  "name": "ghl_social_create_like",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Like a comment"
+ },
+ "POST /social-media-posting/comments/{platform}/list": {
+  "name": "ghl_social_get_comment_list",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List comments for a post or thread"
+ },
+ "POST /social-media-posting/comments/{platform}": {
+  "name": "ghl_social_create_comment",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create a comment or reply"
+ },
+ "GET /social-media-posting/oauth/{locationId}/{platform}/accounts/{accountId}": {
+  "name": "ghl_social_get_oauth_accounts",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Available Accounts (Step 2 of 3)"
+ },
+ "POST /social-media-posting/oauth/{locationId}/{platform}/accounts/{accountId}": {
+  "name": "ghl_social_attach_oauth_accounts",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Connect Account (Step 3 of 3)"
+ },
+ "GET /social-media-posting/oauth/{platform}/start": {
+  "name": "ghl_social_start_oauth",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Start OAuth Flow (Step 1 of 3)"
+ },
+ "POST /social-media-posting/statistics": {
+  "name": "ghl_social_get_statistics",
+  "spec": "v3/social-planner-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Social Media Statistics"
+ },
+ "DELETE /store/shipping-carrier/{shippingCarrierId}": {
+  "name": "ghl_store_delete_shipping_carrier",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Delete shipping carrier"
+ },
+ "GET /store/shipping-carrier/{shippingCarrierId}": {
+  "name": "ghl_store_get_shipping_carriers",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Get Shipping Carrier"
+ },
+ "PUT /store/shipping-carrier/{shippingCarrierId}": {
+  "name": "ghl_store_update_shipping_carrier",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Update Shipping Carrier"
+ },
+ "GET /store/shipping-carrier": {
+  "name": "ghl_store_list_shipping_carriers",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "List Shipping Carriers"
+ },
+ "POST /store/shipping-carrier": {
+  "name": "ghl_store_create_shipping_carrier",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Create Shipping Carrier"
+ },
+ "DELETE /store/shipping-zone/{shippingZoneId}/shipping-rate/{shippingRateId}": {
+  "name": "ghl_store_delete_shipping_rate",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Delete shipping rate"
+ },
+ "GET /store/shipping-zone/{shippingZoneId}/shipping-rate/{shippingRateId}": {
+  "name": "ghl_store_get_shipping_rates",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Get Shipping Rate"
+ },
+ "PUT /store/shipping-zone/{shippingZoneId}/shipping-rate/{shippingRateId}": {
+  "name": "ghl_store_update_shipping_rate",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Update Shipping Rate"
+ },
+ "GET /store/shipping-zone/{shippingZoneId}/shipping-rate": {
+  "name": "ghl_store_list_shipping_rates",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "List Shipping Rates"
+ },
+ "POST /store/shipping-zone/{shippingZoneId}/shipping-rate": {
+  "name": "ghl_store_create_shipping_rate",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Create Shipping Rate"
+ },
+ "DELETE /store/shipping-zone/{shippingZoneId}": {
+  "name": "ghl_store_delete_shipping_zone",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Delete shipping zone"
+ },
+ "GET /store/shipping-zone/{shippingZoneId}": {
+  "name": "ghl_store_get_shipping_zones",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Get Shipping Zone"
+ },
+ "PUT /store/shipping-zone/{shippingZoneId}": {
+  "name": "ghl_store_update_shipping_zone",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Update Shipping Zone"
+ },
+ "POST /store/shipping-zone/shipping-rates": {
+  "name": "ghl_store_get_available_shipping_zones",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Get available shipping rates"
+ },
+ "GET /store/shipping-zone": {
+  "name": "ghl_store_list_shipping_zones",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "List Shipping Zones"
+ },
+ "POST /store/shipping-zone": {
+  "name": "ghl_store_create_shipping_zone",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Create Shipping Zone"
+ },
+ "GET /store/store-setting": {
+  "name": "ghl_store_get_settings",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Get Store Settings"
+ },
+ "POST /store/store-setting": {
+  "name": "ghl_store_create_setting",
+  "spec": "v3/store-v3.json",
+  "version": "",
+  "deprecated": false,
+  "summary": "Create/Update Store Settings"
+ },
+ "GET /surveys/": {
+  "name": "ghl_survey_get",
+  "spec": "v3/surveys-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Surveys"
+ },
+ "GET /surveys/submissions": {
+  "name": "ghl_survey_get_submissions",
+  "spec": "v3/surveys-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Surveys Submissions"
+ },
+ "DELETE /users/{userId}": {
+  "name": "ghl_user_delete",
+  "spec": "v3/users-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete User"
+ },
+ "GET /users/{userId}": {
+  "name": "ghl_user_get",
+  "spec": "v3/users-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get User"
+ },
+ "PUT /users/{userId}": {
+  "name": "ghl_user_update",
+  "spec": "v3/users-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update User"
+ },
+ "POST /users/": {
+  "name": "ghl_user_create",
+  "spec": "v3/users-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create User"
+ },
+ "POST /users/search/filter-by-email": {
+  "name": "ghl_user_filter_by_email",
+  "spec": "v3/users-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Filter Users by Email"
+ },
+ "GET /users/search": {
+  "name": "ghl_user_search",
+  "spec": "v3/users-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Search Users"
+ },
+ "DELETE /voice-ai/actions/{actionId}": {
+  "name": "ghl_voice_ai_delete_action",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Agent Action"
+ },
+ "GET /voice-ai/actions/{actionId}": {
+  "name": "ghl_voice_ai_get_action",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Agent Action"
+ },
+ "PUT /voice-ai/actions/{actionId}": {
+  "name": "ghl_voice_ai_update_action",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Update Agent Action"
+ },
+ "POST /voice-ai/actions": {
+  "name": "ghl_voice_ai_create_action",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Agent Action"
+ },
+ "DELETE /voice-ai/agents/{agentId}": {
+  "name": "ghl_voice_ai_delete_agent",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Delete Agent"
+ },
+ "GET /voice-ai/agents/{agentId}": {
+  "name": "ghl_voice_ai_get_agent",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Agent"
+ },
+ "PATCH /voice-ai/agents/{agentId}": {
+  "name": "ghl_voice_ai_patch_agent",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Patch Agent"
+ },
+ "GET /voice-ai/agents": {
+  "name": "ghl_voice_ai_get_agents",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Agents"
+ },
+ "POST /voice-ai/agents": {
+  "name": "ghl_voice_ai_create_agent",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Create Agent"
+ },
+ "GET /voice-ai/dashboard/call-logs/{callId}": {
+  "name": "ghl_voice_ai_get_call_log",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Call Log"
+ },
+ "GET /voice-ai/dashboard/call-logs": {
+  "name": "ghl_voice_ai_get_call_logs",
+  "spec": "v3/voice-ai-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "List Call Logs"
+ },
+ "GET /workflows/": {
+  "name": "ghl_workflow_get",
+  "spec": "v3/workflows-v3.json",
+  "version": "v3",
+  "deprecated": false,
+  "summary": "Get Workflow"
+ }
+}
