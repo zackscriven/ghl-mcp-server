@@ -57,6 +57,22 @@ export interface OperationOverride {
   forceRequired?: string[];
   /** Content type override, e.g. multipart/form-data uploads. */
   contentType?: string;
+  /**
+   * Patch the request-body schema when the upstream spec is demonstrably wrong
+   * (e.g. a field emitted as an empty `object` schema that the live API
+   * validates as a string enum, or a `required` list that 422s every call).
+   * Applied by registry.ts AFTER the verbatim spec schema is selected, so a
+   * spec regeneration cannot silently clobber the fix. Each use MUST document
+   * why in `note` and/or the domain notes.
+   */
+  patchBody?: {
+    /** Replace these body property schemas wholesale (keyed by property name). */
+    properties?: Record<string, Record<string, unknown>>;
+    /** Replace the body schema's `required` array (pass [] to clear it). */
+    required?: string[];
+    /** Why this patch exists — date it. */
+    note: string;
+  };
 }
 
 export interface DomainOverrides {

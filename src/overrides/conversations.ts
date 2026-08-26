@@ -14,7 +14,8 @@ export const conversationsOverrides: DomainOverrides = {
     "Deprecated-but-usable ops kept registered with descriptionNote naming the documented replacement: the 3 agent-studio /public-api/agents* legacy endpoints each explicitly say 'use GET /agent[/:agentId][/execute] instead' in their spec description.",
     "Skipped as truly unusable (not registry-fixable, spec explicitly disclaims support): POST /conversations/messages/review-reply, POST /conversations/messages/upload/complete, POST /conversations/messages/upload/initiate — all three spec descriptions state verbatim 'This endpoint is internal-only and is not supported for OAuth or public API integrations. It will be removed from the public OpenAPI specification in a future release.' An MCP server calling with an API-key/OAuth token cannot use these; the non-deprecated POST /conversations/messages/upload already covers the functional file-upload need.",
     "Binary/non-JSON responses: GET /conversations/messages/{messageId}/locations/{locationId}/recording returns audio/x-wav (not JSON) and GET /conversations/locations/{locationId}/messages/{messageId}/transcription/download returns text/plain as a file attachment (not JSON) — both spec'd via response `headers` (Content-Type/Content-Disposition) rather than a `content` schema. Added descriptionNote on each. GET .../transcription (no /download) DOES return normal JSON and needed no note.",
-    "POST /conversations/messages (send-a-new-message): requestBody.required per spec is [type, subType, contactId, status] — `status` and `subType` being globally required is unusual for a message-send call (status reads like a response-model field bleeding into the request schema) but this is what the canonical v3 spec documents; not overridden since rule 1/5 only cover demonstrably-wrong version headers and under-marked required params, not stylistic required-field questions. Flagged via descriptionNote since this is the primary PHI-adjacent send path and callers will hit 400s if they omit `status`.",
+    "POST /conversations/messages (send-a-new-message): SUPERSEDED 2026-08-26 — the earlier stance ('spec says [type, subType, contactId, status] required, not overridden') proved untenable: `subType` is emitted as an empty object schema, so passing a string failed client-side validation and passing {} passed validation but the live API 422'd ('subType must be a valid enum value', CONVERSATIONS_VALIDATION_ERROR). Every code path was dead. Now fixed via patchBody override (subType/status optional strings, required [type, contactId]) — the first use of the patchBody mechanism added to types.ts/registry.ts the same day.",
+    "Regression scan 2026-08-26 (empty-object-schema-with-scalar-example pattern): within the conversations spec, POST /conversations/messages is the ONLY occurrence — inbound/outbound (add_inbound_message/add_outbound_message) declare no subType field at all. The same upstream pattern DOES exist in other domains' specs (contacts dateOfBirth, associations labels/keys, opportunities.upsert monetaryValue, products review status, social postType/type, phone purchase numberType, social queue status) — candidates for the same patchBody treatment in their own domain audits, not patched from here.",
     "Naming: renamed ~20 awkward/ambiguous/duplicate-looking auto-generated names in this domain (see overrides below) — notably GET /chat-widget/public/config/{id} was generated as the literally broken 'ghl_chat_widget_get_get2', and GET /phone-system/numbers/location/{locationId}/available carried a typo ('acountry').",
     "GET /chat-widget/public/config/{id} has no `security` block in the spec (unlike every sibling chat-widget op) — appears to be the intentionally public/unauthenticated widget-embed config fetch. Noted via descriptionNote; left registered since a valid API key still works against it.",
   ],
@@ -52,7 +53,30 @@ export const conversationsOverrides: DomainOverrides = {
     },
     "POST /conversations/messages": {
       name: "ghl_conversation_send_message",
-      descriptionNote: "PHI-adjacent: sends a message on a real conversation thread. Per the official spec, requestBody.required = [type, subType, contactId, status] — all four must be supplied or the API returns 400, even though `status` is unusual to set on an outbound send (it reads like a response field). Populate type-appropriate fields (message/html/subject for Email, fromNumber/toNumber for SMS-style channels, attachments as URLs) alongside the required set.",
+      descriptionNote:
+        "PHI-adjacent: sends a message on a real conversation thread. " +
+        "DELIBERATE OVERRIDE of the broken upstream spec (2026-08-26): the official conversations-v3.json declares `subType` as an empty object schema (the live API validates it as a string enum, so `{}` 422s with 'subType must be a valid enum value') and marks [type, subType, contactId, status] as required (forcing subType/status is what makes every call fail — a plain SMS needs only type + contactId + message). " +
+        "This tool therefore requires only `type` and `contactId`; `subType` and `status` are optional strings and are OMITTED from the outbound request entirely when not supplied (the API validates the key if present). The spec enumerates no valid subType values — pass one only if you know it from GHL docs. " +
+        "Populate type-appropriate fields alongside: message (+ fromNumber/toNumber) for SMS-style channels; html/subject/emailTo/emailCc for Email; attachments as URLs. " +
+        "If the spec extractor is re-run, keep this patchBody override — do not let regeneration silently restore the broken schema.",
+      patchBody: {
+        properties: {
+          subType: {
+            type: "string",
+            description:
+              "Message sub-type. OPTIONAL — omit for normal sends. The official spec declares this as an empty object schema and enumerates no valid values (spec gap); the live API validates it as a string enum when the key is present, so only pass a value you know to be valid.",
+          },
+          status: {
+            type: "string",
+            enum: ["delivered", "failed", "pending", "read"],
+            description:
+              "Message status. OPTIONAL — reads like a response/inbound-recording field; do not set on a normal outbound send.",
+          },
+        },
+        required: ["type", "contactId"],
+        note:
+          "2026-08-26: upstream spec bug — subType emitted as empty object schema (string enum in the live API) and subType/status wrongly required, which 422'd every send (CONVERSATIONS_VALIDATION_ERROR). Made both optional strings, required now [type, contactId]. Omitted-when-absent is free: http.ts serializes args.body verbatim.",
+      },
     },
     "POST /conversations/messages/upload": {
       contentType: "multipart/form-data",

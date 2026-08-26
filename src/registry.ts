@@ -92,8 +92,56 @@ function buildInputSchema(op: Operation, ov: OperationOverride | undefined, cont
     if (p.in === "path" || p.required || ov?.forceRequired?.includes(p.name)) required.push(p.name);
   }
 
-  const bodySchema = op.requestBody?.content?.[contentType]?.schema
+  let bodySchema = op.requestBody?.content?.[contentType]?.schema
     ?? op.requestBody?.content?.["application/json"]?.schema;
+  if (contentType.startsWith("multipart/") && bodySchema && (bodySchema as Record<string, any>).properties) {
+    // Multipart file parts are typed `string` (binary) in the spec, but
+    // http.ts also accepts { filePath, filename?, mimeType? } objects and
+    // reads the file from local disk (see http.ts multipart branch). The
+    // verbatim spec schema was rejecting that object form at validation
+    // time (found 2026-07-16 while wiring media uploads for the weekly
+    // social pipeline). Relax every body property to permit either form.
+    const props = (bodySchema as Record<string, any>).properties as Record<string, any>;
+    bodySchema = {
+      ...(bodySchema as Record<string, any>),
+      properties: Object.fromEntries(
+        Object.entries(props).map(([k, v]) => [
+          k,
+          {
+            anyOf: [
+              v,
+              {
+                type: "object",
+                properties: {
+                  filePath: { type: "string" },
+                  filename: { type: "string" },
+                  mimeType: { type: "string" },
+                },
+                required: ["filePath"],
+                additionalProperties: false,
+              },
+            ],
+            ...(v?.description ? { description: v.description } : {}),
+          },
+        ]),
+      ),
+    };
+  }
+  if (ov?.patchBody && bodySchema && (bodySchema as Record<string, any>).properties) {
+    // Curated body-schema patch for known-wrong upstream specs (see
+    // OperationOverride.patchBody in types.ts). Applied here — not in the
+    // generated output — so re-running the spec extractor can't clobber it.
+    const base = bodySchema as Record<string, any>;
+    const patched: Record<string, any> = { ...base, properties: { ...base.properties } };
+    for (const [k, v] of Object.entries(ov.patchBody.properties ?? {})) {
+      patched.properties[k] = v;
+    }
+    if (ov.patchBody.required !== undefined) {
+      if (ov.patchBody.required.length) patched.required = ov.patchBody.required;
+      else delete patched.required;
+    }
+    bodySchema = patched;
+  }
   if (op.requestBody && bodySchema && Object.keys(bodySchema).length > 0) {
     properties["body"] = {
       description: op.requestBody.description ?? "Request body (schema carried verbatim from the official OpenAPI spec).",

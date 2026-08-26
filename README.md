@@ -17,6 +17,7 @@ The previous production connector (`MCP_Servers/_to_delete/ghl-mcp-server-v1-ret
 | `list_media` 422'd (no way to pass required `type`) | `ghl_media_list_files` requires `type`, `altType`, `altId`, `sortBy`, `sortOrder` per spec |
 | Single hardcoded `Version` header | Version header resolved **per operation** from the spec that documents it (494 tools send `v3`, 117 send `2021-07-28`, 10 send `2021-04-15`, 30 send none — e.g. store ops) |
 | Social `create_post` regressed | Schema verified faithful to spec; tool description carries a warning that the live endpoint had a server-side regression as of 2026-07-04 |
+| `ghl_conversation_send_message` 422'd on every send (fix 2026-08-26) | Upstream spec bug, not extraction loss: `subType` emitted as an empty `object` schema (live API validates a string enum — `{}` returned `422 CONVERSATIONS_VALIDATION_ERROR`) and `subType`/`status` wrongly listed in `required`. Fixed via the new `patchBody` override layer (`src/overrides/conversations.ts`): both now optional strings, omitted from the outbound body when absent; required is `[type, contactId]`. Resolves the 2026-08-26 send failure. |
 
 ## Architecture — how "no silently dropped field" is guaranteed
 
@@ -24,7 +25,7 @@ Tools are **generated from the official OpenAPI specs**, not hand-transcribed:
 
 1. `scripts/extract-operations.mjs` parses every spec file, fully dereferences `$ref`s, dedupes by `METHOD /path` (v3 spec variant preferred; legacy-only operations keep their legacy `Version` header), and emits `src/generated/operations.json` with request schemas **verbatim**.
 2. `src/registry.ts` builds one MCP tool per operation: path/query/header params become top-level arguments; the request body schema is carried verbatim under a `body` argument. Missing path-param declarations in the spec are inferred from the URL template.
-3. `src/overrides/*.ts` — eight domain-audit modules (one per sub-agent) carrying curated tool names, Version-header corrections, content-type overrides (multipart, form-urlencoded), agency-token warnings, and the 16 skip-with-reason exceptions.
+3. `src/overrides/*.ts` — eight domain-audit modules (one per sub-agent) carrying curated tool names, Version-header corrections, content-type overrides (multipart, form-urlencoded), body-schema patches for known-wrong specs (`patchBody`, added 2026-08-26 — see `ghl_conversation_send_message`), agency-token warnings, and the 16 skip-with-reason exceptions.
 
 Because the schema pipeline is mechanical, a field can only be missing if it is missing from GoHighLevel's own published spec — and the three known cases of that are documented in the audits (`POST /contacts/search`, object-record create/update, `POST /forms/upload-custom-files`), each exposed with a permissive body rather than dropped.
 
