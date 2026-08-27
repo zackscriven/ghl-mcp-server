@@ -20,6 +20,45 @@ export const marketingOverrides: DomainOverrides = {
     "Twitter/X oauth endpoints (GET/POST .../twitter/accounts/{accountId}, GET .../oauth/twitter/start) are marked deprecated in the legacy spec and operations.json correctly carries deprecated:true through; left registered per BRIEF rule 6 (no documented replacement named in the spec, so no descriptionNote redirect was added beyond the automatic deprecation notice registry.ts already appends).",
   ],
   overrides: {
+    // ---- Empty-object spec-bug patches (2026-08-27 sweep — same upstream pattern as ghl_conversation_send_message subType) ----
+    "POST /social-media-posting/{locationId}/posts/list": {
+      patchBody: {
+        properties: {
+          postType: {
+            type: "string",
+            enum: ["post", "story", "reel"],
+            description:
+              "Post Type — one of: post, story, reel (enum taken from the field's own spec description). (Spec bug override 2026-08-27: upstream declares this as an empty object schema, rejecting every valid string.)",
+          },
+        },
+        note: "2026-08-27: upstream spec bug — postType emitted as empty object schema; its own description enumerates post/story/reel, so coerced to that string enum.",
+      },
+    },
+    "PUT /social-media-posting/category/queues/{queueId}": {
+      patchBody: {
+        properties: {
+          status: {
+            type: "string",
+            description:
+              "Status of the queue, e.g. 'paused'. (Spec bug override 2026-08-27: upstream declares this as an empty object schema. No enum documented; 'paused' is the spec example.)",
+          },
+        },
+        note: "2026-08-27: upstream spec bug — status emitted as empty object schema with string example 'paused'; coerced to free string.",
+      },
+    },
+    "POST /social-media-posting/oauth/{locationId}/facebook/accounts/{accountId}": {
+      patchBody: {
+        properties: {
+          type: {
+            type: "string",
+            description:
+              "Account type, e.g. 'page'. (Spec bug override 2026-08-27: upstream declares this as an empty object schema. No enum documented; 'page' is the spec example.)",
+          },
+        },
+        note: "2026-08-27: upstream spec bug — type emitted as empty object schema with string example 'page'; coerced to free string.",
+      },
+    },
+
     // ---- Regression-check: Social Planner create-post (BRIEF-mandated warning) ----
     "POST /social-media-posting/{locationId}/posts": {
       name: "ghl_social_post_create",
@@ -39,7 +78,7 @@ export const marketingOverrides: DomainOverrides = {
       name: "ghl_media_upload_file",
       contentType: "multipart/form-data",
       descriptionNote:
-        "multipart/form-data upload. `body.file` (binary) is required UNLESS `body.hosted` is true, in which case `body.fileUrl` is required instead — prefer the hosted:true + fileUrl path when the file already has a public URL, since this tool does not construct a multipart payload for you: the `body` you pass is sent to GHL as-is as the request body, so a raw binary `file` upload only works if the caller already has a pre-encoded multipart/form-data payload (including boundary) to hand it. Max 25MB (images/docs) / 500MB (video).",
+        "multipart/form-data upload. `body.file` (binary) is required UNLESS `body.hosted` is true, in which case `body.fileUrl` is required instead. For local files, pass `body.file` as { filePath, filename?, mimeType? } — http.ts reads the file from disk and builds a real multipart payload (schema relaxed to allow this 2026-07-16; the earlier note claiming no multipart construction was stale/wrong per http.ts). Max 25MB (images/docs) / 500MB (video).",
     },
     "POST /social-media-posting/{locationId}/csv": {
       name: "ghl_social_csv_upload",

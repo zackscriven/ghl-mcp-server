@@ -16,6 +16,18 @@ export const opportunitiesOverrides: DomainOverrides = {
     "Renames (2 of 12; brief-cited example ghl_pipeline_list followed intentionally): GET /opportunities/pipelines auto-derived to ghl_opportunity_get_pipelines -> renamed ghl_pipeline_list (pipelines are effectively their own resource nested under the opportunities path; matches the brief's own naming example verbatim). POST /opportunities/search auto-derived to ghl_opportunity_search_opportunities_advanced (redundant 'search_opportunities' stutter since the resource prefix already says opportunity) -> renamed ghl_opportunity_search_advanced. The other 10 generated names were already clear, correctly resource-prefixed, and left as-is.",
   ],
   overrides: {
+    "POST /opportunities/upsert": {
+      patchBody: {
+        properties: {
+          monetaryValue: {
+            type: "number",
+            description:
+              "Monetary value of the opportunity, e.g. 220. (Spec bug override 2026-08-27: upstream declares this as an empty object schema with a numeric example, which rejected every numeric value client-side.)",
+          },
+        },
+        note: "2026-08-27: upstream spec bug — monetaryValue emitted as empty object schema (example 220); coerced to number. Note the sibling create/update ops declare it correctly as number — upsert was the odd one out.",
+      },
+    },
     "GET /opportunities/pipelines": {
       name: "ghl_pipeline_list",
       descriptionNote:

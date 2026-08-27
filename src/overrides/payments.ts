@@ -164,6 +164,16 @@ export const paymentsOverrides: DomainOverrides = {
     "POST /products/reviews/bulk-update": {
       name: "ghl_product_review_bulk_update",
       descriptionNote: "Bulk-mutates multiple reviews in one call (e.g. approve/reject in batch) — review the target reviewIds carefully before sending.",
+      patchBody: {
+        properties: {
+          status: {
+            type: "string",
+            description:
+              "Status to set on the reviews, e.g. 'approved'. (Spec bug override 2026-08-27: upstream declares this as an empty object schema despite listing it in required[] — the tool was uncallable. The spec enumerates no valid values; 'approved' is the documented example.)",
+          },
+        },
+        note: "2026-08-27: upstream spec bug — status emitted as empty object schema with string example 'approved' while ALSO required: tool was completely uncallable. Coerced to free string (no enum documented); required[] unchanged.",
+      },
     },
     "GET /products/reviews/count": { name: "ghl_product_review_count" },
 

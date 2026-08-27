@@ -15,7 +15,7 @@ export const conversationsOverrides: DomainOverrides = {
     "Skipped as truly unusable (not registry-fixable, spec explicitly disclaims support): POST /conversations/messages/review-reply, POST /conversations/messages/upload/complete, POST /conversations/messages/upload/initiate — all three spec descriptions state verbatim 'This endpoint is internal-only and is not supported for OAuth or public API integrations. It will be removed from the public OpenAPI specification in a future release.' An MCP server calling with an API-key/OAuth token cannot use these; the non-deprecated POST /conversations/messages/upload already covers the functional file-upload need.",
     "Binary/non-JSON responses: GET /conversations/messages/{messageId}/locations/{locationId}/recording returns audio/x-wav (not JSON) and GET /conversations/locations/{locationId}/messages/{messageId}/transcription/download returns text/plain as a file attachment (not JSON) — both spec'd via response `headers` (Content-Type/Content-Disposition) rather than a `content` schema. Added descriptionNote on each. GET .../transcription (no /download) DOES return normal JSON and needed no note.",
     "POST /conversations/messages (send-a-new-message): SUPERSEDED 2026-08-26 — the earlier stance ('spec says [type, subType, contactId, status] required, not overridden') proved untenable: `subType` is emitted as an empty object schema, so passing a string failed client-side validation and passing {} passed validation but the live API 422'd ('subType must be a valid enum value', CONVERSATIONS_VALIDATION_ERROR). Every code path was dead. Now fixed via patchBody override (subType/status optional strings, required [type, contactId]) — the first use of the patchBody mechanism added to types.ts/registry.ts the same day.",
-    "Regression scan 2026-08-26 (empty-object-schema-with-scalar-example pattern): within the conversations spec, POST /conversations/messages is the ONLY occurrence — inbound/outbound (add_inbound_message/add_outbound_message) declare no subType field at all. The same upstream pattern DOES exist in other domains' specs (contacts dateOfBirth, associations labels/keys, opportunities.upsert monetaryValue, products review status, social postType/type, phone purchase numberType, social queue status) — candidates for the same patchBody treatment in their own domain audits, not patched from here.",
+    "Regression scan 2026-08-26 (empty-object-schema-with-scalar-example pattern): within the conversations spec, POST /conversations/messages is the ONLY occurrence — inbound/outbound (add_inbound_message/add_outbound_message) declare no subType field at all. The same upstream pattern DOES exist in other domains' specs (contacts dateOfBirth, associations labels/keys, opportunities.upsert monetaryValue, products review status, social postType/type, phone purchase numberType, social queue status) — ALL patched 2026-08-27 via patchBody in their own domain override files (contacts.ts, opportunities.ts, payments.ts, marketing.ts, and phone purchase below). Drive-wide the pattern is now fully remediated; re-run the scan after any spec corpus refresh.",
     "Naming: renamed ~20 awkward/ambiguous/duplicate-looking auto-generated names in this domain (see overrides below) — notably GET /chat-widget/public/config/{id} was generated as the literally broken 'ghl_chat_widget_get_get2', and GET /phone-system/numbers/location/{locationId}/available carried a typo ('acountry').",
     "GET /chat-widget/public/config/{id} has no `security` block in the spec (unlike every sibling chat-widget op) — appears to be the intentionally public/unauthenticated widget-embed config fetch. Noted via descriptionNote; left registered since a valid API key still works against it.",
   ],
@@ -165,6 +165,16 @@ export const conversationsOverrides: DomainOverrides = {
     },
     "POST /phone-system/numbers/location/{locationId}/purchase": {
       name: "ghl_phone_purchase_number",
+      patchBody: {
+        properties: {
+          numberType: {
+            type: "string",
+            description:
+              "Type of phone number to be purchased, e.g. 'local'. (Spec bug override 2026-08-27: upstream declares this as an empty object schema despite listing it in required[] — the tool was uncallable. The spec enumerates no valid values; pass a value you know from GHL docs, e.g. 'local'.)",
+          },
+        },
+        note: "2026-08-27: upstream spec bug — numberType emitted as empty object schema with string example 'local' while ALSO required: tool was completely uncallable. Coerced to free string (no enum documented anywhere in the spec); required[] unchanged.",
+      },
     },
   },
 };

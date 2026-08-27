@@ -55,12 +55,64 @@ export const contactsOverrides: DomainOverrides = {
       descriptionNote:
         "SPEC GAP: the official OpenAPI's SearchBodyV2DTO is an empty object schema — GoHighLevel's spec only points to an external ClickUp doc (linked in the op's externalDocs) for the real filter/sort/pageLimit/searchAfter/query body shape, which is not available in this docs corpus. Verified this is a genuine spec gap (not an extraction bug) against both the legacy (contacts.json) and v3 (v3/contacts-v3.json) copies of this endpoint, and via ghl_docs_context — both show the identical empty schema. The generated tool's body property will still accept arbitrary JSON (no additionalProperties:false is applied inside body sub-schemas), so callers who know the real field names from GHL's docs can pass them; there's just no schema-level validation or autocomplete for this one operation.",
     },
+    "POST /contacts/": {
+      patchBody: {
+        properties: {
+          dateOfBirth: {
+            type: "string",
+            description:
+              "The birth date of the contact, as a string. Supported formats: YYYY/MM/DD, MM/DD/YYYY, YYYY-MM-DD, MM-DD-YYYY, YYYY.MM.DD, MM.DD.YYYY, YYYY_MM_DD, MM_DD_YYYY. (Spec bug override 2026-08-27: upstream declares this as an empty object schema, which rejected every valid string date client-side.)",
+          },
+        },
+        note: "2026-08-27: upstream spec bug — dateOfBirth emitted as empty object schema with a string example ('1990-09-25'); coerced to string per its own documented formats.",
+      },
+    },
     "POST /contacts/upsert": {
       descriptionNote: "Requires locationId. Same field set as ghl_contact_create; use createNewIfDuplicateAllowed to control dedup behavior.",
+      patchBody: {
+        properties: {
+          dateOfBirth: {
+            type: "string",
+            description:
+              "The birth date of the contact, as a string. Supported formats: YYYY/MM/DD, MM/DD/YYYY, YYYY-MM-DD, MM-DD-YYYY, YYYY.MM.DD, MM.DD.YYYY, YYYY_MM_DD, MM_DD_YYYY. (Spec bug override 2026-08-27: upstream declares this as an empty object schema.)",
+          },
+        },
+        note: "2026-08-27: same dateOfBirth empty-object spec bug as POST /contacts/ — coerced to string.",
+      },
     },
     "PUT /contacts/{contactId}": {
       descriptionNote:
         "REGRESSION-VERIFIED: body schema (UpdateContactDtoV3, v3/contacts-v3.json) includes assignedTo, customFields, tags, dnd, dndSettings, inboundDndSettings, address1, city, state, postalCode, country, dateOfBirth, source, website, timezone — all confirmed present against the raw spec, matching what the old connector was missing. `tags` on this endpoint overwrites the full tag list; use ghl_contact_add_tags/ghl_contact_remove_tags for incremental changes.",
+      patchBody: {
+        properties: {
+          dateOfBirth: {
+            type: "string",
+            description:
+              "The birth date of the contact, as a string. Supported formats: YYYY/MM/DD, MM/DD/YYYY, YYYY-MM-DD, MM-DD-YYYY, YYYY.MM.DD, MM.DD.YYYY, YYYY_MM_DD, MM_DD_YYYY. (Spec bug override 2026-08-27: upstream declares this as an empty object schema.)",
+          },
+        },
+        note: "2026-08-27: same dateOfBirth empty-object spec bug as POST /contacts/ — coerced to string.",
+      },
+    },
+    "POST /associations/": {
+      patchBody: {
+        properties: {
+          firstObjectLabel: { type: "string", description: "First Object's Association Label, e.g. 'student'. (Spec bug override 2026-08-27: upstream declares this as an empty object schema despite requiring it — the tool was uncallable.)" },
+          firstObjectKey: { type: "string", description: "First Object's Key, e.g. 'custom_objects.children'. (Spec bug override 2026-08-27: empty object schema in upstream spec.)" },
+          secondObjectLabel: { type: "string", description: "Second Object's Association Label, e.g. 'Teacher'. (Spec bug override 2026-08-27: empty object schema in upstream spec.)" },
+          secondObjectKey: { type: "string", description: "Second Object's Key, e.g. 'contact'. (Spec bug override 2026-08-27: empty object schema in upstream spec.)" },
+        },
+        note: "2026-08-27: upstream spec bug — all four label/key fields emitted as empty object schemas with string examples, while ALSO listed in required[]: the tool was completely uncallable (any string failed client-side validation). Coerced to strings; required[] unchanged (the fields genuinely are required).",
+      },
+    },
+    "PUT /associations/{associationId}": {
+      patchBody: {
+        properties: {
+          firstObjectLabel: { type: "string", description: "First Object's Association Label, e.g. 'student'. (Spec bug override 2026-08-27: empty object schema in upstream spec despite being required — the tool was uncallable.)" },
+          secondObjectLabel: { type: "string", description: "Second Object's Association Label, e.g. 'tutor'. (Spec bug override 2026-08-27: empty object schema in upstream spec.)" },
+        },
+        note: "2026-08-27: same empty-object spec bug as POST /associations/ — both required label fields coerced to strings; required[] unchanged.",
+      },
     },
     "POST /contacts/{contactId}/tasks": {
       descriptionNote:
