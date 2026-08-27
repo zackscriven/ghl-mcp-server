@@ -5,15 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ghl-mcp-server — Full GoHighLevel API Coverage Map</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Spline+Sans+Mono:ital,wght@0,400;0,600;0,700&display=swap');
   :root{
-    --bg:#12100e; --panel:#1c1916; --panel2:#242019; --line:#3a332a;
-    --ink:#f3ede2; --ink-dim:#b8ac98; --ink-faint:#7d7264;
-    --gold:#d9a441; --gold-soft:#eac77e;
-    --green:#7fb069; --red:#c65f4e; --blue:#6f9fc8; --purple:#a58cc4; --orange:#d98e5f;
-    --mono:'SF Mono',ui-monospace,Menlo,Consolas,monospace;
+    /* PracticeOS dark-console theme — swapped 2026-07-16, values only, selectors/variable names unchanged */
+    --bg:#1C1523; --panel:#241B2E; --panel2:#2C2238; --line:rgba(167,139,200,.22);
+    --ink:#F2EDF7; --ink-dim:rgba(242,237,247,.64); --ink-faint:rgba(242,237,247,.42);
+    --gold:#A78BC8; --gold-soft:#C7B5E3;
+    --green:#A78BC8; --red:#EFCB9D; --blue:#C7B5E3; --purple:#C7B5E3; --orange:#EFCB9D;
+    --mono:'Spline Sans Mono',ui-monospace,Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:'Avenir Next','Segoe UI',system-ui,sans-serif;line-height:1.5;padding:32px 24px 80px}
+  body{background:var(--bg);color:var(--ink);font-family:'Nunito',Arial,sans-serif;line-height:1.5;padding:32px 24px 80px}
   .wrap{max-width:1180px;margin:0 auto}
   header{border-bottom:2px solid var(--gold);padding-bottom:20px;margin-bottom:28px}
   header h1{font-size:26px;letter-spacing:.5px}
@@ -47,7 +49,7 @@
   .dom .bar{height:5px;background:var(--panel2);border-radius:3px;margin-top:8px;overflow:hidden}
   .dom .bar i{display:block;height:100%;background:var(--gold);border-radius:3px}
   .vrow{display:flex;border-radius:8px;overflow:hidden;height:34px;margin:8px 0 6px;font-size:12px;font-weight:600}
-  .vrow div{display:flex;align-items:center;justify-content:center;color:#12100e;white-space:nowrap;overflow:hidden}
+  .vrow div{display:flex;align-items:center;justify-content:center;color:#1C1523;white-space:nowrap;overflow:hidden}
   .legend{font-size:12px;color:var(--ink-dim)}
   .legend b{color:var(--ink)}
   table.reg{width:100%;border-collapse:collapse;font-size:13px}
@@ -68,9 +70,9 @@
   .tool:last-child{border-bottom:none}
   .tool:hover{background:var(--panel)}
   .m{font-family:var(--mono);font-size:10px;font-weight:700;text-align:center;border-radius:4px;padding:2px 0}
-  .m.GET{background:#22391f;color:var(--green)} .m.POST{background:#1f2c39;color:var(--blue)}
-  .m.PUT{background:#392f1f;color:var(--orange)} .m.PATCH{background:#2e2439;color:var(--purple)}
-  .m.DELETE{background:#391f1f;color:var(--red)}
+  .m.GET{background:#241f30;color:var(--green)} .m.POST{background:#231f33;color:var(--blue)}
+  .m.PUT{background:#332a1f;color:var(--orange)} .m.PATCH{background:#28223a;color:var(--purple)}
+  .m.DELETE{background:#3a2a1a;color:var(--red)}
   .tool .tn{font-family:var(--mono);font-size:13px;color:var(--gold-soft)}
   .tool .tp{font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
   .tool .ts{font-size:12px;color:var(--ink-dim)}
@@ -85,6 +87,11 @@
 </head>
 <body>
 <div class="wrap">
+
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
+  <img alt="PracticeOS mark" style="height:34px" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 124 124'%3E%3Ctitle%3EPracticeOS mark%3C/title%3E%3Crect width='124' height='124' rx='24' fill='%231C1523'/%3E%3Crect x='12' y='12' width='100' height='100' rx='18' fill='none' stroke='%23EFCB9D' stroke-width='2.5'/%3E%3Crect x='34' y='74' width='56' height='12' rx='6' fill='%23554861'/%3E%3Crect x='34' y='56' width='56' height='12' rx='6' fill='%23A78BC8'/%3E%3Crect x='34' y='38' width='56' height='12' rx='6' fill='%23EFCB9D'/%3E%3C/svg%3E">
+  <span style="font-family:var(--mono);font-weight:600;font-size:10px;letter-spacing:.3em;color:var(--gold)">PRACTICE<span style="display:inline-flex;padding:1px 6px;border-radius:5px;background:#554861;box-shadow:inset 0 0 0 1px #EFCB9D;color:#fff;letter-spacing:.05em;margin:0 2px">OS</span> &nbsp;·&nbsp; TOOLING</span>
+</div>
 
 <header>
   <h1>ghl-mcp-server — <em>the full GoHighLevel API as MCP tools</em></h1>
@@ -194,7 +201,7 @@ function syncCards(){
 /* ---------- version bar ---------- */
 var VC={};
 TOOLS.forEach(function(t){ var k=t.v||"none"; VC[k]=(VC[k]||0)+1; });
-var VCOL={"v3":"#d9a441","2021-07-28":"#6f9fc8","2021-04-15":"#a58cc4","none":"#7d7264"};
+var VCOL={"v3":"#A78BC8","2021-07-28":"#C7B5E3","2021-04-15":"#EFCB9D","none":"#6b6478"};
 var vrow=document.getElementById("vrow");
 Object.keys(VC).sort(function(a,b){return VC[b]-VC[a];}).forEach(function(k){
   var d=document.createElement("div");
