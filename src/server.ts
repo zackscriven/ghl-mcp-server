@@ -20,7 +20,7 @@ export function createServer(): Server {
   const validators = new Map<string, ValidateFunction | null>();
 
   const server = new Server(
-    { name: "ghl-mcp-server", version: "2.0.0" },
+    { name: "ghl-mcp-server", version: "2.1.0" },
     { capabilities: { tools: {} } }
   );
 

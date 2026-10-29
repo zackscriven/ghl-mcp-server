@@ -1,7 +1,7 @@
 {
   "name": "ghl-mcp-server",
-  "version": "2.0.0",
-  "description": "Comprehensive GoHighLevel MCP server \u2014 full public API surface (667 operations), spec-driven, multi-tenant, per-operation Version headers, dry-run safety gate.",
+  "version": "2.1.0",
+  "description": "Comprehensive GoHighLevel MCP server \u2014 full public API surface (867 operations), spec-driven, multi-tenant, per-operation Version headers, dry-run safety gate.",
   "license": "MIT",
   "type": "module",
   "bin": {
@@ -13,7 +13,8 @@
     "start": "node build/index.js",
     "inspect": "npx @modelcontextprotocol/inspector node build/index.js",
     "test": "npm run build && node scripts/check-registry.mjs",
-    "pin-names": "npm run build && node scripts/pin-names.mjs"
+    "pin-names": "npm run build && node scripts/pin-names.mjs",
+    "checklist": "npm run build && node scripts/gen-checklist.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
