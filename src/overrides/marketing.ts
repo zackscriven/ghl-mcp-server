@@ -171,6 +171,10 @@ export const marketingOverrides: DomainOverrides = {
     "GET /campaigns/": { name: "ghl_campaign_list" },
     "GET /surveys/": { name: "ghl_survey_list" },
     "GET /workflows/": { name: "ghl_workflow_list" },
+    "POST /workflows/definition/validate": {
+      readOnly: true,
+      descriptionNote: "Read-only dry validation of a workflow definition — nothing is created or changed.",
+    },
 
     // ---- Social Planner CSV / category naming clarity ----
     "GET /social-media-posting/{locationId}/csv": {

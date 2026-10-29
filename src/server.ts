@@ -52,7 +52,7 @@ export function createServer(): Server {
     }
 
     // Safety gate: block all mutating calls unless writes are explicitly enabled.
-    if (tool.op.method !== "GET" && !config.enableWrites) {
+    if (!tool.annotations.readOnlyHint && !config.enableWrites) {
       return errorResult(
         `WRITE BLOCKED (dry-run mode): ${tool.op.method} ${tool.op.path} is a mutating call and ` +
           `GHL_ENABLE_WRITES is not set. This server defaults to read-only because it can touch a ` +

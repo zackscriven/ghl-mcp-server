@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 import type { Operation, OperationsFile, OperationOverride, SpecParameter } from "./types.js";
 import { assignNames, shapeKey, specBase } from "./naming.js";
 import { allOverrides } from "./overrides/index.js";
+import { SERVICE_NOTES } from "./overrides/service-notes.js";
 
 export interface RegisteredTool {
   name: string;
@@ -190,6 +191,8 @@ export function tokenHint(op: Operation): string | undefined {
 function buildDescription(op: Operation, ov: OperationOverride | undefined): string {
   const parts: string[] = [];
   if (ov?.descriptionNote) parts.push(ov.descriptionNote);
+  const svcNote = SERVICE_NOTES[specBase(op.specFile)];
+  if (svcNote) parts.push(svcNote);
   if (op.deprecated) parts.push("[DEPRECATED per official docs — prefer the documented replacement if one exists.]");
   if (op.legacyFallback) {
     parts.push(
@@ -251,7 +254,7 @@ export function buildRegistry(enabledDomains: string[] | null): Registry {
         ? Object.keys(op.requestBody.content)[0] ?? "application/json"
         : "application/json");
     const { schema, idx } = buildInputSchema(op, ov, contentType);
-    const isRead = op.method === "GET";
+    const isRead = ov?.readOnly ?? (op.method === "GET" || (op.method === "POST" && /^(search|list)-/.test(op.operationId)));
     tools.push({
       name,
       op,
@@ -261,7 +264,7 @@ export function buildRegistry(enabledDomains: string[] | null): Registry {
       annotations: {
         title: op.summary || name,
         readOnlyHint: isRead,
-        destructiveHint: op.method === "DELETE",
+        destructiveHint: ov?.destructive ?? op.method === "DELETE",
         idempotentHint: isRead || op.method === "PUT" || op.method === "DELETE",
         openWorldHint: true,
       },

@@ -116,7 +116,8 @@ export async function callGhl(
         // 429 means the request was NOT processed, so retrying is safe for every method.
         if (res.status === 429 && retried < MAX_429_RETRIES) {
           const ra = Number(res.headers.get("retry-after"));
-          const waitMs = Math.min(Number.isFinite(ra) && ra > 0 ? ra * 1000 : 1000 * 2 ** retried, 15_000);
+          // No Retry-After (e.g. workflows): the docs say wait out the 10s window, so back off 2s, 5s, 10s.
+          const waitMs = Math.min(Number.isFinite(ra) && ra > 0 ? ra * 1000 : [2000, 5000, 10_000][retried] ?? 10_000, 15_000);
           await res.text().catch(() => "");
           retried++;
           await new Promise((r) => setTimeout(r, waitMs));

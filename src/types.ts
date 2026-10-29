@@ -59,6 +59,10 @@ export interface OperationOverride {
   extraQueryParams?: Array<{ name: string; schema: Record<string, unknown>; description: string }>;
   /** Mark params the spec under-marks as required (e.g. GET /medias/files `type`). */
   forceRequired?: string[];
+  /** Force the read-only/destructive tool annotations (and, for readOnly, the write gate). Default: GET = read-only,
+   *  POST whose operationId starts "search-"/"list-" = read-only, DELETE = destructive. */
+  readOnly?: boolean;
+  destructive?: boolean;
   /** Content type override, e.g. multipart/form-data uploads. */
   contentType?: string;
   /**
