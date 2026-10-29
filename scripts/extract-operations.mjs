@@ -95,6 +95,7 @@ function extractFile(file, tier) {
       const body = op.requestBody ? deref(op.requestBody, spec) : null;
       const security = op.security ?? spec.security ?? [];
       const scopes = [...new Set(security.flatMap((s) => Object.values(s).flat()))];
+      const securitySchemes = [...new Set(security.flatMap((x) => Object.keys(x)))].filter((x) => x !== "bearer").sort();
       ops.push({
         specFile: rel,
         tier,
@@ -107,6 +108,7 @@ function extractFile(file, tier) {
         description: (op.description ?? "").slice(0, 2000),
         deprecated: !!op.deprecated,
         scopes,
+        securitySchemes,
         parameters: params.filter(
           (x) => !(x.in === "header" && ["version", "authorization"].includes(String(x.name).toLowerCase()))
         ),

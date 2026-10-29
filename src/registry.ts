@@ -176,6 +176,17 @@ function buildInputSchema(op: Operation, ov: OperationOverride | undefined, cont
   };
 }
 
+/** Human-readable token requirement derived from the spec's security schemes. */
+export function tokenHint(op: Operation): string | undefined {
+  const sch = op.securitySchemes ?? [];
+  if (!sch.length) return undefined;
+  const agency = sch.some((x) => x.startsWith("Agency-Access"));
+  const location = sch.some((x) => x.startsWith("Location-Access"));
+  const oauthOnly = sch.some((x) => x.endsWith("-Only"));
+  const who = agency && location ? "an Agency or Sub-Account token" : agency ? "an Agency (company-level) token" : "a Sub-Account (location) token";
+  return `Requires ${who}.` + (oauthOnly ? " OAuth access token only — Private Integration Tokens are rejected." : "");
+}
+
 function buildDescription(op: Operation, ov: OperationOverride | undefined): string {
   const parts: string[] = [];
   if (ov?.descriptionNote) parts.push(ov.descriptionNote);
@@ -189,6 +200,8 @@ function buildDescription(op: Operation, ov: OperationOverride | undefined): str
   const desc = op.description?.trim();
   if (desc && desc !== op.summary) parts.push(desc.slice(0, 1500));
   parts.push(`Endpoint: ${op.method} ${op.path} (Version header: ${op.versionHeader || "none"}; source: ${op.specFile})`);
+  const th = tokenHint(op);
+  if (th) parts.push(th);
   if (op.scopes.length) parts.push(`OAuth scopes: ${op.scopes.join(", ")}`);
   const pag = op.parameters.filter((p) => p.in === "query" && PAGINATION_PARAMS.has(p.name)).map((p) => p.name);
   if (pag.length) parts.push(`Pagination params: ${pag.join(", ")} — pass them to page through full result sets.`);

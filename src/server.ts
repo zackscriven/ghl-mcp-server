@@ -9,7 +9,7 @@ import addFormatsModule from "ajv-formats";
 const addFormats = addFormatsModule as unknown as (ajv: Ajv) => Ajv;
 import { loadConfig } from "./config.js";
 import { callGhl, type CallArgs } from "./http.js";
-import { buildRegistry, type RegisteredTool } from "./registry.js";
+import { buildRegistry, tokenHint, type RegisteredTool } from "./registry.js";
 
 export function createServer(): Server {
   const config = loadConfig();
@@ -74,13 +74,14 @@ export function createServer(): Server {
 
     try {
       const res = await callGhl(config, tool.op, tool.versionHeader, call, tool.contentType);
-      const structured = { status: res.status, ok: res.ok, data: res.data };
+      const structured = { status: res.status, ok: res.ok, data: res.data, ...(res.rateLimit ? { rateLimit: res.rateLimit } : {}) };
       const text = res.ok
         ? JSON.stringify(res.data, null, 2)
         : `HTTP ${res.status} from ${tool.op.method} ${tool.op.path}\n` +
           `${JSON.stringify(res.data, null, 2)}\n` +
           `Hints: check required params/scopes (${tool.op.scopes.join(", ") || "n/a"}), and that the ` +
-          `token's location matches locationId. Version header sent: ${tool.versionHeader || "none"}.`;
+          `token's location matches locationId. Version header sent: ${tool.versionHeader || "none"}.` +
+          ((res.status === 401 || res.status === 403) && tokenHint(tool.op) ? ` Token: ${tokenHint(tool.op)}` : "");
       return {
         content: [{ type: "text" as const, text: truncate(text, 100_000) }],
         structuredContent: structured,

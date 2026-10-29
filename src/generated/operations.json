@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-29T05:36:55.299Z",
+ "generatedAt": "2026-10-29T05:38:15.689Z",
  "specsDir": "specs-1028",
  "totals": {
   "rawOperations": 1388,
@@ -24,6 +24,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -203,6 +204,9 @@
    "scopes": [
     "brand-boards/design-kit.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -244,6 +248,9 @@
    "scopes": [
     "brand-boards/design-kit.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -284,6 +291,9 @@
    "deprecated": false,
    "scopes": [
     "brand-boards/design-kit.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -469,6 +479,9 @@
    "scopes": [
     "brand-boards/design-kit.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -541,6 +554,9 @@
    "deprecated": false,
    "scopes": [
     "brand-boards/design-kit.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -729,6 +745,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -760,6 +777,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -832,6 +850,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -883,6 +902,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -946,6 +966,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -1012,6 +1033,7 @@
    "description": "Update or archive a custom subtype. Requires agency or account admin role.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -1084,6 +1106,7 @@
    "description": "Get all custom subtypes for a location",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -1113,6 +1136,7 @@
    "description": "Create a new custom subtype for a location. Requires agency or account admin role.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -1184,6 +1208,7 @@
    "description": "Get all subscription statuses for a contact (all emails or specific email)",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -1233,6 +1258,7 @@
    "description": "Process subscription change initiated by a user (admin/agent). Supports individual custom subscription changes and resub all functionality. Legal forms are automatically created for user-initiated resubscribe actions on custom subscriptions.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -1364,6 +1390,9 @@
    "description": "Delete a template",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -1402,6 +1431,9 @@
    "deprecated": false,
    "scopes": [
     "emails/builder.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -1500,6 +1532,9 @@
    "deprecated": false,
    "scopes": [
     "emails/builder.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -1625,6 +1660,9 @@
    "scopes": [
     "emails/builder.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -1722,6 +1760,9 @@
    "deprecated": false,
    "scopes": [
     "emails/schedule.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -1883,6 +1924,9 @@
    "scopes": [
     "oauth.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access-Only"
+   ],
    "parameters": [
     {
      "name": "skip",
@@ -2006,6 +2050,9 @@
    "scopes": [
     "oauth.write"
    ],
+   "securitySchemes": [
+    "Agency-Access-Only"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -2047,6 +2094,9 @@
    "description": "Fetch all agency subscription plans for a given company ID",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -2076,6 +2126,9 @@
    "description": "Disable SaaS for locations for given locationIds",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -2130,6 +2183,9 @@
    "description": "Enable SaaS mode for multiple locations with support for both SaaS v1 and v2",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -2224,6 +2280,9 @@
    "description": "<div>\n                  <p>Enable SaaS for Sub-Account (Formerly Location) based on the data provided</p>\n                  <div>\n                    <span style= \"display: inline-block;\n                                width: 25px; height: 25px;\n                                background-color: yellow;\n                                color: black;\n                                font-weight: bold;\n                                font-size: 24px;\n                                text-align: center;\n                                line-height: 22px;\n                                border: 2px solid black;\n                                border-radius: 10%;\n                                margin-right: 10px;\">\n                                !\n                      </span>\n                      <span>\n                        <strong>\n                          This feature is only available on Agency Pro ($497) plan.\n                        </strong>\n                      </span>\n                  </div>\n                </div>\n    ",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -2321,6 +2380,9 @@
    "description": "Fetch subscription details for a specific location from location metadata",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -2360,6 +2422,9 @@
    "description": "Get locations by stripeCustomerId or stripeSubscriptionId with companyId",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "customerId",
@@ -2409,6 +2474,9 @@
    "description": "Pause Sub account for given locationId",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -2463,6 +2531,9 @@
    "description": "Fetch all SaaS-activated locations for a company with pagination",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -2502,6 +2573,9 @@
    "description": "Fetch a specific SaaS plan by plan ID",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "planId",
@@ -2541,6 +2615,9 @@
    "description": "Bulk update rebilling for given locationIds",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -2642,6 +2719,9 @@
    "description": "Update SaaS subscription for given locationId and customerId",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -2702,6 +2782,7 @@
    "description": "Get facebook pages",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -2740,6 +2821,7 @@
    "description": "Attach facebook pages",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -2810,6 +2892,7 @@
    "description": "Get google business locations",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -2848,6 +2931,7 @@
    "description": "Set google business locations",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -2908,6 +2992,7 @@
    "description": "Get Instagram Professional Accounts",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -2946,6 +3031,7 @@
    "description": "Attach Instagram Professional Accounts",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3018,6 +3104,7 @@
    "description": "Get Linkedin pages and profile",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3056,6 +3143,7 @@
    "description": "Attach linkedin pages and profile",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3134,6 +3222,7 @@
    "description": "Get Tiktok Business profile",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3172,6 +3261,7 @@
    "description": "Get Tiktok profile",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3210,6 +3300,7 @@
    "description": "Attach Tiktok profile",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3293,6 +3384,7 @@
    "description": "<div><div>\n  <span style= \"display: inline-block;\n    width: 25px; height: 25px;\n    background-color: red;\n    color: black;\n    font-weight: bold;\n    font-size: 24px;\n    text-align: center;\n    line-height: 20px;\n    border: 2px solid black;\n    border-radius: 20%;\n    margin-right: 10px;\">\n    !\n  </span>\n  <span><strong>As of December 4, 2024, X (formerly Twitter) is no longer supported. We apologise for any inconvenience.</strong></span>\n</div></div>",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3331,6 +3423,7 @@
    "description": "<div><div>\n  <span style= \"display: inline-block;\n    width: 25px; height: 25px;\n    background-color: red;\n    color: black;\n    font-weight: bold;\n    font-size: 24px;\n    text-align: center;\n    line-height: 20px;\n    border: 2px solid black;\n    border-radius: 20%;\n    margin-right: 10px;\">\n    !\n  </span>\n  <span><strong>As of December 4, 2024, X (formerly Twitter) is no longer supported. We apologise for any inconvenience.</strong></span>\n</div></div>",
    "deprecated": true,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3408,6 +3501,7 @@
    "description": "Open the API in a window with appropriate params and headers instead of using the Curl. User is navigated to Facebook login OAuth screen. On successful login, listen on window object for message where event listener returns data in its callback function. \n  ### Sample code to listen to event data:\n    window.addEventListener('message', \n      function(e) {\n        if (e.data && e.data.page === 'social_media_posting') {\n        const { actionType, page, platform, placement, accountId, reconnectAccounts } = e.data\n        }\n      },\n    false)\n  ### Event Data Response:\n    {\n      actionType: string,            Ex: \"close\" \n      page: string,                  Ex: \"social-media-posting\" \n      platform: string,              Ex: \"facebook\" \n      placement: string,             Ex: \"placement\" \n      accountId: string,             Ex: \"658a9b6833b91e0ecb8f3958\" \n      reconnectAccounts: string[]]   Ex: [\"658a9b6833b91e0ecb834acd\", \"efd2daa9b6833b91e0ecb8f3511\"] \n    }\n  ### The accountId retrieved from above data can be used to fetch Facebook account details using below API -\n  API: '/social-media-posting/oauth/facebook/accounts/:accountId' \n\n  Method: GET",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3468,6 +3562,7 @@
    "scopes": [
     "socialplanner/oauth.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3528,6 +3623,7 @@
    "scopes": [
     "socialplanner/oauth.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3586,6 +3682,7 @@
    "description": "Open the API in a window with appropriate params and headers instead of using the Curl. User is navigated to LinkedIn login OAuth screen. On successful login, listen on window object for message where event listener returns data in its callback function. \n  ### Sample code to listen to event data:\n    window.addEventListener('message', \n      function(e) {\n        if (e.data && e.data.page === 'social_media_posting') {\n        const { actionType, page, platform, placement, accountId, reconnectAccounts } = e.data\n        }\n      },\n    false)\n  ### Event Data Response:\n    {\n      actionType: string,            Ex: \"close\" \n      page: string,                  Ex: \"social-media-posting\" \n      platform: string,              Ex: \"linkedin\" \n      placement: string,             Ex: \"placement\" \n      accountId: string,             Ex: \"658a9b6833b91e0ecb8f3958\" \n      reconnectAccounts: string[]]   Ex: [\"658a9b6833b91e0ecb834acd\", \"efd2daa9b6833b91e0ecb8f3511\"] \n    }\n  ### The accountId retrieved from above data can be used to fetch LinkedIn account details using below API -\n  API: '/social-media-posting/oauth/linkedin/accounts/:accountId' \n\n  Method: GET",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3646,6 +3743,7 @@
    "scopes": [
     "socialplanner/oauth.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3706,6 +3804,7 @@
    "scopes": [
     "socialplanner/oauth.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3766,6 +3865,7 @@
    "scopes": [
     "socialplanner/oauth.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -3826,6 +3926,9 @@
    "scopes": [
     "users.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -3856,6 +3959,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adAccountId",
@@ -3911,6 +4015,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adAccountId",
@@ -3956,6 +4061,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -4035,6 +4141,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adId",
@@ -4090,6 +4197,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adId",
@@ -4145,6 +4253,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adId",
@@ -4200,6 +4309,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adId",
@@ -4255,6 +4365,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adSetId",
@@ -4310,6 +4421,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adSetId",
@@ -4365,6 +4477,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adSetId",
@@ -4420,6 +4533,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adSetId",
@@ -4475,6 +4589,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -4997,6 +5112,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -5248,6 +5364,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "campaignId",
@@ -5313,6 +5430,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "campaignId",
@@ -5368,6 +5486,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "campaignId",
@@ -5423,6 +5542,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "campaignId",
@@ -5463,6 +5583,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "campaignId",
@@ -5518,6 +5639,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "campaignId",
@@ -5573,6 +5695,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "campaignId",
@@ -5628,6 +5751,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -5792,6 +5916,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -5847,6 +5972,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -5937,6 +6063,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "customAudienceId",
@@ -6024,6 +6151,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "customAudienceId",
@@ -6090,6 +6218,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "customAudienceId",
@@ -6156,6 +6285,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "customAudienceId",
@@ -6201,6 +6331,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "customAudienceId",
@@ -6246,6 +6377,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "customAudienceId",
@@ -6312,6 +6444,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -6444,6 +6577,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -6568,6 +6702,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -6612,6 +6747,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -6647,6 +6783,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -6702,6 +6839,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "leadFormId",
@@ -6757,6 +6895,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -6792,6 +6931,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "pageId",
@@ -6888,6 +7028,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "pageId",
@@ -7329,6 +7470,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "pageId",
@@ -7388,6 +7530,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -7443,6 +7586,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -7488,6 +7632,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -7553,6 +7698,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -7666,6 +7812,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -7736,6 +7883,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "campaignId",
@@ -7801,6 +7949,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -7896,6 +8045,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -8011,6 +8161,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -8081,6 +8232,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adAccountId",
@@ -8136,6 +8288,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -8181,6 +8334,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -8242,6 +8396,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adId",
@@ -8282,6 +8437,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adId",
@@ -8337,6 +8493,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adId",
@@ -8382,6 +8539,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -10107,6 +10265,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -10196,6 +10355,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -10479,6 +10639,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "audienceId",
@@ -10524,6 +10685,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -10579,6 +10741,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -10936,6 +11099,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -10991,6 +11155,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "conversionId",
@@ -11036,6 +11201,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "conversionId",
@@ -11081,6 +11247,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -11221,6 +11388,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -11378,6 +11546,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -11502,6 +11671,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -11537,6 +11707,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -11593,6 +11764,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -11674,6 +11846,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -11709,6 +11882,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "campaignId",
@@ -11774,6 +11948,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -11869,6 +12044,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -11980,6 +12156,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "segmentId",
@@ -12039,6 +12216,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "segmentId",
@@ -12098,6 +12276,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -12167,6 +12346,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -12237,6 +12417,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -12861,6 +13042,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -12966,6 +13148,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "type",
@@ -13025,6 +13208,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -13664,6 +13848,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "accountId",
@@ -13766,6 +13951,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adId",
@@ -13847,6 +14033,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -13892,6 +14079,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -13937,6 +14125,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -13972,6 +14161,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adId",
@@ -14027,6 +14217,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "adId",
@@ -14072,6 +14263,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -14759,6 +14951,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -14794,6 +14987,7 @@
    "scopes": [
     "adPublishing.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -14862,6 +15056,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -14897,6 +15092,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "campaignGroupId",
@@ -15001,6 +15197,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -15120,6 +15317,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -15248,6 +15446,7 @@
    "scopes": [
     "adPublishing.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -15313,6 +15512,9 @@
    "scopes": [
     "affiliate-manager.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -15363,6 +15565,9 @@
    "scopes": [
     "affiliate-manager.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -15412,6 +15617,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -15571,6 +15779,9 @@
    "scopes": [
     "affiliate-manager.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -15634,6 +15845,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -15783,6 +15997,9 @@
    "scopes": [
     "affiliate-manager.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -15832,6 +16049,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -15902,6 +16122,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -16008,6 +16231,9 @@
    "scopes": [
     "affiliate-manager.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -16094,6 +16320,9 @@
    "scopes": [
     "affiliate-manager.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -16155,6 +16384,9 @@
    "scopes": [
     "affiliate-manager.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -16214,6 +16446,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -16286,6 +16521,7 @@
    "scopes": [
     "affiliate-manager.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -16330,6 +16566,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -16482,6 +16721,7 @@
    "scopes": [
     "affiliate-manager.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -16592,6 +16832,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -16734,6 +16977,9 @@
    "scopes": [
     "affiliate-manager.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -16773,6 +17019,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -16876,6 +17125,9 @@
    "scopes": [
     "affiliate-manager.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -16915,6 +17167,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -16983,6 +17238,9 @@
    "scopes": [
     "affiliate-manager.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -17022,6 +17280,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -17274,6 +17535,7 @@
    "scopes": [
     "affiliate-manager.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -17397,6 +17659,9 @@
    "scopes": [
     "affiliate-manager.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -17426,6 +17691,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -17466,6 +17734,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -17528,6 +17799,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -17655,6 +17929,7 @@
    "scopes": [
     "affiliate-manager.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -17778,6 +18053,9 @@
    "scopes": [
     "affiliate-manager.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -17860,6 +18138,9 @@
    "scopes": [
     "affiliate-manager.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -17928,6 +18209,9 @@
    "deprecated": false,
    "scopes": [
     "affiliate-manager.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -17999,6 +18283,9 @@
    "scopes": [
     "affiliate-manager.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -18041,6 +18328,9 @@
    "deprecated": false,
    "scopes": [
     "agent-studio.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -18167,6 +18457,9 @@
    "scopes": [
     "agent-studio.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "agentId",
@@ -18222,6 +18515,9 @@
    "scopes": [
     "agent-studio.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "agentId",
@@ -18276,6 +18572,9 @@
    "deprecated": false,
    "scopes": [
     "agent-studio.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -18362,6 +18661,9 @@
    "scopes": [
     "agent-studio.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "versionId",
@@ -18441,6 +18743,9 @@
    "deprecated": false,
    "scopes": [
     "agent-studio.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -18617,6 +18922,9 @@
    "scopes": [
     "agent-studio.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -18691,6 +18999,9 @@
    "deprecated": false,
    "scopes": [
     "agent-studio.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -18821,6 +19132,9 @@
    "scopes": [
     "managed-agents.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "managedAgentId",
@@ -18918,6 +19232,9 @@
    "scopes": [
     "managed-agents.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "managedAgentId",
@@ -18958,6 +19275,9 @@
    "deprecated": false,
    "scopes": [
     "managed-agents.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -19025,6 +19345,9 @@
    "deprecated": true,
    "scopes": [
     "agent-studio.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -19151,6 +19474,9 @@
    "scopes": [
     "agent-studio.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "agentId",
@@ -19205,6 +19531,9 @@
    "deprecated": true,
    "scopes": [
     "agent-studio.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -19271,6 +19600,7 @@
    "scopes": [
     "associations.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "associationId",
@@ -19304,6 +19634,7 @@
    "scopes": [
     "associations.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "associationId",
@@ -19337,6 +19668,7 @@
    "scopes": [
     "associations.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "associationId",
@@ -19394,6 +19726,7 @@
    "scopes": [
     "associations.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -19446,6 +19779,7 @@
    "scopes": [
     "associations.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "key_name",
@@ -19487,6 +19821,7 @@
    "scopes": [
     "associations.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "objectKey",
@@ -19530,6 +19865,7 @@
    "scopes": [
     "associations.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -19603,6 +19939,7 @@
    "scopes": [
     "associations/relation.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "recordId",
@@ -19676,6 +20013,7 @@
    "scopes": [
     "associations/relation.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "relationId",
@@ -19719,6 +20057,7 @@
    "scopes": [
     "associations/relation.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -19780,6 +20119,9 @@
    "deprecated": false,
    "scopes": [
     "blogs/author.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -19846,6 +20188,9 @@
    "scopes": [
     "blogs/category.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -19910,6 +20255,9 @@
    "deprecated": false,
    "scopes": [
     "blogs/post-update.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -20147,6 +20495,9 @@
    "scopes": [
     "blogs/posts.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -20241,6 +20592,9 @@
    "scopes": [
     "blogs/posts.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "postId",
@@ -20280,6 +20634,9 @@
    "deprecated": false,
    "scopes": [
     "blogs/check-slug.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -20335,6 +20692,9 @@
    "deprecated": false,
    "scopes": [
     "blogs/post.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -20504,6 +20864,9 @@
    "scopes": [
     "blogs/list.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -20569,6 +20932,9 @@
    "scopes": [
     "brand-boards/voices.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -20608,6 +20974,9 @@
    "deprecated": false,
    "scopes": [
     "brand-boards/voices.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -20649,6 +21018,9 @@
    "scopes": [
     "brand-boards/voices.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -20688,6 +21060,9 @@
    "deprecated": false,
    "scopes": [
     "brand-boards/voices.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -20849,6 +21224,9 @@
    "scopes": [
     "brand-boards/voices.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -20924,6 +21302,9 @@
    "deprecated": false,
    "scopes": [
     "brand-boards/voices.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -21106,6 +21487,9 @@
    "scopes": [
     "brand-boards/design-kit.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -21145,6 +21529,9 @@
    "deprecated": false,
    "scopes": [
     "brand-boards/design-kit.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -21186,6 +21573,9 @@
    "scopes": [
     "brand-boards/design-kit.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -21225,6 +21615,9 @@
    "deprecated": false,
    "scopes": [
     "brand-boards/design-kit.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -21398,6 +21791,9 @@
    "scopes": [
     "brand-boards/design-kit.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -21473,6 +21869,9 @@
    "deprecated": false,
    "scopes": [
     "brand-boards/design-kit.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -21647,6 +22046,7 @@
    "scopes": [
     "businesses.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "businessId",
@@ -21681,6 +22081,7 @@
    "scopes": [
     "businesses.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "businessId",
@@ -21715,6 +22116,7 @@
    "scopes": [
     "businesses.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "businessId",
@@ -21801,6 +22203,7 @@
    "scopes": [
     "businesses.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -21855,6 +22258,7 @@
    "scopes": [
     "businesses.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -21939,6 +22343,7 @@
    "scopes": [
     "calendars.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -22039,6 +22444,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -22084,6 +22490,7 @@
    "scopes": [
     "calendars/events.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -22129,6 +22536,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -22351,6 +22759,7 @@
    "scopes": [
     "calendars/events.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -22428,6 +22837,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -22642,6 +23052,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -22677,6 +23088,7 @@
    "scopes": [
     "calendars.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -22712,6 +23124,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -23596,6 +24009,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "appointmentId",
@@ -23631,6 +24045,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "appointmentId",
@@ -23692,6 +24107,7 @@
    "scopes": [
     "calendars/events.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "limit",
@@ -23749,6 +24165,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "appointmentId",
@@ -23810,6 +24227,7 @@
    "scopes": [
     "calendars/events.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -23895,6 +24313,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "eventId",
@@ -23951,6 +24370,7 @@
    "scopes": [
     "calendars/events.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "eventId",
@@ -23996,6 +24416,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "eventId",
@@ -24153,6 +24574,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -24305,6 +24727,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "eventId",
@@ -24396,6 +24819,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -24466,6 +24890,7 @@
    "scopes": [
     "calendars/events.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -24551,6 +24976,7 @@
    "scopes": [
     "calendars.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -24607,6 +25033,7 @@
    "scopes": [
     "calendars/groups.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "groupId",
@@ -24662,6 +25089,7 @@
    "scopes": [
     "calendars/groups.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "groupId",
@@ -24697,6 +25125,7 @@
    "scopes": [
     "calendars/groups.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "groupId",
@@ -24764,6 +25193,7 @@
    "scopes": [
     "calendars/groups.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -24814,6 +25244,7 @@
    "scopes": [
     "calendars/groups.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -24849,6 +25280,7 @@
    "scopes": [
     "calendars/groups.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -24916,6 +25348,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -25829,6 +26262,9 @@
    "scopes": [
     "calendars/resources.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "resourceType",
@@ -25878,6 +26314,9 @@
    "scopes": [
     "calendars/resources.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "resourceType",
@@ -25926,6 +26365,9 @@
    "deprecated": false,
    "scopes": [
     "calendars/resources.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -26032,6 +26474,9 @@
    "scopes": [
     "calendars/resources.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "resourceType",
@@ -26100,6 +26545,9 @@
    "deprecated": false,
    "scopes": [
     "calendars/resources.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -26202,6 +26650,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -26247,6 +26696,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -26292,6 +26742,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -26327,6 +26778,7 @@
    "scopes": [
     "calendars.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -26362,6 +26814,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -26507,6 +26960,7 @@
    "scopes": [
     "calendars.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -26537,6 +26991,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -26676,6 +27131,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "calendarId",
@@ -26811,6 +27267,7 @@
    "scopes": [
     "calendars.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -26891,6 +27348,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -27052,6 +27510,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "bookingId",
@@ -27082,6 +27541,7 @@
    "scopes": [
     "calendars/events.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "bookingId",
@@ -27112,6 +27572,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "bookingId",
@@ -27286,6 +27747,7 @@
    "scopes": [
     "calendars/events.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -27356,6 +27818,7 @@
    "scopes": [
     "calendars/events.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "overrideAvailability",
@@ -27534,6 +27997,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "serviceId",
@@ -27564,6 +28028,7 @@
    "scopes": [
     "calendars.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "serviceId",
@@ -27594,6 +28059,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "serviceId",
@@ -27880,6 +28346,7 @@
    "scopes": [
     "calendars.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -27930,6 +28397,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -28216,6 +28684,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "serviceLocationId",
@@ -28246,6 +28715,7 @@
    "scopes": [
     "calendars.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "serviceLocationId",
@@ -28276,6 +28746,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "serviceLocationId",
@@ -28352,6 +28823,7 @@
    "scopes": [
     "calendars.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -28382,6 +28854,7 @@
    "scopes": [
     "calendars.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -28457,6 +28930,7 @@
    "scopes": [
     "campaigns.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -28500,6 +28974,9 @@
    "scopes": [
     "chat-widget.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "id",
@@ -28539,6 +29016,9 @@
    "deprecated": false,
    "scopes": [
     "chat-widget.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -28590,6 +29070,9 @@
    "scopes": [
     "chat-widget.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "id",
@@ -28629,6 +29112,9 @@
    "deprecated": false,
    "scopes": [
     "chat-widget.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -29625,6 +30111,9 @@
    "scopes": [
     "chat-widget.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "id",
@@ -30620,6 +31109,9 @@
    "scopes": [
     "chat-widget.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -30752,6 +31244,9 @@
    "deprecated": false,
    "scopes": [
     "chat-widget.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -31743,6 +32238,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": null
   },
@@ -31762,6 +32258,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "projectId",
@@ -31793,6 +32290,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "projectId",
@@ -31845,6 +32343,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "projectId",
@@ -31919,6 +32418,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "projectId",
@@ -31983,6 +32483,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "projectId",
@@ -32063,6 +32564,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "projectId",
@@ -32119,6 +32621,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32161,6 +32664,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32226,6 +32730,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32277,6 +32782,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32340,6 +32846,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32416,6 +32923,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32447,6 +32955,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32478,6 +32987,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32532,6 +33042,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32605,6 +33116,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32647,6 +33159,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32678,6 +33191,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32734,6 +33248,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32775,6 +33290,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32817,6 +33333,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32949,6 +33466,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -32991,6 +33509,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -33033,6 +33552,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -33298,6 +33818,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -33329,6 +33850,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "path",
@@ -33390,6 +33912,7 @@
    "scopes": [
     "clientportal-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "query",
@@ -33466,6 +33989,7 @@
    "scopes": [
     "clientportal-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "in": "header",
@@ -33651,6 +34175,9 @@
    "scopes": [
     "companies.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -33685,6 +34212,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -33720,6 +34248,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -33765,6 +34294,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -33821,6 +34351,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -33851,6 +34382,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -33912,6 +34444,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -33973,6 +34506,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34018,6 +34552,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34063,6 +34598,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34145,6 +34681,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34180,6 +34717,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34255,6 +34793,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34316,6 +34855,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34377,6 +34917,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34442,6 +34983,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34487,6 +35029,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34532,6 +35075,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34614,6 +35158,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34649,6 +35194,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34726,6 +35272,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34788,6 +35335,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34850,6 +35398,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34885,6 +35434,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -34920,6 +35470,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "contactId",
@@ -35767,6 +36318,7 @@
    "description": "Add/Remove Contacts From Business . Passing a `null` businessId will remove the businessId from the contacts",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -35829,6 +36381,7 @@
    "description": "Allows you to update tags to multiple contacts at once, you can add or remove tags from the contacts",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -35904,6 +36457,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "businessId",
@@ -36007,6 +36561,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -36077,6 +36632,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -36932,6 +37488,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -36987,6 +37544,7 @@
    "scopes": [
     "contacts.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -37022,6 +37580,7 @@
    "scopes": [
     "contacts.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -37823,6 +38382,7 @@
    "scopes": [
     "conversation-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "actionId",
@@ -37868,6 +38428,7 @@
    "scopes": [
     "conversation-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "actionId",
@@ -37913,6 +38474,7 @@
    "scopes": [
     "conversation-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "actionId",
@@ -38727,6 +39289,7 @@
    "scopes": [
     "conversation-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -38762,6 +39325,7 @@
    "scopes": [
     "conversation-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -38792,6 +39356,7 @@
    "scopes": [
     "conversation-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -39596,6 +40161,7 @@
    "scopes": [
     "conversation-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -39771,6 +40337,7 @@
    "scopes": [
     "conversation-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -39801,6 +40368,7 @@
    "scopes": [
     "conversation-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -39831,6 +40399,7 @@
    "scopes": [
     "conversation-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -40454,6 +41023,7 @@
    "scopes": [
     "conversation-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -41077,6 +41647,7 @@
    "scopes": [
     "conversation-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -41112,6 +41683,7 @@
    "scopes": [
     "conversation-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -41147,6 +41719,7 @@
    "scopes": [
     "conversation-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -41335,6 +41908,7 @@
    "scopes": [
     "conversation-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "startAfter",
@@ -41390,6 +41964,7 @@
    "scopes": [
     "conversation-ai.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -41576,6 +42151,7 @@
    "scopes": [
     "conversation-ai.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "messageId",
@@ -41625,6 +42201,7 @@
    "scopes": [
     "conversations/message.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "conversationId",
@@ -41707,6 +42284,7 @@
    "scopes": [
     "conversations.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "conversationId",
@@ -41742,6 +42320,7 @@
    "scopes": [
     "conversations.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "conversationId",
@@ -41777,6 +42356,7 @@
    "scopes": [
     "conversations.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "conversationId",
@@ -41843,6 +42423,9 @@
    "description": "Download the recording transcription for a message by passing the message id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -41886,6 +42469,9 @@
    "description": "Get the recording transcription for a message by passing the message id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -41931,6 +42517,7 @@
    "scopes": [
     "conversations/message.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": null,
    "legacyTwin": {
@@ -41955,6 +42542,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "messageId",
@@ -42013,6 +42601,9 @@
    "description": "Get the recording for a message by passing the message id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -42058,6 +42649,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "messageId",
@@ -42093,6 +42685,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "messageId",
@@ -42197,6 +42790,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "emailMessageId",
@@ -42232,6 +42826,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "emailMessageId",
@@ -42413,6 +43008,7 @@
    "scopes": [
     "conversations/message.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": null,
    "legacyTwin": {
@@ -42437,6 +43033,7 @@
    "scopes": [
     "conversations/message.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -42574,6 +43171,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -42755,6 +43353,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -42872,6 +43471,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -42948,6 +43548,7 @@
    "scopes": [
     "conversations/message.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -43210,6 +43811,7 @@
    "scopes": [
     "conversations.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -43259,6 +43861,9 @@
    "deprecated": false,
    "scopes": [
     "conversations/livechat.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -43322,6 +43927,7 @@
    "scopes": [
     "conversations.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -43629,6 +44235,9 @@
    "scopes": [
     "countdown-timer/timer.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": null
   },
@@ -43647,6 +44256,9 @@
    "deprecated": false,
    "scopes": [
     "countdown-timer/timer.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -43677,6 +44289,9 @@
    "deprecated": false,
    "scopes": [
     "countdown-timer/timer.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -43717,6 +44332,9 @@
    "deprecated": false,
    "scopes": [
     "countdown-timer/timer.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -44210,6 +44828,9 @@
    "scopes": [
     "countdown-timer/timer.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "limit",
@@ -44309,6 +44930,9 @@
    "deprecated": false,
    "scopes": [
     "countdown-timer/timer.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -44781,6 +45405,7 @@
    "description": "Import Courses through public channels",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -45168,6 +45793,9 @@
    "scopes": [
     "courses.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -45224,6 +45852,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -45282,6 +45913,9 @@
    "scopes": [
     "courses.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "offerId",
@@ -45325,6 +45959,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "offerId",
@@ -45367,6 +46004,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -45522,6 +46162,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "limit",
@@ -45599,6 +46242,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -45749,6 +46395,9 @@
    "scopes": [
     "courses.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -45838,6 +46487,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -45892,6 +46544,9 @@
    "deprecated": false,
    "scopes": [
     "courses.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -45973,6 +46628,9 @@
    "scopes": [
     "courses.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -46027,6 +46685,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -46111,6 +46772,9 @@
    "scopes": [
     "courses.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -46191,6 +46855,9 @@
    "scopes": [
     "courses.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -46246,6 +46913,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -46300,6 +46970,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -46445,6 +47118,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -46498,6 +47174,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -46567,6 +47246,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -46609,6 +47291,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -46745,6 +47430,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -46821,6 +47509,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -46886,6 +47577,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -46940,6 +47634,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -47028,6 +47725,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -47082,6 +47782,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -47174,6 +47877,9 @@
    "scopes": [
     "courses.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -47229,6 +47935,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -47283,6 +47992,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -47428,6 +48140,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -47481,6 +48196,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -47618,6 +48336,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -47672,6 +48393,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -47817,6 +48541,9 @@
    "scopes": [
     "courses.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -47871,6 +48598,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -47960,6 +48690,9 @@
    "scopes": [
     "courses.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -48003,6 +48736,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -48045,6 +48781,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -48220,6 +48959,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "limit",
@@ -48283,6 +49025,9 @@
    "deprecated": false,
    "scopes": [
     "courses.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -48449,6 +49194,9 @@
    "scopes": [
     "courses.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "contactId",
@@ -48502,6 +49250,7 @@
    "scopes": [
     "locations/customFields.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -48535,6 +49284,7 @@
    "scopes": [
     "locations/customFields.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -48568,6 +49318,7 @@
    "scopes": [
     "locations/customFields.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -48687,6 +49438,7 @@
    "scopes": [
     "locations/customFields.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -48730,6 +49482,7 @@
    "scopes": [
     "locations/customFields.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -48789,6 +49542,7 @@
    "scopes": [
     "locations/customFields.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -48845,6 +49599,7 @@
    "scopes": [
     "locations/customFields.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "objectKey",
@@ -48889,6 +49644,7 @@
    "scopes": [
     "locations/customFields.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -49041,6 +49797,9 @@
    "scopes": [
     "custom-menu-link.write"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "customMenuId",
@@ -49076,6 +49835,9 @@
    "scopes": [
     "custom-menu-link.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "customMenuId",
@@ -49110,6 +49872,9 @@
    "deprecated": false,
    "scopes": [
     "custom-menu-link.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [
     {
@@ -49250,6 +50015,9 @@
    "scopes": [
     "custom-menu-link.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -49328,6 +50096,9 @@
    "deprecated": false,
    "scopes": [
     "custom-menu-link.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -49472,6 +50243,9 @@
    "scopes": [
     "lc-email.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -49537,6 +50311,9 @@
    "scopes": [
     "emails/campaigns.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -49576,6 +50353,9 @@
    "deprecated": false,
    "scopes": [
     "emails/campaigns.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -49679,6 +50459,9 @@
    "deprecated": false,
    "scopes": [
     "emails/campaigns.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -50239,6 +51022,9 @@
    "scopes": [
     "emails/campaigns.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -50279,6 +51065,9 @@
    "scopes": [
     "emails/campaigns.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -50318,6 +51107,9 @@
    "deprecated": false,
    "scopes": [
     "emails/campaigns.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -50394,6 +51186,9 @@
    "deprecated": false,
    "scopes": [
     "emails/campaigns.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -50480,6 +51275,9 @@
    "deprecated": false,
    "scopes": [
     "emails/campaigns.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -50573,6 +51371,9 @@
    "scopes": [
     "emails/stats.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -50638,6 +51439,9 @@
    "scopes": [
     "emails/campaigns.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -50677,6 +51481,9 @@
    "deprecated": false,
    "scopes": [
     "emails/campaigns.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -50758,6 +51565,9 @@
    "scopes": [
     "emails/templates.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -50798,6 +51608,9 @@
    "scopes": [
     "emails/templates.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -50837,6 +51650,9 @@
    "deprecated": false,
    "scopes": [
     "emails/templates.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -50944,6 +51760,9 @@
    "scopes": [
     "emails/templates.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -50998,6 +51817,9 @@
    "deprecated": false,
    "scopes": [
     "emails/templates.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -51073,6 +51895,9 @@
    "deprecated": false,
    "scopes": [
     "emails/templates.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -51205,6 +52030,9 @@
    "scopes": [
     "emails/templates.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -51300,6 +52128,7 @@
    "scopes": [
     "files.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "slug",
@@ -51330,6 +52159,7 @@
    "scopes": [
     "forms.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -51393,6 +52223,7 @@
    "scopes": [
     "forms.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -51489,6 +52320,9 @@
    "scopes": [
     "forms.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "contactId",
@@ -51537,6 +52371,9 @@
    "description": "Retrieves a list of all funnels based on the given query parameters.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -51618,6 +52455,9 @@
    "scopes": [
     "funnels/redirect.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "id",
@@ -51659,6 +52499,9 @@
    "deprecated": false,
    "scopes": [
     "funnels/redirect.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -51728,6 +52571,9 @@
    "scopes": [
     "funnels/redirect.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -51788,6 +52634,9 @@
    "deprecated": false,
    "scopes": [
     "funnels/redirect.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -51856,6 +52705,9 @@
    "description": "Retrieves count of all funnel pages based on the given query parameters.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -51903,6 +52755,9 @@
    "description": "Retrieves a list of all funnel pages based on the given query parameters.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -51966,6 +52821,10 @@
    "description": "API to update invoice late fees configuration by invoice id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "invoiceId",
@@ -52155,6 +53014,10 @@
    "scopes": [
     "invoices.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "invoiceId",
@@ -52292,6 +53155,10 @@
    "deprecated": false,
    "scopes": [
     "invoices.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -52514,6 +53381,10 @@
    "scopes": [
     "invoices.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "invoiceId",
@@ -52578,6 +53449,10 @@
    "scopes": [
     "invoices.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "invoiceId",
@@ -52636,6 +53511,10 @@
    "scopes": [
     "invoices.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "invoiceId",
@@ -52693,6 +53572,10 @@
    "deprecated": false,
    "scopes": [
     "invoices.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -53356,6 +54239,10 @@
    "scopes": [
     "invoices/estimate.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "estimateId",
@@ -53432,6 +54319,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/estimate.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -53543,6 +54434,10 @@
    "scopes": [
     "invoices/estimate.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "estimateId",
@@ -53604,6 +54499,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/estimate.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -54552,6 +55451,10 @@
    "scopes": [
     "invoices/estimate.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -54677,6 +55580,10 @@
    "scopes": [
     "invoices/estimate.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -54721,6 +55628,10 @@
    "description": "API to update estimate last visited at by estimate id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -54764,6 +55675,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/estimate.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -54826,6 +55741,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/estimate.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -55231,6 +56150,10 @@
    "scopes": [
     "invoices/estimate.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -55286,6 +56209,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/estimate.readonly"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -55362,6 +56289,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/estimate.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -55755,6 +56686,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/estimate.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -56678,6 +57613,10 @@
    "scopes": [
     "invoices.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -56722,6 +57661,10 @@
    "deprecated": false,
    "scopes": [
     "invoices.readonly"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -56881,6 +57824,10 @@
    "deprecated": false,
    "scopes": [
     "invoices.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -57685,6 +58632,10 @@
    "scopes": [
     "invoices/schedule.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "scheduleId",
@@ -57870,6 +58821,10 @@
    "scopes": [
     "invoices/schedule.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "scheduleId",
@@ -57933,6 +58888,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/schedule.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -58118,6 +59077,10 @@
    "scopes": [
     "invoices/schedule.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "scheduleId",
@@ -58152,6 +59115,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/schedule.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -58211,6 +59178,10 @@
    "scopes": [
     "invoices/schedule.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "scheduleId",
@@ -58268,6 +59239,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/schedule.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -58892,6 +59867,10 @@
    "scopes": [
     "invoices/schedule.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -59013,6 +59992,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/schedule.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -59825,6 +60808,10 @@
    "scopes": [
     "invoices.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -59869,6 +60856,10 @@
    "description": "API to update invoice last visited at by invoice id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -59911,6 +60902,10 @@
    "description": "API to update template late fees configuration by template id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "templateId",
@@ -60098,6 +61093,10 @@
    "description": "API to update template late fees configuration by template id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "templateId",
@@ -60195,6 +61194,10 @@
    "scopes": [
     "invoices/template.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "templateId",
@@ -60253,6 +61256,10 @@
    "scopes": [
     "invoices/template.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "templateId",
@@ -60310,6 +61317,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/template.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -60678,6 +61689,10 @@
    "scopes": [
     "invoices/template.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -60799,6 +61814,10 @@
    "deprecated": false,
    "scopes": [
     "invoices/template.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -61361,6 +62380,9 @@
    "deprecated": false,
    "scopes": [
     "invoices.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -62187,6 +63209,9 @@
    "scopes": [
     "knowledge-bases.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "id",
@@ -62244,6 +63269,9 @@
    "scopes": [
     "knowledge-bases.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "knowledgeBaseId",
@@ -62279,6 +63307,9 @@
    "scopes": [
     "knowledge-bases.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "knowledgeBaseId",
@@ -62313,6 +63344,9 @@
    "deprecated": false,
    "scopes": [
     "knowledge-bases.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -62390,6 +63424,9 @@
    "scopes": [
     "knowledge-bases.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -62444,6 +63481,9 @@
    "deprecated": false,
    "scopes": [
     "knowledge-bases.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -62511,6 +63551,9 @@
    "deprecated": false,
    "scopes": [
     "knowledge-bases.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -62593,6 +63636,9 @@
    "scopes": [
     "knowledge-bases.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "knowledgeBaseId",
@@ -62667,6 +63713,9 @@
    "deprecated": false,
    "scopes": [
     "knowledge-bases.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -62751,6 +63800,9 @@
    "scopes": [
     "knowledge-bases.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "id",
@@ -62785,6 +63837,9 @@
    "deprecated": false,
    "scopes": [
     "knowledge-bases.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -62846,6 +63901,9 @@
    "deprecated": false,
    "scopes": [
     "knowledge-bases.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -62934,6 +63992,9 @@
    "scopes": [
     "knowledge-bases.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -62996,6 +64057,9 @@
    "scopes": [
     "knowledge-bases.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "fileId",
@@ -63026,6 +64090,9 @@
    "scopes": [
     "knowledge-bases.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "fileId",
@@ -63055,6 +64122,9 @@
    "deprecated": false,
    "scopes": [
     "knowledge-bases.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -63128,6 +64198,9 @@
    "scopes": [
     "knowledge-bases.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -63178,6 +64251,9 @@
    "deprecated": false,
    "scopes": [
     "knowledge-bases.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -63245,6 +64321,9 @@
    "scopes": [
     "knowledge-bases.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -63300,6 +64379,7 @@
    "scopes": [
     "links.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "linkId",
@@ -63335,6 +64415,7 @@
    "scopes": [
     "links.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "linkId",
@@ -63396,6 +64477,7 @@
    "scopes": [
     "links.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -63431,6 +64513,7 @@
    "scopes": [
     "links.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -63476,6 +64559,7 @@
    "scopes": [
     "links.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -63532,6 +64616,7 @@
    "scopes": [
     "links.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -63599,6 +64684,9 @@
    "scopes": [
     "locations.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -63640,6 +64728,7 @@
    "description": "Delete Custom Field",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -63683,6 +64772,7 @@
    "description": "Get Custom Field",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -63735,6 +64825,7 @@
    "description": "Update Custom Field",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -64016,6 +65107,7 @@
    "scopes": [
     "locations/customFields.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -64071,6 +65163,7 @@
    "scopes": [
     "locations/customFields.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -64121,6 +65214,7 @@
    "scopes": [
     "locations/customFields.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -64417,6 +65511,7 @@
    "description": "Delete Custom Value",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -64460,6 +65555,7 @@
    "description": "Get Custom Value",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -64503,6 +65599,7 @@
    "description": "Update Custom Value",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -64572,6 +65669,7 @@
    "scopes": [
     "locations/customValues.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -64607,6 +65705,7 @@
    "scopes": [
     "locations/customValues.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -64666,6 +65765,9 @@
    "scopes": [
     "locations/write"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -64695,6 +65797,9 @@
    "deprecated": false,
    "scopes": [
     "locations/write"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [
     {
@@ -64777,6 +65882,7 @@
    "description": "Delete Recurring Task",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -64820,6 +65926,7 @@
    "description": "Get Recurring Task By Id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -64863,6 +65970,7 @@
    "description": "Update Recurring Task",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -65039,6 +66147,7 @@
    "description": "Create Recurring Task",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -65207,6 +66316,7 @@
    "description": "Delete tag",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -65250,6 +66360,7 @@
    "description": "Get tag by id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -65293,6 +66404,7 @@
    "description": "Update tag",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -65358,6 +66470,7 @@
    "scopes": [
     "locations/tags.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -65393,6 +66506,7 @@
    "scopes": [
     "locations/tags.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -65448,6 +66562,7 @@
    "scopes": [
     "locations/tasks.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -65541,6 +66656,7 @@
    "description": "DELETE an email/sms template",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -65586,6 +66702,7 @@
    "scopes": [
     "locations/templates.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "deleted",
@@ -65674,6 +66791,9 @@
    "scopes": [
     "locations.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": null,
    "legacyTwin": {
@@ -65697,6 +66817,9 @@
    "deprecated": false,
    "scopes": [
     "locations.internal-access-only"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [
     {
@@ -65743,6 +66866,10 @@
    "scopes": [
     "locations.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -65777,6 +66904,9 @@
    "deprecated": false,
    "scopes": [
     "locations.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [
     {
@@ -66331,6 +67461,9 @@
    "scopes": [
     "locations.write"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -66854,6 +67987,10 @@
    "scopes": [
     "locations.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -66931,6 +68068,10 @@
    "scopes": [
     "oauth.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access-Only"
+   ],
    "parameters": [
     {
      "name": "appId",
@@ -66993,6 +68134,10 @@
    "scopes": [
     "marketplace-installer-details.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access-Only",
+    "Location-Access-Only"
+   ],
    "parameters": [
     {
      "name": "appId",
@@ -67027,6 +68172,9 @@
    "deprecated": false,
    "scopes": [
     "oauth.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access-Only"
    ],
    "parameters": [
     {
@@ -67073,6 +68221,9 @@
    "scopes": [
     "charges.write"
    ],
+   "securitySchemes": [
+    "Location-Access-Only"
+   ],
    "parameters": [
     {
      "name": "chargeId",
@@ -67107,6 +68258,9 @@
    "deprecated": false,
    "scopes": [
     "charges.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access-Only"
    ],
    "parameters": [
     {
@@ -67143,6 +68297,9 @@
    "scopes": [
     "charges.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access-Only"
+   ],
    "parameters": [],
    "requestBody": null,
    "legacyTwin": {
@@ -67166,6 +68323,9 @@
    "deprecated": false,
    "scopes": [
     "charges.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access-Only"
    ],
    "parameters": [
     {
@@ -67262,6 +68422,9 @@
    "scopes": [
     "charges.write"
    ],
+   "securitySchemes": [
+    "Location-Access-Only"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -67356,6 +68519,10 @@
    "deprecated": false,
    "scopes": [
     "marketplace-external-auth-migration.write"
+   ],
+   "securitySchemes": [
+    "Location-Access",
+    "Location-Access-Only"
    ],
    "parameters": [],
    "requestBody": {
@@ -67497,6 +68664,9 @@
    "scopes": [
     "medias.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "id",
@@ -67550,6 +68720,9 @@
    "description": "Updates a single file or folder by ID",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "id",
@@ -67618,6 +68791,9 @@
    "description": "Soft-deletes or trashes multiple files and folders in a single request",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -67704,6 +68880,9 @@
    "deprecated": false,
    "scopes": [
     "medias.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -67828,6 +69007,9 @@
    "description": "Creates a new folder in the media storage",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -67890,6 +69072,9 @@
    "description": "Updates metadata or status of multiple files and folders",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -67973,6 +69158,9 @@
    "scopes": [
     "medias.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -68023,6 +69211,9 @@
    "deprecated": false,
    "scopes": [
     "oauth.readonly"
+   ],
+   "securitySchemes": [
+    "Agency-Access-Only"
    ],
    "parameters": [
     {
@@ -68156,6 +69347,9 @@
    "scopes": [
     "oauth.write"
    ],
+   "securitySchemes": [
+    "Agency-Access-Only"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -68199,6 +69393,7 @@
    "description": "Use Access Tokens to access CRM resources on behalf of an authenticated location/company.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -68284,6 +69479,7 @@
    "scopes": [
     "notes.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -68373,6 +69569,7 @@
    "scopes": [
     "notes.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -68460,6 +69657,7 @@
    "scopes": [
     "notes.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -68527,6 +69725,7 @@
    "scopes": [
     "notes.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -68567,6 +69766,7 @@
    "scopes": [
     "notes.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -68607,6 +69807,7 @@
    "scopes": [
     "notes.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -68679,6 +69880,7 @@
    "scopes": [
     "notes.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -68763,6 +69965,7 @@
    "scopes": [
     "notes.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -68868,6 +70071,7 @@
    "scopes": [
     "objects/schema.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "key",
@@ -68923,6 +70127,7 @@
    "scopes": [
     "objects/schema.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "key",
@@ -69020,6 +70225,7 @@
    "description": "Delete Record By Id . Supported Objects are business and custom objects.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "schemaKey",
@@ -69063,6 +70269,7 @@
    "description": "Allows you to get a Standard Object like business and custom object record by Id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "schemaKey",
@@ -69106,6 +70313,7 @@
    "description": "Update a Custom Object Record by Id. Supported Objects are business and custom objects. Documentation Link - https://doc.clickup.com/8631005/d/h/87cpx-277156/93bf0c2e23177b0/87cpx-376296",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "schemaKey",
@@ -69170,6 +70378,7 @@
    "scopes": [
     "objects/record.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "schemaKey",
@@ -69254,6 +70463,7 @@
    "scopes": [
     "objects/record.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "schemaKey",
@@ -69319,6 +70529,7 @@
    "scopes": [
     "objects/schema.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -69353,6 +70564,9 @@
    "deprecated": false,
    "scopes": [
     "objects/schema.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -69471,6 +70685,7 @@
    "scopes": [
     "opportunities.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -69542,6 +70757,7 @@
    "scopes": [
     "opportunities.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -69603,6 +70819,7 @@
    "scopes": [
     "opportunities.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -69670,6 +70887,7 @@
    "scopes": [
     "opportunities.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -69705,6 +70923,7 @@
    "scopes": [
     "opportunities.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -69740,6 +70959,7 @@
    "scopes": [
     "opportunities.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -69926,6 +71146,7 @@
    "scopes": [
     "opportunities.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -70024,6 +71245,7 @@
    "scopes": [
     "pipelines.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "pipelineId",
@@ -70054,6 +71276,7 @@
    "scopes": [
     "pipelines.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "pipelineId",
@@ -70084,6 +71307,7 @@
    "scopes": [
     "pipelines.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "pipelineId",
@@ -70170,6 +71394,7 @@
    "scopes": [
     "opportunities.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -70205,6 +71430,7 @@
    "scopes": [
     "pipelines.create"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -70290,6 +71516,7 @@
    "scopes": [
     "opportunities.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -70482,6 +71709,7 @@
    "scopes": [
     "opportunities.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "q",
@@ -70716,6 +71944,7 @@
    "scopes": [
     "opportunities.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -70833,6 +72062,7 @@
    "scopes": [
     "opportunities.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -70960,6 +72190,9 @@
    "scopes": [
     "payments/coupons.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -71055,6 +72288,9 @@
    "scopes": [
     "payments/coupons.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -71113,6 +72349,9 @@
    "deprecated": false,
    "scopes": [
     "payments/coupons.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -71181,6 +72420,9 @@
    "deprecated": false,
    "scopes": [
     "payments/coupons.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -71371,6 +72613,9 @@
    "deprecated": false,
    "scopes": [
     "payments/coupons.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -71568,6 +72813,9 @@
    "scopes": [
     "payments/custom-provider.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -71622,6 +72870,9 @@
    "scopes": [
     "payments/custom-provider.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -71656,6 +72907,9 @@
    "deprecated": false,
    "scopes": [
     "payments/custom-provider.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -71758,6 +73012,9 @@
    "scopes": [
     "payments/custom-provider.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -71813,6 +73070,9 @@
    "scopes": [
     "payments/custom-provider.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -71847,6 +73107,9 @@
    "deprecated": false,
    "scopes": [
     "payments/custom-provider.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -71933,6 +73196,9 @@
    "scopes": [
     "payments/integration.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -72002,6 +73268,9 @@
    "deprecated": false,
    "scopes": [
     "payments/integration.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -72093,6 +73362,9 @@
    "scopes": [
     "payments/orders.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -72148,6 +73420,9 @@
    "deprecated": false,
    "scopes": [
     "payments/orders.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -72266,6 +73541,9 @@
    "description": "List all notes of an order",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -72321,6 +73599,9 @@
    "deprecated": false,
    "scopes": [
     "payments/orders.collectPayment"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -72465,6 +73746,9 @@
    "scopes": [
     "payments/orders.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "orderId",
@@ -72519,6 +73803,9 @@
    "deprecated": false,
    "scopes": [
     "payments/orders.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -72683,6 +73970,9 @@
    "scopes": [
     "payments/subscriptions.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "subscriptionId",
@@ -72740,6 +74030,9 @@
    "deprecated": false,
    "scopes": [
     "payments/subscriptions.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -72901,6 +74194,9 @@
    "scopes": [
     "payments/transactions.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "transactionId",
@@ -72965,6 +74261,9 @@
    "deprecated": false,
    "scopes": [
     "payments/transactions.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -73133,6 +74432,9 @@
    "scopes": [
     "numberpools.read"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -73167,6 +74469,9 @@
    "deprecated": false,
    "scopes": [
     "phonenumbers.read"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -73285,6 +74590,9 @@
    "deprecated": false,
    "scopes": [
     "phonenumbers.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -73407,6 +74715,9 @@
    "scopes": [
     "phonenumbers.read"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -73496,6 +74807,10 @@
    "scopes": [
     "products/prices.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -73551,6 +74866,10 @@
    "scopes": [
     "products/prices.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -73605,6 +74924,10 @@
    "deprecated": false,
    "scopes": [
     "products/prices.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -73965,6 +75288,10 @@
    "scopes": [
     "products/prices.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -74041,6 +75368,10 @@
    "deprecated": false,
    "scopes": [
     "products/prices.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -74391,6 +75722,10 @@
    "scopes": [
     "products.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -74446,6 +75781,10 @@
    "scopes": [
     "products.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "productId",
@@ -74500,6 +75839,10 @@
    "deprecated": false,
    "scopes": [
     "products.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -74797,6 +76140,7 @@
    "description": "API to bulk edit products and their associated prices (max 30 entities)",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -75150,6 +76494,9 @@
    "scopes": [
     "products.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -75352,6 +76699,9 @@
    "scopes": [
     "products/collection.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "collectionId",
@@ -75410,6 +76760,9 @@
    "scopes": [
     "products/collection.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "collectionId",
@@ -75454,6 +76807,9 @@
    "deprecated": false,
    "scopes": [
     "products/collection.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -75555,6 +76911,9 @@
    "scopes": [
     "products/collection.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "limit",
@@ -75644,6 +77003,9 @@
    "deprecated": false,
    "scopes": [
     "products/collection.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -75740,6 +77102,10 @@
    "deprecated": false,
    "scopes": [
     "products.readonly"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -75894,6 +77260,10 @@
    "scopes": [
     "products/prices.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "limit",
@@ -75971,6 +77341,10 @@
    "deprecated": false,
    "scopes": [
     "products/prices.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -76051,6 +77425,10 @@
    "deprecated": false,
    "scopes": [
     "products.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -76332,6 +77710,9 @@
    "scopes": [
     "products.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "reviewId",
@@ -76397,6 +77778,9 @@
    "deprecated": false,
    "scopes": [
     "products.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -76553,6 +77937,9 @@
    "scopes": [
     "products.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -76640,6 +78027,9 @@
    "deprecated": false,
    "scopes": [
     "products.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -76736,6 +78126,9 @@
    "deprecated": false,
    "scopes": [
     "products.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -76881,6 +78274,9 @@
    "description": "API to set the display priority of products in a store",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "storeId",
@@ -76950,6 +78346,9 @@
    "deprecated": false,
    "scopes": [
     "products.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -77026,6 +78425,9 @@
    "deprecated": false,
    "scopes": [
     "products.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -77111,6 +78513,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "folderId",
@@ -77178,6 +78581,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "folderId",
@@ -77279,6 +78683,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "folderId",
@@ -77332,6 +78737,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "folderId",
@@ -77401,6 +78807,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "folderId",
@@ -77443,6 +78850,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "folderId",
@@ -77485,6 +78893,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "folderId",
@@ -77583,6 +78992,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "listId",
@@ -77625,6 +79035,7 @@
    "scopes": [
     "projects/tasks.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "listId",
@@ -77678,6 +79089,7 @@
    "scopes": [
     "projects/tasks.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "listId",
@@ -77731,6 +79143,7 @@
    "scopes": [
     "projects/tasks.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "listId",
@@ -77798,6 +79211,7 @@
    "scopes": [
     "projects/tasks.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "listId",
@@ -77956,6 +79370,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "listId",
@@ -78009,6 +79424,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "listId",
@@ -78078,6 +79494,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "listId",
@@ -78120,6 +79537,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "listId",
@@ -78162,6 +79580,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "listId",
@@ -78260,6 +79679,7 @@
    "scopes": [
     "projects/tasks.recurring.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -78302,6 +79722,7 @@
    "scopes": [
     "projects/tasks.recurring.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -78344,6 +79765,7 @@
    "scopes": [
     "projects/tasks.recurring.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "id",
@@ -78522,6 +79944,7 @@
    "scopes": [
     "projects/tasks.recurring.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -78693,6 +80116,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -78760,6 +80184,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -78861,6 +80286,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -78928,6 +80354,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -79029,6 +80456,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -79071,6 +80499,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -79242,6 +80671,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -79295,6 +80725,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -79364,6 +80795,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -79406,6 +80838,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -79448,6 +80881,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "spaceId",
@@ -79546,6 +80980,7 @@
    "scopes": [
     "projects/workspace.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -79577,6 +81012,7 @@
    "scopes": [
     "projects/workspace.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -79667,6 +81103,7 @@
    "scopes": [
     "projects/tasks.comments.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "taskId",
@@ -79720,6 +81157,7 @@
    "scopes": [
     "projects/tasks.comments.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "taskId",
@@ -79804,6 +81242,7 @@
    "scopes": [
     "projects/tasks.comments.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "taskId",
@@ -79873,6 +81312,7 @@
    "scopes": [
     "projects/tasks.comments.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "taskId",
@@ -79952,6 +81392,7 @@
    "scopes": [
     "projects/tasks.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "taskId",
@@ -80014,6 +81455,7 @@
    "scopes": [
     "projects/tasks.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "taskId",
@@ -80056,6 +81498,7 @@
    "scopes": [
     "projects/tasks.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "taskId",
@@ -80098,6 +81541,7 @@
    "scopes": [
     "projects/tasks.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "taskId",
@@ -80140,6 +81584,7 @@
    "scopes": [
     "projects/tasks.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "taskId",
@@ -80294,6 +81739,7 @@
    "scopes": [
     "projects/tasks.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -80352,6 +81798,7 @@
    "scopes": [
     "projects/tasks.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -80627,6 +82074,10 @@
    "description": "Send document to a client",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -80809,6 +82260,10 @@
    "description": "List documents for a location",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -80924,6 +82379,10 @@
    "description": "Send template to a client",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -80994,6 +82453,10 @@
    "description": "List document contract templates for a location",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -81109,6 +82572,9 @@
    "scopes": [
     "saas/company.read"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -81141,6 +82607,9 @@
    "deprecated": false,
    "scopes": [
     "saas/company.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [
     {
@@ -81246,6 +82715,9 @@
    "scopes": [
     "saas/company.write"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -81304,6 +82776,9 @@
    "deprecated": false,
    "scopes": [
     "saas/company.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [
     {
@@ -81405,6 +82880,9 @@
    "scopes": [
     "saas/company.write"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -81462,6 +82940,9 @@
    "scopes": [
     "saas/company.read"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -81501,6 +82982,9 @@
    "deprecated": false,
    "scopes": [
     "saas/company.read"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [
     {
@@ -81615,6 +83099,9 @@
    "scopes": [
     "saas/company.write"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -81717,6 +83204,9 @@
    "scopes": [
     "saas/company.read"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -81757,6 +83247,9 @@
    "deprecated": false,
    "scopes": [
     "saas/location.read"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [
     {
@@ -81871,6 +83364,9 @@
    "scopes": [
     "saas/company.read"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "customerId",
@@ -81911,6 +83407,9 @@
    "deprecated": false,
    "scopes": [
     "saas/company.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [
     {
@@ -81971,6 +83470,9 @@
    "scopes": [
     "saas/company.write"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -82021,6 +83523,9 @@
    "scopes": [
     "saas/company.read"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -82062,6 +83567,9 @@
    "scopes": [
     "saas/company.read"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "planId",
@@ -82102,6 +83610,9 @@
    "deprecated": false,
    "scopes": [
     "saas/company.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access"
    ],
    "parameters": [
     {
@@ -82206,6 +83717,9 @@
    "scopes": [
     "saas/company.write"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -82269,6 +83783,9 @@
    "description": "Get a list of all own and imported Snapshots",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -82302,6 +83819,9 @@
    "description": "Create a share link for snapshot",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -82375,6 +83895,9 @@
    "description": "Get Latest Snapshot Push Status for a location id",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "companyId",
@@ -82425,6 +83948,9 @@
    "description": "Get list of sub-accounts snapshot pushed in time period",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [
     {
      "name": "snapshotId",
@@ -82508,6 +84034,9 @@
    "scopes": [
     "socialplanner/account.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -82563,6 +84092,9 @@
    "scopes": [
     "socialplanner/account.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -82597,6 +84129,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/category.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -82642,6 +84177,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/category.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -82707,6 +84245,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/oauth.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -82784,6 +84325,9 @@
    "scopes": [
     "socialplanner/account.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -82833,6 +84377,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/csv.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -82889,6 +84436,9 @@
    "scopes": [
     "socialplanner/csv.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -82933,6 +84483,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/csv.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -82999,6 +84552,9 @@
    "scopes": [
     "socialplanner/csv.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -83063,6 +84619,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/csv.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -83151,6 +84710,9 @@
    "scopes": [
     "socialplanner/csv.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -83206,6 +84768,9 @@
    "scopes": [
     "socialplanner/post.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -83251,6 +84816,9 @@
    "scopes": [
     "socialplanner/post.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -83295,6 +84863,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/post.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -84333,6 +85904,9 @@
    "scopes": [
     "socialplanner/post.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -84389,6 +85963,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/post.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -84484,6 +86061,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/post.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -85512,6 +87092,9 @@
    "scopes": [
     "socialplanner/csv.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -85610,6 +87193,9 @@
    "scopes": [
     "socialplanner/tag.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -85669,6 +87255,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/tag.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -85735,6 +87324,9 @@
    "scopes": [
     "socialplanner/watermarks.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "templateId",
@@ -85775,6 +87367,9 @@
    "scopes": [
     "socialplanner/watermarks.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "templateId",
@@ -85814,6 +87409,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/watermarks.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -85924,6 +87522,9 @@
    "scopes": [
     "socialplanner/watermarks.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -86027,6 +87628,9 @@
    "scopes": [
     "socialplanner/watermarks.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "locationId",
@@ -86086,6 +87690,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/watermarks.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -86181,6 +87788,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "postId",
@@ -86221,6 +87829,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -87366,6 +88975,7 @@
    "scopes": [
     "socialplanner/category.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -87444,6 +89054,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -87506,6 +89117,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -87568,6 +89180,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -87618,6 +89231,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -87690,6 +89304,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -87755,6 +89370,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -87815,6 +89431,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -88965,6 +90582,7 @@
    "scopes": [
     "socialplanner/category.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -89040,6 +90658,7 @@
    "scopes": [
     "socialplanner/category.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -89107,6 +90726,7 @@
    "scopes": [
     "socialplanner/category.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -89147,6 +90767,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "queueId",
@@ -89261,6 +90882,7 @@
    "scopes": [
     "socialplanner/category.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -89321,6 +90943,7 @@
    "scopes": [
     "socialplanner/category.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -89392,6 +91015,7 @@
    "scopes": [
     "socialplanner/category.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -89441,6 +91065,7 @@
    "scopes": [
     "socialplanner/category.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -89537,6 +91162,9 @@
    "scopes": [
     "socialplanner/comments.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "platform",
@@ -89594,6 +91222,9 @@
    "scopes": [
     "socialplanner/comments.write"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "platform",
@@ -89650,6 +91281,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/comments.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -89772,6 +91406,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/comments.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -89972,6 +91609,9 @@
    "scopes": [
     "socialplanner/oauth.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "platform",
@@ -90043,6 +91683,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/oauth.write"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -90553,6 +92196,9 @@
    "scopes": [
     "socialplanner/oauth.readonly"
    ],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "platform",
@@ -90622,6 +92268,9 @@
    "deprecated": false,
    "scopes": [
     "socialplanner/statistics.readonly"
+   ],
+   "securitySchemes": [
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -90762,6 +92411,9 @@
    "description": "Delete specific shipping carrier with Id :shippingCarrierId",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingCarrierId",
@@ -90816,6 +92468,9 @@
    "description": "The \"List Shipping Carrier\" API allows to retrieve a paginated list of shipping carrier.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingCarrierId",
@@ -90870,6 +92525,9 @@
    "description": "The \"update Shipping Carrier\" API allows update a shipping carrier to the system. ",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingCarrierId",
@@ -90965,6 +92623,9 @@
    "description": "The \"List Shipping Carrier\" API allows to retrieve a list of shipping carrier.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -91009,6 +92670,9 @@
    "description": "The \"Create Shipping Carrier\" API allows adding a new shipping carrier.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -91099,6 +92763,9 @@
    "description": "Delete specific shipping rate with Id :shippingRateId",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingZoneId",
@@ -91163,6 +92830,9 @@
    "description": "The \"List Shipping Rate\" API allows to retrieve a paginated list of shipping rate.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingZoneId",
@@ -91227,6 +92897,9 @@
    "description": "The \"update Shipping Rate\" API allows update a shipping rate to the system. ",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingZoneId",
@@ -91372,6 +93045,9 @@
    "description": "The \"List Shipping Rate\" API allows to retrieve a list of shipping rate.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingZoneId",
@@ -91448,6 +93124,9 @@
    "description": "The \"Create Shipping Rate\" API allows adding a new shipping rate.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingZoneId",
@@ -91594,6 +93273,9 @@
    "description": "Delete specific shipping zone with Id :shippingZoneId",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingZoneId",
@@ -91648,6 +93330,9 @@
    "description": "The \"List Shipping Zone\" API allows to retrieve a paginated list of shipping zone.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingZoneId",
@@ -91712,6 +93397,9 @@
    "description": "The \"update Shipping Zone\" API allows update a shipping zone to the system. ",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "shippingZoneId",
@@ -92833,6 +94521,7 @@
    "description": "This return available shipping rates for country based on order amount",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -94582,6 +96271,9 @@
    "description": "The \"List Shipping Zone\" API allows to retrieve a list of shipping zone.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -94658,6 +96350,9 @@
    "description": "The \"Create Shipping Zone\" API allows adding a new shipping zone.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -95774,6 +97469,9 @@
    "description": "Get store settings by altId and altType.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [
     {
      "name": "altId",
@@ -95818,6 +97516,9 @@
    "description": "Create or update store settings by altId and altType.",
    "deprecated": false,
    "scopes": [],
+   "securitySchemes": [
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -97031,6 +98732,7 @@
    "scopes": [
     "surveys.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -97094,6 +98796,7 @@
    "scopes": [
     "surveys.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -97190,6 +98893,10 @@
    "scopes": [
     "users.write"
    ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
+   ],
    "parameters": [],
    "requestBody": null,
    "legacyTwin": {
@@ -97213,6 +98920,10 @@
    "deprecated": false,
    "scopes": [
     "users.readonly"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -97248,6 +98959,10 @@
    "deprecated": false,
    "scopes": [
     "users.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -98030,6 +99745,10 @@
    "deprecated": false,
    "scopes": [
     "users.write"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [],
    "requestBody": {
@@ -98822,6 +100541,9 @@
    "scopes": [
     "users.readonly"
    ],
+   "securitySchemes": [
+    "Agency-Access"
+   ],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -98894,6 +100616,10 @@
    "deprecated": false,
    "scopes": [
     "users.readonly"
+   ],
+   "securitySchemes": [
+    "Agency-Access",
+    "Location-Access"
    ],
    "parameters": [
     {
@@ -99032,6 +100758,7 @@
    "scopes": [
     "voice-ai-agent-goals.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "actionId",
@@ -99085,6 +100812,7 @@
    "scopes": [
     "voice-ai-agent-goals.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "actionId",
@@ -99129,6 +100857,7 @@
    "scopes": [
     "voice-ai-agent-goals.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "actionId",
@@ -99651,6 +101380,7 @@
    "scopes": [
     "voice-ai-agent-goals.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -100163,6 +101893,7 @@
    "scopes": [
     "voice-ai-agents.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -100208,6 +101939,7 @@
    "scopes": [
     "voice-ai-agents.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -100253,6 +101985,7 @@
    "scopes": [
     "voice-ai-agents.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "agentId",
@@ -100576,6 +102309,7 @@
    "scopes": [
     "voice-ai-agents.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "page",
@@ -100645,6 +102379,7 @@
    "scopes": [
     "voice-ai-agents.write"
    ],
+   "securitySchemes": [],
    "parameters": [],
    "requestBody": {
     "required": true,
@@ -100955,6 +102690,7 @@
    "scopes": [
     "voice-ai-dashboard.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "callId",
@@ -101000,6 +102736,7 @@
    "scopes": [
     "voice-ai-dashboard.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -101153,6 +102890,7 @@
    "scopes": [
     "workflows.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "workflowId",
@@ -101193,6 +102931,7 @@
    "scopes": [
     "workflows.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "workflowId",
@@ -101979,6 +103718,7 @@
    "scopes": [
     "workflows.logs"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "workflowId",
@@ -102130,6 +103870,7 @@
    "scopes": [
     "workflows.logs"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "workflowId",
@@ -102306,6 +104047,7 @@
    "scopes": [
     "workflows.publish"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "workflowId",
@@ -102370,6 +104112,7 @@
    "scopes": [
     "workflows.delete"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "workflowId",
@@ -102410,6 +104153,7 @@
    "scopes": [
     "workflows.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -103190,6 +104934,7 @@
    "scopes": [
     "workflows.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -103225,6 +104970,7 @@
    "scopes": [
     "workflows.write"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -104000,6 +105746,7 @@
    "scopes": [
     "workflows.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",
@@ -104259,6 +106006,7 @@
    "scopes": [
     "workflows.readonly"
    ],
+   "securitySchemes": [],
    "parameters": [
     {
      "name": "locationId",

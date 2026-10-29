@@ -22,6 +22,8 @@ export interface Operation {
   description: string;
   deprecated: boolean;
   scopes: string[];
+  /** Security scheme names from the spec, e.g. Agency-Access, Location-Access-Only (bearer omitted). */
+  securitySchemes?: string[];
   parameters: SpecParameter[];
   requestBody: {
     required?: boolean;

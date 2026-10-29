@@ -37,7 +37,7 @@ export const platformOverrides: DomainOverrides = {
     "POST /oauth/token": {
       name: "ghl_oauth_get_access_token",
       contentType: "application/x-www-form-urlencoded",
-      descriptionNote: "OAuth2 token exchange (authorization_code / refresh_token grants). Spec documents the SAME GetAccessTokenBodyDto schema under both application/x-www-form-urlencoded and application/json content types — this tool defaults to the conventional form-encoded body; application/json is also accepted per spec if you construct the request outside this tool. No security scheme on this op (client credentials go in the body).",
+      descriptionNote: "OAuth2 token exchange (authorization_code / refresh_token grants). Form-encoded body only: the live docs (2026-08-10, breaking) no longer accept application/json, and the body fields are snake_case (client_id, client_secret, grant_type, code, refresh_token, user_type, redirect_uri). No security scheme on this op (client credentials go in the body).",
     },
 
     // --- users ---

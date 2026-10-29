@@ -25,6 +25,8 @@ export interface GhlResponse {
   status: number;
   data: unknown;
   requestUrl: string;
+  /** Rate-limit headers from the last response, when the API sent them. */
+  rateLimit?: { limit?: string; remaining?: string; dailyRemaining?: string; retried?: number };
 }
 
 export async function callGhl(
@@ -102,26 +104,48 @@ export async function callGhl(
     }
   }
 
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), config.timeoutMs);
-  init.signal = controller.signal;
-
+  const MAX_429_RETRIES = 3;
+  let retried = 0;
   try {
-    const res = await fetch(url, init);
-    const text = await res.text();
-    let data: unknown = text;
-    try {
-      data = text ? JSON.parse(text) : null;
-    } catch {
-      /* keep raw text */
+    for (;;) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), config.timeoutMs);
+      init.signal = controller.signal;
+      try {
+        const res = await fetch(url, init);
+        // 429 means the request was NOT processed, so retrying is safe for every method.
+        if (res.status === 429 && retried < MAX_429_RETRIES) {
+          const ra = Number(res.headers.get("retry-after"));
+          const waitMs = Math.min(Number.isFinite(ra) && ra > 0 ? ra * 1000 : 1000 * 2 ** retried, 15_000);
+          await res.text().catch(() => "");
+          retried++;
+          await new Promise((r) => setTimeout(r, waitMs));
+          continue;
+        }
+        const text = await res.text();
+        let data: unknown = text;
+        try {
+          data = text ? JSON.parse(text) : null;
+        } catch {
+          /* keep raw text */
+        }
+        const h = (n: string) => res.headers.get(n) ?? undefined;
+        const rateLimit = {
+          limit: h("x-ratelimit-limit-minute") ?? h("x-ratelimit-limit"),
+          remaining: h("x-ratelimit-remaining"),
+          dailyRemaining: h("x-ratelimit-daily-remaining"),
+          ...(retried ? { retried } : {}),
+        };
+        const hasRl = Object.values(rateLimit).some((v) => v !== undefined);
+        return { ok: res.ok, status: res.status, data, requestUrl: url.toString(), ...(hasRl ? { rateLimit } : {}) };
+      } finally {
+        clearTimeout(timer);
+      }
     }
-    return { ok: res.ok, status: res.status, data, requestUrl: url.toString() };
   } catch (e) {
     const msg = e instanceof Error && e.name === "AbortError"
       ? `Request timed out after ${config.timeoutMs}ms`
       : String(e);
     throw new Error(`GHL request failed (${op.method} ${url}): ${msg}`);
-  } finally {
-    clearTimeout(timer);
   }
 }
