@@ -39,10 +39,6 @@ export const conversationsOverrides: DomainOverrides = {
       name: "ghl_agent_studio_execute_deprecated",
       descriptionNote: "Deprecated per official spec — use ghl_agent_studio_execute (POST /agent-studio/agent/{agentId}/execute) instead.",
     },
-    "GET /chat-widget/public/config/{id}": {
-      name: "ghl_chat_widget_get_public_config",
-      descriptionNote: "Auto-generated name collided with another chat-widget tool (rendered as 'ghl_chat_widget_get_get2') — renamed. This is the public widget-embed config fetch; the spec declares no security/auth requirement for it, unlike other chat-widget ops.",
-    },
     "GET /conversations/messages/{id}": {
       name: "ghl_conversation_get_message",
       descriptionNote: "Note: the official spec omits the `id` path-parameter declaration; this server infers it from the URL template (registry.ts fallback added 2026-07-16), so `id` (the message ID) is a required argument here despite the spec gap.",

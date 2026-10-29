@@ -1,0 +1,726 @@
+{
+ "generatedAt": "2026-10-29T05:36:55.299Z",
+ "tally": {
+  "2021-07-28 -> v3": 94,
+  "v3 -> 2021-07-28": 5,
+  "(none) -> v3": 30,
+  "v3 -> 2021-04-15": 14
+ },
+ "changes": [
+  {
+   "key": "GET /ad-publishing/facebook/reporting",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/reporting/campaign/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/reporting/list",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/me",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/pages",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/page/{}/instagram",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/page/{}/forms",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/page/{}/forms",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/ad-accounts",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/ad-accounts/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/facebook/ad-accounts/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/conversation-forms",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/conversation-forms",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/integration",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/integration",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/facebook/integration",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/targeting/search",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/campaigns/{}/publish",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/facebook/page",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/pixels",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/facebook/pixels",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/custom-audience",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/facebook/custom-audience/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/facebook/custom-audience/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/custom-audience/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/facebook/custom-audience/{}/member",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/facebook/custom-audience/{}/member",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/facebook/custom-audience/{}/member/batch",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/facebook/page/default",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/lead-form/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/campaign/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/facebook/entity",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/facebook/campaigns",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/facebook/adsets",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/campaigns/{}/pause",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/campaigns/{}/resume",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/campaigns/{}/duplicate",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/facebook/campaigns/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/adsets/{}/pause",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/adsets/{}/resume",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/adsets/{}/duplicate",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/facebook/adsets/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/ads/{}/pause",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/ads/{}/resume",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/facebook/ads/{}/duplicate",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/facebook/ads/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/reporting",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/reporting/list",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/reporting/campaign/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/conversions",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/google/conversions",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/conversions/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/google/conversions/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/integration",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/google/integration",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/me",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/ad-accounts",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/ad-accounts/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/google/ad-accounts/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/google/ads/{}/publish",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/targeting/search",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/google/keyword-ideas",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/assets",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/google/assets",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/entity",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/target-interests",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/segments",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/google/segments",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/google/segments/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/segments/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/google/segments/offline-user-list-job",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/google/audiences",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/audiences",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/audiences/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/google/ads",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/ads/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/google/conversion-goals",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/linkedin/integration",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/linkedin/integration",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/linkedin/ad-accounts",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/linkedin/ad-account",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /ad-publishing/linkedin/ad-account",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/linkedin/me",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/linkedin/ads/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/linkedin/ads/{}/publish",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/linkedin/ads",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/linkedin/targeting/search",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/linkedin/{}/forms",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "POST /ad-publishing/linkedin/{}/form",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "PATCH /ad-publishing/linkedin/{}/status",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/linkedin/reporting",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/linkedin/reporting/list",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /ad-publishing/linkedin/reporting/campaign-group/{}",
+   "from": "2021-07-28",
+   "to": "v3"
+  },
+  {
+   "key": "GET /brand-boards/{}",
+   "from": "v3",
+   "to": "2021-07-28"
+  },
+  {
+   "key": "GET /brand-boards/{}/{}",
+   "from": "v3",
+   "to": "2021-07-28"
+  },
+  {
+   "key": "PATCH /brand-boards/{}/{}",
+   "from": "v3",
+   "to": "2021-07-28"
+  },
+  {
+   "key": "DELETE /brand-boards/{}/{}",
+   "from": "v3",
+   "to": "2021-07-28"
+  },
+  {
+   "key": "POST /brand-boards/",
+   "from": "v3",
+   "to": "2021-07-28"
+  },
+  {
+   "key": "GET /conversations/messages/email/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /conversations/messages/email/{}/schedule",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "POST /conversations/messages/review-reply",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "POST /conversations/messages/upload/initiate",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "POST /conversations/messages/upload/complete",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "GET /funnels/funnel/list",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /funnels/page",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /funnels/page/count",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "POST /marketplace/billing/charges",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /marketplace/billing/charges",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /marketplace/billing/charges/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /marketplace/billing/charges/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /marketplace/billing/charges/has-funds",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /phone-system/number-pools",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /phone-system/numbers/location/{}/available",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /saas-api/public-api/locations",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "PUT /saas-api/public-api/update-saas-subscription/{}",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "POST /saas-api/public-api/bulk-disable-saas/{}",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "POST /saas-api/public-api/enable-saas/{}",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "POST /saas-api/public-api/pause/{}",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "POST /saas-api/public-api/update-rebilling/{}",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "GET /saas-api/public-api/agency-plans/{}",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "GET /saas-api/public-api/get-saas-subscription/{}",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "POST /saas-api/public-api/bulk-enable-saas/{}",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "GET /saas-api/public-api/saas-locations/{}",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "GET /saas-api/public-api/saas-plan/{}",
+   "from": "v3",
+   "to": "2021-04-15"
+  },
+  {
+   "key": "POST /store/shipping-zone",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /store/shipping-zone",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /store/shipping-zone/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /store/shipping-zone/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /store/shipping-zone/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "POST /store/shipping-zone/shipping-rates",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "POST /store/shipping-zone/{}/shipping-rate",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /store/shipping-zone/{}/shipping-rate",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /store/shipping-zone/{}/shipping-rate/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /store/shipping-zone/{}/shipping-rate/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /store/shipping-zone/{}/shipping-rate/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "POST /store/shipping-carrier",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /store/shipping-carrier",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /store/shipping-carrier/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /store/shipping-carrier/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "DELETE /store/shipping-carrier/{}",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "POST /store/store-setting",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "GET /store/store-setting",
+   "from": "",
+   "to": "v3"
+  },
+  {
+   "key": "PUT /ad-publishing/facebook/ads",
+   "from": "2021-07-28",
+   "to": "v3"
+  }
+ ]
+}

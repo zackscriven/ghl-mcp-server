@@ -11,7 +11,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Operation, OperationsFile, OperationOverride, SpecParameter } from "./types.js";
-import { assignNames, specBase } from "./naming.js";
+import { assignNames, shapeKey, specBase } from "./naming.js";
 import { allOverrides } from "./overrides/index.js";
 
 export interface RegisteredTool {
@@ -180,9 +180,14 @@ function buildDescription(op: Operation, ov: OperationOverride | undefined): str
   const parts: string[] = [];
   if (ov?.descriptionNote) parts.push(ov.descriptionNote);
   if (op.deprecated) parts.push("[DEPRECATED per official docs — prefer the documented replacement if one exists.]");
+  if (op.legacyFallback) {
+    parts.push(
+      "[LEGACY FALLBACK — this endpoint is no longer in the live v3 docs (checked 2026-10-28) but is still served under the legacy Version header. Expect removal; prefer a current equivalent.]",
+    );
+  }
   parts.push(op.summary || op.operationId || `${op.method} ${op.path}`);
   const desc = op.description?.trim();
-  if (desc && desc !== op.summary) parts.push(desc.slice(0, 600));
+  if (desc && desc !== op.summary) parts.push(desc.slice(0, 1500));
   parts.push(`Endpoint: ${op.method} ${op.path} (Version header: ${op.versionHeader || "none"}; source: ${op.specFile})`);
   if (op.scopes.length) parts.push(`OAuth scopes: ${op.scopes.join(", ")}`);
   const pag = op.parameters.filter((p) => p.in === "query" && PAGINATION_PARAMS.has(p.name)).map((p) => p.name);
@@ -190,25 +195,39 @@ function buildDescription(op: Operation, ov: OperationOverride | undefined): str
   return parts.join("\n");
 }
 
+/** Pinned tool names (public API): shape key -> name. Committed; never regenerated blindly. */
+function loadPinnedNames(): Record<string, string> {
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const p = path.join(here, "generated", "tool-names.json");
+  return fs.existsSync(p) ? (JSON.parse(fs.readFileSync(p, "utf8")) as Record<string, string>) : {};
+}
+
 export function buildRegistry(enabledDomains: string[] | null): Registry {
   const opsFile = loadOperations();
   const overrideMap = new Map<string, OperationOverride>();
   for (const dom of allOverrides) {
-    for (const [key, ov] of Object.entries(dom.overrides)) overrideMap.set(key, ov);
+    for (const [key, ov] of Object.entries(dom.overrides)) {
+      const [m, ...rest] = key.split(" ");
+      overrideMap.set(shapeKey(m, rest.join(" ")), ov);
+    }
   }
+  const pinned = loadPinnedNames();
 
   let ops = opsFile.operations;
   if (enabledDomains) {
     ops = ops.filter((op) => enabledDomains.includes(specBase(op.specFile).toLowerCase()));
   }
 
-  const names = assignNames(ops, (op) => overrideMap.get(op.method + " " + op.path)?.name);
+  const names = assignNames(ops, (op) => {
+    const sk = shapeKey(op.method, op.path);
+    return overrideMap.get(sk)?.name ?? pinned[sk];
+  });
   const tools: RegisteredTool[] = [];
   const skipped: Registry["skipped"] = [];
 
   for (const op of ops) {
     const key = op.method + " " + op.path;
-    const ov = overrideMap.get(key);
+    const ov = overrideMap.get(shapeKey(op.method, op.path));
     const name = names.get(op)!;
     if (ov?.skip) {
       skipped.push({ key, name, reason: ov.skip.reason });

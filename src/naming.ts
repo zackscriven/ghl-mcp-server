@@ -18,15 +18,18 @@ const RESOURCE: Record<string, string> = {
   calendars: "calendar",
   campaigns: "campaign",
   "chat-widget": "chat_widget",
+  "clientportal-ai": "clientportal",
   companies: "company",
   contacts: "contact",
   "conversation-ai": "conversation_ai",
   conversations: "conversation",
   courses: "course",
+  "countdown-timer": "countdown",
   "custom-fields": "custom_field",
   "custom-menus": "custom_menu",
   "email-isv": "email_verify",
   emails: "email",
+  files: "file",
   forms: "form",
   funnels: "funnel",
   invoices: "invoice",
@@ -41,6 +44,7 @@ const RESOURCE: Record<string, string> = {
   payments: "payment",
   "phone-system": "phone",
   products: "product",
+  projects: "project",
   proposals: "proposal",
   saas: "saas",
   "saas-api": "saas",
@@ -53,6 +57,12 @@ const RESOURCE: Record<string, string> = {
   "voice-ai": "voice_ai",
   workflows: "workflow",
 };
+
+/** Path-shape key: METHOD + path with parameter names erased, so a spec-side
+ *  param rename ({id} -> {emailMessageId}) never orphans an override or a pinned name. */
+export function shapeKey(method: string, path: string): string {
+  return method + " " + path.replace(/\{[^}]+\}/g, "{}");
+}
 
 export function specBase(specFile: string): string {
   return specFile.replace(/^v3\//, "").replace(/-v3\.json$|\.json$/, "");

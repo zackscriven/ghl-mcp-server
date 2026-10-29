@@ -124,10 +124,14 @@ for (const f of v3Files) all.push(...extractFile(f, "v3"));
 const errors = all.filter((o) => o.parseError);
 const ops = all.filter((o) => !o.parseError);
 
-// Dedupe by METHOD+path, prefer v3 variant; keep pointer to the legacy twin.
+// Dedupe by METHOD + path SHAPE (param names normalised, so a rename such as
+// {audienceId} -> {customAudienceId} or {id} -> {emailMessageId} does not emit
+// a duplicate tool bound to the legacy twin); prefer the v3 variant and keep a
+// pointer to the legacy twin.
+const shape = (o) => o.method + " " + o.path.replace(/\{[^}]+\}/g, "{}");
 const byKey = new Map();
 for (const o of ops) {
-  const key = o.method + " " + o.path;
+  const key = shape(o);
   const cur = byKey.get(key);
   if (!cur) byKey.set(key, o);
   else if (o.tier === "v3" && cur.tier === "legacy") {
@@ -135,6 +139,38 @@ for (const o of ops) {
     byKey.set(key, o);
   } else if (o.tier === "legacy" && cur.tier === "v3") {
     cur.legacyTwin = { specFile: o.specFile, versionHeader: o.versionHeader, operationId: o.operationId };
+  }
+}
+
+// Legacy-fallback flag: a legacy-only op whose service HAS a v3 spec but whose
+// endpoint is absent from it was removed from the live v3 docs. It still works
+// against the old Version header, so we keep it, flagged, for one minor release.
+const v3Services = new Set(v3Files.map((f) => path.basename(f).replace(/-v3\.json$/, "")));
+let legacyFallbackCount = 0;
+for (const o of byKey.values()) {
+  const svc = o.specFile.replace(/^v3\//, "").replace(/(-v3)?\.json$/, "");
+  if (o.tier === "legacy" && v3Services.has(svc)) {
+    o.legacyFallback = true;
+    legacyFallbackCount++;
+  }
+}
+
+// Version-header drift report vs the previous operations.json. A header change
+// silently changes request behaviour, so unexpected drift fails the build
+// unless GHL_ACCEPT_HEADER_CHANGES=1 (the report is written either way).
+let headerChanges = [];
+if (fs.existsSync(OUT)) {
+  try {
+    const prev = JSON.parse(fs.readFileSync(OUT, "utf8")).operations ?? [];
+    const prevByShape = new Map(prev.map((o) => [shape(o), o]));
+    for (const [k, o] of byKey) {
+      const p = prevByShape.get(k);
+      if (p && p.versionHeader !== o.versionHeader) {
+        headerChanges.push({ key: k, from: p.versionHeader, to: o.versionHeader });
+      }
+    }
+  } catch {
+    /* no usable previous file */
   }
 }
 
@@ -151,4 +187,16 @@ const result = {
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify(result, null, 1));
 console.log(`Wrote ${byKey.size} unique operations (${ops.length} raw) → ${OUT}`);
+console.log(`Legacy-fallback ops (removed from live v3 docs, kept flagged): ${legacyFallbackCount}`);
 if (errors.length) console.error("Parse errors:", errors);
+if (headerChanges.length) {
+  const tally = {};
+  for (const c of headerChanges) tally[`${c.from || "(none)"} -> ${c.to || "(none)"}`] = (tally[`${c.from || "(none)"} -> ${c.to || "(none)"}`] ?? 0) + 1;
+  const report = path.resolve(path.dirname(OUT), "version-header-changes.json");
+  fs.writeFileSync(report, JSON.stringify({ generatedAt: result.generatedAt, tally, changes: headerChanges }, null, 1));
+  console.log("Version header changes vs previous operations.json:", tally, "→", report);
+  if (process.env.GHL_ACCEPT_HEADER_CHANGES !== "1") {
+    console.error("Header drift is not accepted. Review the report, then re-run with GHL_ACCEPT_HEADER_CHANGES=1.");
+    process.exit(2);
+  }
+}

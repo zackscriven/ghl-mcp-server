@@ -159,10 +159,12 @@ export const platformOverrides: DomainOverrides = {
     },
 
     // --- saas/* (current family — all agency-only except wallet-balance ops) ---
-    "GET /saas-api/public-api/companies/{companyId}/locations/{locationId}/wallet-balance": {
+    "GET /saas/companies/{companyId}/locations/{locationId}/wallet-balance": {
+      name: "ghl_saas_get_location_wallet_balance",
       descriptionNote: "REQUIRES AN AGENCY-LEVEL (Company) TOKEN — spec security is Agency-Access-Only.",
     },
-    "POST /saas-api/public-api/companies/{companyId}/locations/{locationId}/wallet-balance/complimentary-credits": {
+    "POST /saas/companies/{companyId}/locations/{locationId}/wallet-balance/complimentary-credits": {
+      name: "ghl_saas_update_location_wallet_balance",
       descriptionNote: "REQUIRES AN AGENCY-LEVEL (Company) TOKEN — spec security is Agency-Access-Only. Adds/adjusts complimentary wallet credits for the given location.",
     },
     "GET /saas/agency-plans/{companyId}": {

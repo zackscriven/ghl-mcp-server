@@ -29,6 +29,8 @@ export interface Operation {
     content?: Record<string, { schema?: Record<string, unknown> }>;
   } | null;
   legacyTwin?: { specFile: string; versionHeader: string; operationId: string };
+  /** Removed from the live v3 docs but still served under the legacy Version header. */
+  legacyFallback?: boolean;
 }
 
 export interface OperationsFile {
